@@ -3,6 +3,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import pages.Admin_Dashboard;
 
 import java.io.File;
 import java.io.IOException;
@@ -409,5 +410,15 @@ public class ReusableMethods {
 
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
+    }
+
+    //Zafer kullanici adi ve sifresiyle admin paneline giris
+    public static void adminLoginZafer (){
+        Admin_Dashboard adminLogin = new Admin_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
+        adminLogin.adminUsernameLogin.sendKeys("zafer.sahingoz");
+        ReusableMethods.wait(2);
+        adminLogin.adminPasswordLogin.sendKeys("123456");
+        adminLogin.adminLoginSignInButton.click();
     }
 }
