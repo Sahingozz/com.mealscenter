@@ -1,0 +1,3 @@
+# com.mealscenter
+STLC_Team7
+PROJEYLE ILGILI KULLANIM KILAVUZU
