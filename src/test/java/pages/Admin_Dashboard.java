@@ -31,4 +31,5 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//a[@href='/backoffice/order/list']")
     public WebElement adminAllOrderLink;
 
+
 }

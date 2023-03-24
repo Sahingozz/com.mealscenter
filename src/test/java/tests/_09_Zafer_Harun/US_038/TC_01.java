@@ -9,7 +9,8 @@ public class TC_01 {
 
     Admin_Dashboard adminLogin = new Admin_Dashboard();
 
-    // AdminAllorderLink
+    // Verify that after logging in to admin section, "All order" menu is
+    //displayed and it is clickable
     @Test
     public void adminAllorderLink (){
         ReusableMethods.adminLoginZafer();
