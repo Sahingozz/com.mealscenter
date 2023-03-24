@@ -9,6 +9,7 @@ public class Merchant_Dashboard {
     public Merchant_Dashboard(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//label[@for='AR_merchant_login_username']")
     public WebElement merchantLoginUsername;

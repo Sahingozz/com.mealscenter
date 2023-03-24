@@ -422,7 +422,8 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys("123456");
         adminLogin.adminLoginSignInButton.click();
     }
-    public static void getmerchandLogin(String username, String password){
+   //---------------------------------------------------------------------------------
+        public static void getmerchandLogin(String username, String password){
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
         Merchant_Dashboard merchandLogin= new Merchant_Dashboard();
         merchandLogin.merchantLoginUsername.sendKeys(username);
