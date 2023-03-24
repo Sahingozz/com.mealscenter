@@ -9,13 +9,13 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_06 {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
 
     @Test
-    private void TC_01(){
+    private void TC_06() {
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -35,7 +35,12 @@ public class TC_01 {
         homepage.signInButtonConfirm.click();
         homepage.cookiesButton.click();
 
-        // 4* User closes the Page.
+
+        // 4* User clicks the Logout button.
+
+        homepage.nameButton.click();
+
+        // 5* User closes the Page.
 
         Driver.getDriver().close();
     }
