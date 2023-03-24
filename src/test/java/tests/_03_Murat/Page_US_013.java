@@ -1,4 +1,4 @@
-package _03_Murat;
+package tests._03_Murat;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,15 +11,19 @@ public class Page_US_013 {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    // Homepage panel> sign  in button
     @FindBy(xpath = "//li[@class='d-none d-lg-inline line-left']")
     public WebElement signInButton;
 
+    // Homepage panel> sign in > eMail button
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
     public WebElement eMailButton;
 
+    // Homepage panel> sign in confirm
     @FindBy(xpath = "//button[@class='btn btn-green w-100']")
     public WebElement signInButtonConfirm;
 
+    // Homepage panel > search button
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
     public WebElement searchButton;
 

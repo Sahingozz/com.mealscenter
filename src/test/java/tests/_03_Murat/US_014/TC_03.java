@@ -1,4 +1,4 @@
-package _03_Murat.US_014;
+package tests._03_Murat.US_014;
 
 
 import org.openqa.selenium.By;

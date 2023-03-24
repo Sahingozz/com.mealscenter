@@ -1,4 +1,4 @@
-package _03_Murat.US_013;
+package tests._03_Murat.US_013;
 
 
 import org.openqa.selenium.Keys;

@@ -1,17 +1,18 @@
-package _03_Murat.US_011;
+package tests._03_Murat.US_011;
 
-import Proje.Page_US_011;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+import tests._03_Murat.Page_US_011;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReausableMethods;
+import utilities.ReusableMethods;
 
 public class TC_05 {
 
     Page_US_011 page_us_011 = new Page_US_011();
-    private ReausableMethods reausableMethods;
+    private ReusableMethods reausableMethods;
 
     @Test
     private void restaurantMethod() {
