@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import pages.Admin_Dashboard;
+import pages.Merchant_Dashboard;
 
 import java.io.File;
 import java.io.IOException;
@@ -420,5 +421,20 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys("123456");
         adminLogin.adminLoginSignInButton.click();
+    }
+    public static void getmerchandLogin(String username, String password){
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        Merchant_Dashboard merchandLogin= new Merchant_Dashboard();
+        merchandLogin.merchantLoginUsername.sendKeys(username);
+        ReusableMethods.wait(2);
+        merchandLogin.merchantLoginPassword.sendKeys(password);
+        merchandLogin.merchantLoginSignin.click();
+
+
+
+
+
+
+
     }
 }
