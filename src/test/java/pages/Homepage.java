@@ -43,6 +43,7 @@ public class Homepage {
     @FindBy(xpath = "//li[@class='d-none d-lg-inline line-left']")
     public WebElement signInButton;
 
+
     // Homepage panel> sign in > eMail button
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
     public WebElement eMailButton;
@@ -219,6 +220,54 @@ public class Homepage {
     @FindBy(xpath = "//a[@class='dropdown-item with-icon-logout']")
     public WebElement logoutButton;
 
+
+
+    //============================= Harun's Locaters ===================
+@FindBy(xpath = "//*[text()='Sign in']")
+public WebElement anaEkranSignInButonu;
+
+    //Cookies i kabul et
+    @FindBy(xpath = "//*[text()='Accept']")
+    public WebElement AcceptKabulButonu;
+
+    //MealsCenter>Sign in ekranindaki Email kutusu
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement EmailorTelefonButonu;
+
+    //Mealscenter>Sign in ekranindaki Sign Up butonu
+    @FindBy (xpath = "//*[text()='Sign Up']")
+    public WebElement SignUpButonu;
+
+    //MealsCenter>Sign Up Kutularindaki ilkKutu(isim)
+    @FindBy (xpath = "//input[@id=\"firstname\"]")
+    public WebElement FristnameKutusu;
+
+    //MealsCenter/Anasayfanin/contact Us Butonu
+    @FindBy(xpath = "//*[text()='Contact us']")
+    public WebElement ContactUs;
+
+    @FindBy (xpath = "//h2[@class='text-center mb-3']")
+    public WebElement hungryyazisi;
+
+    //MealsCenter>Contact Us yazisi
+    @FindBy (xpath = "//*[text()='Contact Us']")
+    public WebElement ContactUSGorundu;
+
+    //MealsCenter/TermsundConditionsButonu
+    @FindBy (xpath = "//*[text()='Terms and conditions']")
+    public WebElement TermsundConditions;
+
+    //TermsundconditionsYazisi
+    @FindBy (xpath = "(//*[text()='Terms and conditions'])[1]")
+    public WebElement TermsundConditionsgoruldu;
+
+    //MealsCenter/PrivacyPolicyButonu
+    @FindBy(xpath = "//*[text()='Privacy policy']")
+    public WebElement Privacy_Policiy;
+
+    //MealsCenter>PrivacyPolicyYazisi
+    @FindBy(xpath = "(//*[text()='Privacy policy'])[1]")
+    public WebElement PrivacyPolicyGorundu;
 
 
 
