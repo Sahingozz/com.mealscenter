@@ -32,7 +32,6 @@ public class Admin_Dashboard {
     public WebElement adminAllOrderLink;
 
 
-
     // Admin Dashboard > Reports WebElementi
     @FindBy(xpath = "//a[text()='Reports']")
     public WebElement adminReports;
@@ -104,6 +103,5 @@ public class Admin_Dashboard {
     //Admin Dashboard Reports > Order Earnings > Count: ?
     @FindBy(xpath = "//h5[text()='148']")
     public WebElement adminReportsOrderEarningsCount;
-
 
 }

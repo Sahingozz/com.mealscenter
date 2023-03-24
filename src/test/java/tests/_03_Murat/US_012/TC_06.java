@@ -35,6 +35,8 @@ public class TC_06 {
 
         page_us_012.signInButtonConfirm.click();
 
+        page_us_012.cookiesButton.click();
+
         // 4* User clicks Chinese page.
 
         page_us_012.moreButton.click();

@@ -24,7 +24,7 @@ public class Page_US_011 {
     public WebElement signInButtonConfirm;
 
     // Homepage panel > search button
-    @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
+    @FindBy(xpath = "(//div[@class='position-relative search-geocomplete'])[1]")
     public WebElement searchButton;
 
     // Homepage panel > search button >

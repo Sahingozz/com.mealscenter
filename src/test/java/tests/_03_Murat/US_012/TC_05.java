@@ -35,6 +35,8 @@ public class TC_05 {
 
         page_us_012.signInButtonConfirm.click();
 
+        page_us_012.cookiesButton.click();
+
         // 4* User clicks on Thai page.
 
         page_us_012.thaiButton.click();

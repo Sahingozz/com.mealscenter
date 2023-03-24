@@ -38,6 +38,14 @@ public class TC_05 {
 
         page_us_011.cookiesButton.click();
 
+        // 5* User type New Orleans into the search engine and search.
+
+
+
+        actions.sendKeys(page_us_011.searchButton)
+                .sendKeys("New Orleans").perform();
+        page_us_011.newOrleansButton.click();
+
         // 5* User clicks on Burger King restaurant.
 
         page_us_011.burgerKingButton.click();

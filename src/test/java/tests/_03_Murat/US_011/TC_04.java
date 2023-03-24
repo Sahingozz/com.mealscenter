@@ -37,15 +37,23 @@ public class TC_04 {
 
         page_us_011.cookiesButton.click();
 
-        // 5* User clicks Starbucks page.
+        // 5* User type New Orleans into the search engine and search.
+
+
+
+        actions.sendKeys(page_us_011.searchButton)
+                .sendKeys("New Orleans").perform();
+        page_us_011.newOrleansButton.click();
+
+        // 6* User clicks Starbucks page.
 
         page_us_011.starbucksButton.click();
 
-        // 6* User adds 'Caffè Misto' to cart menu."
+        // 7* User adds 'Caffè Misto' to cart menu."
 
         page_us_011.caffeMistroButton.click();
 
-        // 7* User closes the page.
+        // 8* User closes the page.
 
         Driver.getDriver().close();
 

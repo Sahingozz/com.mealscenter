@@ -24,6 +24,10 @@ public class Page_US_012 {
     @FindBy(xpath = "//button[@class='btn btn-green w-100']")
     public WebElement signInButtonConfirm;
 
+    // Homepage panel > search button > cookies button
+    @FindBy(xpath = "//button[@class='el-button el-button--default is-round w-100']")
+    public WebElement cookiesButton;
+
     // Homepage panel > search button
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
     public WebElement searchButton;

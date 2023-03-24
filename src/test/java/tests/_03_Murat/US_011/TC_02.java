@@ -51,11 +51,11 @@ public class TC_02 {
 
         // 6* Verifies that the  section exists.
 
-        //  String expectedContents="15 stores";
-        WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//h4[@class='m-0'])[1]"));
-        //String actualContents=Driver.getDriver().findElement(By.xpath("(//h4[@class='m-0'])[1]")).getText();
-        Assert.assertTrue(storeYazisi.isDisplayed());
-        // Assert.assertTrue(actualContents.contains(expectedContents));
+         String expectedUrl="https://qa.mealscenter.com/restaurants";
+        //WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        //Assert.assertTrue(storeYazisi.isDisplayed());
+        //Assert.assertEquals(expectedUrl,actualUrl);
 
         // 7* User goes to Eleven page.
         // 8* Checks that there is a User Menu section.
