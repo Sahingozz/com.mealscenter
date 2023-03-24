@@ -427,5 +427,8 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
+
+
+
 }
 }
