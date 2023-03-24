@@ -9,7 +9,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_02 {
 
     Page_US_013 page_us_013 = new Page_US_013();
     private ReusableMethods reausableMethods;
@@ -34,7 +34,15 @@ public class TC_01 {
 
         page_us_013.signInButtonConfirm.click();
 
-        // 4* User closes the Page.
+        // 4* User type New Orleans into the search engine and search.
+
+        page_us_013.cookiesButton.click();
+
+        actions.sendKeys(page_us_013.searchButton)
+                .sendKeys("New Orleans").perform();
+        page_us_013.newOrleansButton.click();
+
+        // 5* User closes the Page.
 
         Driver.getDriver().close();
 

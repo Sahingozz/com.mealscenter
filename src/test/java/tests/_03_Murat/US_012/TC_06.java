@@ -3,13 +3,14 @@ package _03_Murat.US_012;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests._03_Murat.Page_US_012;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_06 {
 
     Page_US_012 page_us_012 = new Page_US_012();
     private ReusableMethods reausableMethods;
@@ -34,7 +35,19 @@ public class TC_01 {
 
         page_us_012.signInButtonConfirm.click();
 
-        // 4* User closes the page.
+        // 4* User clicks Chinese page.
+
+        page_us_012.moreButton.click();
+        page_us_012.chineseButton.click();
+
+        // 5* User verifies that there is a Sichuanese Cuisine restaurant.
+
+        page_us_012.sichuaneseButton.click();
+        String expectedSichuaneseUrl="https://qa.mealscenter.com/sichuanesecuisine";
+        String actaulSichuaneseUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(expectedSichuaneseUrl.contains(actaulSichuaneseUrl));
+
+        // 6* User closes the page.
 
         Driver.getDriver().close();
 

@@ -1,15 +1,18 @@
 package _03_Murat.US_014;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests._03_Murat.Page_US_014;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_03 {
 
     Page_US_014 page_us_014 = new Page_US_014();
     private ReusableMethods reausableMethods;
@@ -35,7 +38,20 @@ public class TC_01 {
         page_us_014.signInButtonConfirm.click();
         page_us_014.cookiesButton.click();
 
-        // 4* User closes the Page.
+
+        // 4* User clicks My Orders link.
+
+        page_us_014.nameButton.click();
+        page_us_014.myOrdersButton.click();
+
+        // 5* The number of User Orders confirms.
+
+        WebElement orderNumber=Driver.getDriver().
+                findElement(By.xpath("//div[@class='col-lg-3 d-none d-lg-block']"));
+        Assert.assertTrue(orderNumber.isDisplayed());
+
+
+        // 6* User closes the Page.
 
         Driver.getDriver().close();
     }
