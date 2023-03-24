@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class Merchant_Dashboard {
 
-   public Merchant_Dashboard() {
+    public Merchant_Dashboard() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -76,7 +76,7 @@ public class Merchant_Dashboard {
     public WebElement nameBox3;
 
     //Dashboard>ddm1
-    @FindBy (xpath = "//select[@class=\"form-control custom-select form-control-select\"]")
+    @FindBy(xpath = "//select[@class=\"form-control custom-select form-control-select\"]")
     public WebElement ddm1;
 
     //Dashboard>ddm2
@@ -115,6 +115,10 @@ public class Merchant_Dashboard {
     @FindBy(xpath = "(//td[@class=\"available\"])[23]")
     public WebElement expriration17;
 
+
+    //Dashboard>Promo>Coupon>AllCoupon/Expriration17
+    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
+    public WebElement expriration20;
 
 }
 
