@@ -417,4 +417,15 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys("123456");
         adminLogin.adminLoginSignInButton.click();
     }
+
+
+    //Admin paneline parametreli Kullanici adi ve sifre isle giris methodu
+    public static void adminLogin (String userName, String password){
+        Admin_Dashboard adminLogin = new Admin_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
+        adminLogin.adminUsernameLogin.sendKeys(userName);
+        ReusableMethods.wait(2);
+        adminLogin.adminPasswordLogin.sendKeys(password);
+        adminLogin.adminLoginSignInButton.click();
+}
 }
