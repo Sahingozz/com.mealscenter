@@ -116,9 +116,7 @@ public class Merchant_Dashboard {
     public WebElement expriration17;
 
 
-    //Dashboard>Promo>Coupon>AllCoupon/Expriration17
-    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
-    public WebElement expriration20;
+
 
 }
 
