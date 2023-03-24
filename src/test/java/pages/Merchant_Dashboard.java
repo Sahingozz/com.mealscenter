@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class Merchant_Dashboard {
 
-    public Merchant_Dashboard() {
+   public Merchant_Dashboard() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -117,3 +117,4 @@ public class Merchant_Dashboard {
 
 
 }
+
