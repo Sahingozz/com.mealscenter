@@ -5,18 +5,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import tests._03_Murat.Page_US_012;
+import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_05 {
 
-    Page_US_012 page_us_012 = new Page_US_012();
+    Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
 
     @Test
-    public void yerelLezzetler() {
+    public void TC_05() {
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -24,23 +24,23 @@ public class TC_05 {
 
         // 2* The user presses the sign in button and writes the mail and password.
 
-        page_us_012.signInButton.click();
+        homepage.signInButton.click();
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(page_us_012.eMailButton)
+        actions.sendKeys(homepage.eMailButton)
                 .sendKeys("m.korkmaz4606@gmail.com")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Murat3656.").perform();
 
         // 3* User confirms Sign in button.
 
-        page_us_012.signInButtonConfirm.click();
+        homepage.signInButtonConfirm.click();
 
-        page_us_012.cookiesButton.click();
+        homepage.cookiesButton.click();
 
         // 4* User clicks on Thai page.
 
-        page_us_012.thaiButton.click();
-        page_us_012.streetCafeButton.click();
+        homepage.thaiButton.click();
+        homepage.streetCafeButton.click();
 
         // 5* User confirms that Bai Tong Thai Sreet Cafe exists.
 
