@@ -1,4 +1,4 @@
-package tests._03_Murat.US_014;
+package tests._03_Murat.US_013;
 
 
 import org.openqa.selenium.Keys;
@@ -9,13 +9,13 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_02 {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
 
     @Test
-    private void TC_01(){
+    private void TC_02() {
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,10 +33,19 @@ public class TC_01 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+
+        // 4* User type New Orleans into the search engine and search.
+
         homepage.cookiesButton.click();
 
-        // 4* User closes the Page.
+        actions.sendKeys(homepage.searchButton)
+                .sendKeys("New Orleans").perform();
+        homepage.newOrleansButton.click();
+
+        // 5* User closes the Page.
 
         Driver.getDriver().close();
+
     }
 }
+

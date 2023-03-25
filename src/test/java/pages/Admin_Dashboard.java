@@ -31,7 +31,42 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//a[@href='/backoffice/order/list']")
     public WebElement adminAllOrderLink;
 
+    // Admin Dashboard All Order Text on the list page
+    @FindBy (xpath = "//h5[text()='All Orders']")
+    public WebElement allOrderListText;
 
+    // Admin Dashboard All Order -> 'Cancel' Text
+    @FindBy (xpath = "//p[text()='Cancel']")
+    public WebElement cancelledOrderText;
+
+    // Admin Dashboard All Order -> cancelled order 'Number'
+    @FindBy (xpath = "(//h5[@class='m-0'])[2]")
+    public WebElement cancelledOrderNumber;
+
+    // Admin Dashboard All Order -> 'Total Refund' Text
+    @FindBy (xpath = "//p[text()='Total refund']")
+    public WebElement totalRefundText ;
+
+    // Admin Dashboard All Order -> total Refund 'Number'
+    @FindBy (xpath = "(//h5[@class='m-0'])[3]")
+    public WebElement totalRefundNumber;
+
+    // Admin Dashboard All Order -> 'Total Orders' Text
+    @FindBy (xpath = "//p[text()='Total Orders']")
+    public WebElement totalValueOfOrdersText ;
+
+    // Admin Dashboard All Order -> total orders 'Value'
+    @FindBy (xpath = "(//h5[@class='m-0'])[4]")
+    public WebElement totalValueOfOrders;
+
+    //Admin Dashboard All order -> start-date-end-date
+    @FindBy (xpath = "//input[@placeholder='Start date -- End date']")
+    public WebElement ordersStartEndDate ;
+
+    //Admin Dashboard All Order -> date search result element
+
+    @FindBy (xpath = "//div[@class='dataTables_info']")
+    public WebElement searchResults ;
 
     // Admin Dashboard > Reports WebElementi
     @FindBy(xpath = "//a[text()='Reports']")
@@ -105,5 +140,48 @@ public class Admin_Dashboard {
     @FindBy(xpath = "//h5[text()='148']")
     public WebElement adminReportsOrderEarningsCount;
 
+    //------------------------------------------
 
+    // Admin Dashboard ->Order>All order > Order by ID butonu
+    @FindBy (xpath = "//th[text()='Order ID']")
+    public WebElement sortByOrderIDButton ;
+
+    // Admin Dashboard ->Order->All order > Download any order butonu
+
+    @FindBy (xpath = "(//i[@class='zmdi zmdi-download'])[1]")
+    public WebElement orderDownloadButton ;
+
+    // Admin Dashboard -> Earnings butonu
+
+    @FindBy (xpath = "//a[text()='Earnings']")
+    public WebElement earningsButton;
+
+    // Admin Dashboard -> Earnings -> Merchant Earnings butonu
+
+    @FindBy (xpath = "//a[text()='Merchant Earnings']")
+    public WebElement merchantEarningsButton;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Earnings Text
+    @FindBy (xpath = "//h5[text()='Merchant Earnings']")
+    public WebElement merchantEarningsText;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Earnings Text
+    @FindBy (xpath = "//th[text()='Balance']")
+    public WebElement balanceText ;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Text Button
+    @FindBy (xpath = "//th[text()='Merchant']")
+    public WebElement merchantText ;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Actions Eye Button
+    @FindBy (xpath = "//i[@class='zmdi zmdi-eye']")
+    public WebElement actionsEyeButton;
+
+    //Admin Dashboard -> Earnings ->Merchant Earnings ->Merchant Info Pop-up Text
+    @FindBy (xpath = "//h6[text()='Merchant Info']")
+    public WebElement merchantInfoText;
+
+    //Admin Dashboard -> Earnings -> Merchant Earnings -> SearchField
+    @FindBy (xpath = "(//div[@class='col-sm-12 col-md-6'])[2]")
+    public WebElement merchantEarningsSearchField;
 }

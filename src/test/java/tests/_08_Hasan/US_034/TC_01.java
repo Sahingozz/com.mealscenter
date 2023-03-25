@@ -17,7 +17,7 @@ public class TC_01 {
     -User closes the page
      */
 
-    Merchant_Dashboard merchantDashboard=new Merchant_Dashboard();
+
 
     @Test
     public void TC_01(){
