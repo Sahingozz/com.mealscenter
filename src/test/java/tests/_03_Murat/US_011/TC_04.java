@@ -1,5 +1,4 @@
-package tests._03_Murat.US_014;
-
+package tests._03_Murat.US_011;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -9,19 +8,19 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_04 {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
 
     @Test
-    private void TC_01(){
+    private void TC_04() {
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
         Driver.getDriver().get(ConfigReader.getProperty("mealUrl"));
 
-        // 2* The user presses the sign in button and writes the mail and password.
+        // 2* User presses the sign in button and writes the mail and password.
 
         homepage.signInButton.click();
         Actions actions = new Actions(Driver.getDriver());
@@ -30,13 +29,34 @@ public class TC_01 {
                 .sendKeys(Keys.TAB)
                 .sendKeys("Murat3656.").perform();
 
-        // 3* User confirms Sign in button.
+        // 3* User confirms Sign in button."
 
         homepage.signInButtonConfirm.click();
+
+        // 4* press the cookies button
+
         homepage.cookiesButton.click();
 
-        // 4* User closes the Page.
+        // 5* User type New Orleans into the search engine and search.
+
+
+
+        actions.sendKeys(homepage.searchButton)
+                .sendKeys("New Orleans").perform();
+        homepage.newOrleansButton.click();
+
+        // 6* User clicks Starbucks page.
+
+        homepage.starbucksButton.click();
+
+        // 7* User adds 'Caffè Misto' to cart menu."
+
+        homepage.caffeMistroButton.click();
+
+        // 8* User closes the page.
 
         Driver.getDriver().close();
+
+
     }
 }

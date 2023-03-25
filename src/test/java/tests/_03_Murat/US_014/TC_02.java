@@ -9,13 +9,13 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_02 {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
 
     @Test
-    private void TC_01(){
+    private void TC_02() {
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -35,7 +35,32 @@ public class TC_01 {
         homepage.signInButtonConfirm.click();
         homepage.cookiesButton.click();
 
-        // 4* User closes the Page.
+        // 4* The user clicks on his name in the upper right corner.
+
+        homepage.nameButton.click();
+
+        // 5* The user presses the Manage my account button.
+
+        homepage.manageMyAccountButton.click();
+
+        // 6* User presses the Change Password button."
+
+        homepage.changePasswordButton.click();
+
+        // 7* User writer old password 'Murat3656.' , new passwords 'Murat4606.'.
+
+        actions.sendKeys(homepage.oldPasswordButton)
+                .sendKeys("Murat3656.")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Murat4606.")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Murat4606.").perform();
+
+        // 8* User click Submit button.
+
+        homepage.changePasswordSubmitButton.click();
+
+        // 9* User closes the Page.
 
         Driver.getDriver().close();
     }
