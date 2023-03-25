@@ -10,6 +10,157 @@ public class Homepage {
     public Homepage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    //Header
+    @FindBy(xpath = "//div[@class='top-logo']")
+    public static WebElement homePageHeaderLogo;
+    @FindBy(xpath = "//h2[@class='text-center mb-3']")
+    public static WebElement homePageHeaderText;//<h2 class="text-center mb-3">Hungry? We got you</h2>
+
+    @FindBy(xpath = "//div[@class='position-relative search-geocomplete']")
+    public static WebElement homePageHeaderSearchBox;
+
+    @FindBy(xpath = "//a[@class='ssm-toggle-navx']")
+    public static WebElement homePageHeaderCart;
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/shopping-bag.svg']")
+    public static WebElement homePageHeaderShoppingBag;
+    @FindBy(xpath = "//a[@href='/account/login']")
+    public static WebElement homePageHeaderSignIn;
+
+
+    @FindBy(xpath = "//div[@id='main-search-banner']")
+    public static WebElement homePageHeaderSearchBanner;// searchboxla beraber resimler ortadaki tüm alan
+
+    //body
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
+    public static WebElement homePageBodyAmerican;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[2]")
+    public static WebElement homePageBodyMediterranean;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[3]")
+    public static WebElement homePageBodySandwiches;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[4]")
+    public static WebElement homePageBodyItalian;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[5]")
+    public static WebElement homePageBodyMexican;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[6]")
+    public static WebElement homePageBodyBurgers;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[7]")
+    public static WebElement homePageBodyJapanese;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[8]")
+    public static WebElement homePageBodyThai;
+
+
+    @FindBy(xpath = "//a[@id='dropdownCuisine']")
+    public static WebElement homePageBodyMenuDropDown;
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[1]")
+    public static WebElement homePageBodyMenuDropDownChinese;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[2]")
+    public static WebElement homePageBodyMenuDropDownKosher;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[3]")
+    public static WebElement homePageBodyMenuDropDownHalal;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[4]")
+    public static WebElement homePageBodyMenuDropDownVegetarian;
+
+    @FindBy(xpath = "//h5[@class='m-0 section-title']")
+    public static WebElement homePageBodyPopularNearbyText;//Popular nearby Seattle Mcdonalds
+    @FindBy(xpath = "//div[@class='row equal align-items-center position-relative w-100']")
+    public static WebElement homePageBodyPopularNearbyMD;//Popular nearby Seattle Mcdonalds
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[4]")
+    public static WebElement homePageBodyPopularMcDonald;
+
+    @FindBy(xpath = "//div[@class='addons addons-1']")
+    public static WebElement homeHomeBodyNoMinimumOrder;
+
+    @FindBy(xpath = "//div[@class='addons addons-2']")
+    public static WebElement homePageBodyTrackYourDelivery;
+
+    @FindBy(xpath = "//div[@class='addons addons-3']")
+    public static WebElement homePageBodyDeliveryOnTime;
+
+    //read
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[1]")
+    public static WebElement homePageBodyReadText;// body bolumunde readbolumu DiscoverHealtyFood
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[2]")
+    public static WebElement homePageBodyReadText2;// body bolumunde readbolumu Meals Center for Your Healthy Lifestyle
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[3]")
+    public static WebElement homePageBodyReadText3;// body bolumunde readbolumu How to Eat Healthy with Food Delivery
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[4]")
+    public static WebElement homePageBodyReadText4; // body bolumunde readbolumu Discover the Best Vegetarian Food Options in Your Area
+    @FindBy(xpath = "//div[@class='section-join-us mt-0 mb-0']")
+    public static WebElement homePageBodyReadText5;//Are you a restaurant owner?// Join us and reach new customers
+    //Just a few steps to join our family
+
+    //bodynin en alti
+    @FindBy(xpath = " //div[@class='section-mobileapp tree-columns-center d-none d-md-block']")
+    public static WebElement homePageBodyBottom;
+
+
+    //footer
+    @FindBy(xpath = " //img[@class='img-200']")
+    public static WebElement homePageFooterMealsCenterLogo;
+
+    @FindBy(xpath = "//div[@class='sub-footer']")
+    public static WebElement homePageFooterAll;
+
+    // footer menu
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/contactus']")
+    public static WebElement homePageFooterContactUsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/terms-and-conditions']")
+    public static WebElement homePageFooterTermsAndConditionsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/privacy-policy']")
+    public static WebElement homePageFooterPrivacyPolicyLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/merchant/signup']")
+    public static WebElement homePageFooterBecomePartnerLink;
+
+    //footer social media
+    @FindBy(xpath = "//a[@class='facebook']")
+    public static WebElement homePageFooterSocialMediaFacebookLink;
+    @FindBy(xpath = "//a[@class='instagram']")
+    public static WebElement homePageFooterSocialMediaInstagramLink;
+    @FindBy(xpath = "//a[@class='linkedin']")
+    public static WebElement homePageFooterSocialMediaLinkedinLink;
+    @FindBy(xpath = "//a[@class='twitter']")
+    public static WebElement homePageFooterSocialMediaTwitterLink;
+    @FindBy(xpath = "//a[@class='youtube']")
+    public static WebElement homePageFooterSocialMediaYoutubeLink;
+
+    //footer blog
+    @FindBy(xpath = "//ul[@id='yw2']")
+    public static WebElement homePageFooterBlogList;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-the-best-vegetarian-food-delivery-options-in-your-area']")
+    public static WebElement homePageFooterBlogDiscoverLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/how-to-eat-healthy-with-food-delivery']")
+    public static WebElement homePageFooterBlogHowToLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle']")
+    public static WebElement homePageFooterBlogBenefitsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family']")
+    public static WebElement homePageFooterBlogWholeFamilyLink;
+
+    //footer of footer
+
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/app-store@2x.png']")
+    public static WebElement homePageFooterAppStore;
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/google-play@2x.png']")
+    public static WebElement homePageFooterGoogleStore;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/']")
+    public static WebElement homePageFooterQaMealsCenterLink;
+
+
     //HomePage/Sign in buttonElement
     @FindBy(linkText = "Sign in")
     public WebElement signInButtonElement;
