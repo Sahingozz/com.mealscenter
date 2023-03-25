@@ -1,4 +1,40 @@
-/.idea
+# IntelliJ IDEA files
+.idea/
+
+# Compiled Java class files
+*.class
+
+# Maven files
+target/
+pom.xml.lock
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+mvnw
+mvnw.cmd
+
+# Gradle files
+.gradle/
+build/
+
+# TestNG files
+test-output/
+
+# Selenium WebDriver files
+geckodriver.log
+webdriver.log
+
+# Logs
+*.log
+log/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
 
 
 
