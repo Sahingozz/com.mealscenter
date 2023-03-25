@@ -423,19 +423,28 @@ public class ReusableMethods {
         adminLogin.adminLoginSignInButton.click();
     }
    //---------------------------------------------------------------------------------
-        public static void getmerchandLogin(String username, String password){
-        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        public static void getmerchantLogin(String username, String password){
         Merchant_Dashboard merchandLogin= new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
         merchandLogin.merchantLoginUsername.sendKeys(username);
-        ReusableMethods.wait(2);
         merchandLogin.merchantLoginPassword.sendKeys(password);
         merchandLogin.merchantLoginSignin.click();
-
-
-
-
-
-
-
+    }
+    //Admin paneline parametreli Kullanici adi ve sifre isle giris methodu
+        public static void adminLogin (String userName, String password){
+        Admin_Dashboard adminLogin = new Admin_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
+        adminLogin.adminUsernameLogin.sendKeys(userName);
+        ReusableMethods.wait(2);
+        adminLogin.adminPasswordLogin.sendKeys(password);
+        adminLogin.adminLoginSignInButton.click();
+}
+        public static void merchantLoginHasan (){
+        Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+         merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
+        ReusableMethods.wait(2);
+         merchantDashboard.merchantLoginPassword.sendKeys("1234567");
+         merchantDashboard.merchantLoginSignin.click();
     }
 }
