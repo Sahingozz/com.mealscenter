@@ -163,7 +163,110 @@ public class Merchant_Dashboard {
     @FindBy(xpath = "(//td[@class=\"available\"])[23]")
     public WebElement expriration17;
 
+    //Merchant panel login password 2
+    @FindBy(xpath = "//*[@id=\"AR_merchant_login_password\"]")
+    public WebElement merchantPasswordLogin2;
 
+    //Merchant Dashboard/ successfull Login Element
+    @FindBy(xpath = "//img[@class='img-200']")
+     public WebElement successfullLoginElement;
+    //Merchant Dashboard>Stephanie Eleven
+    @FindBy(xpath = "(//*[@id=\"dropdownMenuLink\"])[1]")
+    public WebElement profilDropdownmenu;
+    // Merchant Dashboard>Stephanie Eleven/profil
+     @FindBy(xpath = "//*[@class='dropdown-item']")
+    public WebElement profile;
+   // Merchant Dashboard>Stephanie Eleven>profil/FirstName
+     @FindBy(xpath = "//*[@id=\"AR_merchant_user_first_name\"]")
+    public WebElement merchanProfileFirstName;
+   // Merchant Dashboard>Stephanie Eleven>profil/LastName
+   @FindBy(xpath = "//*[@id=\"AR_merchant_user_last_name\"]")
+   public WebElement merchanProfileLastName;
+ // Merchant Dashboard>Stephanie Eleven>profil/Email address
+ @FindBy(xpath = "//*[@id=\"AR_merchant_user_contact_email\"]")
+ public WebElement merchanProfileEmailAdresse;
+ // Merchant Dashboard>Stephanie Eleven>profil/ContactNumber
+ @FindBy(xpath = "//*[@id=\"AR_merchant_user_contact_number\"]")
+ public WebElement merchanProfileContactNumber;
+ // Merchant Dashboard>Stephanie Eleven>profil/SaveButton
+ @FindBy(xpath = "//*[@value=\"Save\"]")
+ public WebElement merchanProfileSaveButton;
+
+ // Merchant Dashboard>Stephanie Eleven>profil/Change Password
+ @FindBy(xpath = "(//*[text()='Change Password'])[1]")
+ public WebElement profilechange_passwort;
+ // Merchant Dashboard>Stephanie Eleven>profil>Change Password/Old Password
+ @FindBy(xpath = "//*[@id=\"AR_merchant_user_old_password\"]")
+ public WebElement profilechange_OldPassword;
+ // Merchant Dashboard>Stephanie Eleven>profil>Change Password/New Password
+ @FindBy(xpath = "//*[@id=\"AR_merchant_user_new_password\"]")
+ public WebElement profilechange_NewPassword;
+ // Merchant Dashboard>Stephanie Eleven>profil>Change Password/Confirm Password
+ @FindBy(xpath = "//*[@id=\"AR_merchant_user_repeat_password\"]")
+ public WebElement profilechange_ConfirmPassword;
+ // Merchant Dashboard/Total Orders
+ @FindBy(xpath = "//*[@class=\"rounded-status-report rounded r1\"]")
+ public WebElement totalOrders;
+
+ // Merchant Dashboard/Total Cancel
+ @FindBy(xpath = "//*[@class=\"rounded-status-report rounded r2\"]")
+ public WebElement totalCancel;
+
+ // Merchant Dashboard/Total Refund
+ @FindBy(xpath = "//*[@class=\"rounded-status-report rounded r3\"]")
+ public WebElement totalRefund;
+
+ // Merchant Dashboard/Total Sales
+ @FindBy(xpath = "//*[@class=\"rounded-status-report rounded r4\"]")
+ public WebElement totalSales;
+
+ // Merchant Dashboard/Sales this week
+ @FindBy(xpath = "//*[text()='Sales this week']")
+ public WebElement SalesThisWeek;
+
+ // Merchant Dashboard/Earning this week
+ @FindBy(xpath = "//*[text()='Earning this week']")
+ public WebElement EarningThisWeek;
+
+ // Merchant Dashboard/Order received
+ @FindBy(xpath = "//*[text()='Order received']")
+ public WebElement OrderReceived;
+
+ // Merchant Dashboard/Today delivered
+ @FindBy(xpath = "//*[text()='Today delivered']")
+ public WebElement TodayDelivered;
+
+ // Merchant Dashboard/Today sales
+ @FindBy(xpath = "//*[text()='Today sales']")
+ public WebElement TodaySales;
+
+ // Merchant Dashboard/Today refund
+ @FindBy(xpath = "//*[text()='Today refund']")
+ public WebElement TodayRefund;
+
+ // Merchant Dashboard/Top Customers
+ @FindBy(xpath = "//*[text()='Top Customers']")
+ public WebElement TopCustomers;
+
+ // Merchant Dashboard/Popular items
+ @FindBy(xpath = "(//*[text()='Popular items'])[1]")
+ public WebElement PopularItems;
+
+ // Merchant Dashboard/Overview of Review
+ @FindBy(xpath = "//*[text()='Overview of Review']")
+ public WebElement OverviewOfReview;
+
+
+ // Merchant Dashboard/Food
+ @FindBy(xpath = "//*[text()='Food']")
+ public WebElement FoodLink;
+
+ // Merchant Dashboard/Food
+ @FindBy(xpath = "//*[text()='Category']")
+ public WebElement CategoryLink;
+
+ @FindBy(xpath = "(//*[text()='Category List'])[2]")
+ public WebElement CategoryList;
 
 
 
