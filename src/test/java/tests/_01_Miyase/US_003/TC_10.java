@@ -1,3 +1,4 @@
+
 package tests._01_Miyase.US_003;
 
 import org.openqa.selenium.WebDriver;
@@ -8,19 +9,23 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_10 {
 
     Homepage homepage = new Homepage();
 
     @Test
-    public void testMealCenterAccessAmericanCuisine() {
+    public void testMealCenterAccessKosherCuisine() {
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
-        Assert.assertTrue(homepage.homePageBodyAmerican.isDisplayed());
-        homepage.homePageBodyAmerican.click();
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/american");
+        if (homepage.homePageBodyMenuDropDown.isDisplayed()){
+            homepage.homePageBodyMenuDropDown.click();
+        }
+        Assert.assertTrue(homepage.homePageBodyMenuDropDownKosher.isDisplayed());
+        homepage.homePageBodyMenuDropDownKosher.click();
+        ReusableMethods.wait(3);
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/healthy");
         driver.quit();
     }
 }
