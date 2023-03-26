@@ -14,22 +14,34 @@ public class Homepage {
     //Header
     @FindBy(xpath = "//div[@class='top-logo']")
     public static WebElement homePageHeaderLogo;
-    @FindBy(xpath = "//h2[@class='text-center mb-3']")
-    public static WebElement homePageHeaderText;//<h2 class="text-center mb-3">Hungry? We got you</h2>
+    @FindBy(xpath = "//button[@class='el-button el-button--default is-round w-100']")
 
-    @FindBy(xpath = "//div[@class='position-relative search-geocomplete']")
+    public static WebElement homePageCookiesDecline;
+    @FindBy(xpath = "//h2[@class='text-center mb-3']")
+    public static WebElement homePageHeaderText;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-text']")
     public static WebElement homePageHeaderSearchBox;
+
+    @FindBy(xpath = "//div[@class='search-geocomplete-results']")
+    public static WebElement homePageSearchResults;
+
+    @FindBy(xpath = "(//h6[@class='m-0'])[1]")
+    public static WebElement homePageSearchResultsFirstResult;
 
     @FindBy(xpath = "//a[@class='ssm-toggle-navx']")
     public static WebElement homePageHeaderCart;
     @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/shopping-bag.svg']")
     public static WebElement homePageHeaderShoppingBag;
+    @FindBy(xpath = "//section[@class='el-drawer__body']")
+    public static WebElement shoppingBagSection;
+
     @FindBy(xpath = "//a[@href='/account/login']")
     public static WebElement homePageHeaderSignIn;
 
 
     @FindBy(xpath = "//div[@id='main-search-banner']")
-    public static WebElement homePageHeaderSearchBanner;// searchboxla beraber resimler ortadaki tüm alan
+    public static WebElement homePageHeaderSearchBanner;
 
     //body
     @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
@@ -91,10 +103,10 @@ public class Homepage {
     //read
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[1]")
-    public static WebElement homePageBodyReadText;// body bolumunde readbolumu DiscoverHealtyFood
+    public static WebElement homePageBodyReadText;
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[2]")
-    public static WebElement homePageBodyReadText2;// body bolumunde readbolumu Meals Center for Your Healthy Lifestyle
+    public static WebElement homePageBodyReadText2;
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[3]")
     public static WebElement homePageBodyReadText3;// body bolumunde readbolumu How to Eat Healthy with Food Delivery
