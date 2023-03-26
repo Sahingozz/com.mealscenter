@@ -6,7 +6,9 @@ import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_18 {
+import java.io.IOException;
+
+public class TC_18 extends TestBaseReport {
 
     /*---------------------------------------------------------------------------------------------
     -Reports menüsünden “Order earnings”  bölümüne gidildiğinde arama yapabildiği doğrulanmalı
@@ -17,25 +19,35 @@ public class TC_18 {
     Admin_Dashboard adminDashboard=new Admin_Dashboard();
 
     @Test
-    public void TC_18(){
+    public void TC_18() throws IOException {
+
+        extentTest= extentReports.createTest("TC_18", "ilgili alana gidildiginde arama yapabildiği doğrulanmalı");
 
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
+        extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
         adminDashboard.adminReportsOrderEarnings.click();
+        extentTest.info("Order Earnings linkine tiklandi");
 
         //- Gelen sekmede arama kutusuna gidin ve arama yapin
+        ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
         adminDashboard.adminReportsOrderEarningsSearchBox.sendKeys("10246");
+        extentTest.info("Gelen sekmede arama kutusuna gidildi ve arama yapildi");
 
         //- Arama yaptiginiz Order Id nin ekranınıza geldigini dogrulayin
         Assert.assertTrue(adminDashboard.adminFirstElementofSearchResultOrderID.isDisplayed());
+        extentTest.info("Arama yaptiginiz Order Id nin ekranınıza geldigi dogrulandi");
 
         //- Sayfayi kapatin
         Driver.closeDriver();
+        extentTest.info("Sayfa Kapatildi");
+        extentTest.pass("Basarili sekilde Test edildi");
 }
         /*
         32. satirda gerceklesen bug nedeniyle test fail olmustur.

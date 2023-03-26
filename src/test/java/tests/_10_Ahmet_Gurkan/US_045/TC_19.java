@@ -6,7 +6,7 @@ import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_19 {
+public class TC_19 extends TestBaseReport {
 
     /*---------------------------------------------------------------------------------------------
     -Reports menüsünden “Order earnings”  bölümüne gidildiğinde order id, subtotal, total, merchant earnings, admin commision e göre sıralanabildiği doğrulanmalı
@@ -20,14 +20,19 @@ public class TC_19 {
     @Test
     public void TC_19(){
 
+        extentTest= extentReports.createTest("TC_19", "ilgili alana gidildiginde order id, subtotal, total, merchant earnings, admin commision e göre sıralanabildiği doğrulanmalı");
+
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
+        extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
         adminDashboard.adminReportsOrderEarnings.click();
+        extentTest.info("Order Earnings linkine tiklandi");
 
         //- Gelen sekmede gözuken listeyi order id, subtotal, total, merchant earnings,admin commision basliklarinin gorunur ve tiklanabilir oldugu doğrulanmalı
         Assert.assertTrue(adminDashboard.adminReportsMerchantSalesOrderID.isDisplayed());
@@ -41,9 +46,12 @@ public class TC_19 {
         Assert.assertTrue(adminDashboard.adminReportsTotal.isEnabled());
         Assert.assertTrue(adminDashboard.adminReportsMerchantEarnings.isEnabled());
         Assert.assertTrue(adminDashboard.adminReportsAdminCommission.isEnabled());
+        extentTest.info("Gelen sekmede gözuken listeyi order id, subtotal, total, merchant earnings,admin commision basliklari gorundu ve tiklanabilir oldugu doğrulandi");
 
         //- Sayfayi kapatin
         Driver.closeDriver();
+        extentTest.info("Sayfa Kapatildi");
+        extentTest.pass("Basarili sekilde Test edildi");
 
 }
 }

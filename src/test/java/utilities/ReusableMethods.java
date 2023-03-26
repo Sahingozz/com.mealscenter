@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -433,10 +435,9 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
+    }
 
 
-
-}
         public static void merchantLoginHasan (){
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));

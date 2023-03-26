@@ -3,13 +3,12 @@ package tests._10_Ahmet_Gurkan.US_044;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_13 {
+public class TC_13 extends TestBaseReport {
 
     /*-----------------------------------------------------------------------------------
     - Reports menüsünden “Merchant Sales”  bölümüne gidildiğinde filtre kullanarak Order ID ye göre sıralanabildiği doğrulanmalı
@@ -23,23 +22,32 @@ public class TC_13 {
     @Test
     public void TC13(){
 
+        extentTest= extentReports.createTest("TC_13", "ilgili alana gidildiginde secilen isme gore liste siralanmali");
+
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
+        extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
         adminDashboard.adminReportsMerchantSales.click();
+        extentTest.info("Merchant Sales linkine tiklandi");
 
         //- Merchant Sales Report yazisinin altinda "Order ID" yazan yere tiklayin
         adminDashboard.adminReportsMerchantSalesOrderID.click();
+        extentTest.info("By Marchant basligi altinda Order ID secildi");
 
         //- Siralamadaki ilk iki bolumun Order Id lerinin kucukten buyuge ilerledigini dogrulayin
         orderIDSiralama(1,2);
+        extentTest.info("Siralama yapildi");
 
         //- sayfayi kapatin
         Driver.closeDriver();
+        extentTest.info("Sayfa Kapatildi");
+        extentTest.pass("Basarili sekilde siralandigi Test edildi");
 }
 
 
