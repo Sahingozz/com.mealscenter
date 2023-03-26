@@ -120,11 +120,11 @@ public class Homepage {
 
 
     //footer
-    @FindBy(xpath = " //img[@class='img-200']")
+    @FindBy(xpath = " //div[@class='footer-logo']")
     public static WebElement homePageFooterMealsCenterLogo;
 
     @FindBy(xpath = "//div[@class='sub-footer']")
-    public static WebElement homePageFooterAll;
+    public static WebElement homePageFooterVisible;
 
     // footer menu
     @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/contactus']")
@@ -151,11 +151,11 @@ public class Homepage {
     //footer blog
     @FindBy(xpath = "//ul[@id='yw2']")
     public static WebElement homePageFooterBlogList;
-    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-the-best-vegetarian-food-delivery-options-in-your-area']")
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/discover-the-best-vegetarian-food-delivery-options-in-your-area'])[2]")
     public static WebElement homePageFooterBlogDiscoverLink;
-    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/how-to-eat-healthy-with-food-delivery']")
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/how-to-eat-healthy-with-food-delivery'])[2]")
     public static WebElement homePageFooterBlogHowToLink;
-    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle']")
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle'])[2]")
     public static WebElement homePageFooterBlogBenefitsLink;
     @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family']")
     public static WebElement homePageFooterBlogWholeFamilyLink;
