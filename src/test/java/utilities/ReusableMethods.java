@@ -77,7 +77,7 @@ public class ReusableMethods {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : elems) {
-            if (!el.getText().isEmpty()) {
+            if (!el.getText().isEmpty() && el.isDisplayed()) {
                 elemTexts.add(el.getText());
             }
         }
@@ -484,7 +484,7 @@ public class ReusableMethods {
 
         LocalDateTime ldt=LocalDateTime.now();
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
-        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+".jpg";
+        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"US_37 TC_4"+".jpg";
 
         //dosya yolu "target/tumSayfaSs20230227114813"
         File tumSayfaSs=new File(dinamikDosyaYolu);
