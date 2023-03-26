@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_11 {
+public class TC_11 extends TestBaseReport {
 
     /*---------------------------------------------------------------------------------------------
     Reports menüsünden “Merchant Sales”  bölümüne gidildiği doğrulanmalı
@@ -18,21 +19,30 @@ public class TC_11 {
 
     @Test
     public void TC_11(){
+
+        extentTest= extentReports.createTest("TC_11", "ilgili alana gidildigi dogrulanmali");
+
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
+        extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
         adminDashboard.adminReportsMerchantSales.click();
+        extentTest.info("Merchant Sales linkine tiklandi");
 
         //- Gittiğiniz yerin urlsini alarak doğru urlde olduğunuzu test edin
         String expectedUrl= "https://qa.mealscenter.com/backoffice/reports/merchant_sales";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
+        extentTest.info("Dogru urlde oldugu dogrulandi");
 
         //- Sayfayi kapatin
         Driver.closeDriver();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("Basarili sekilde dogrulandi");
     }
 }
