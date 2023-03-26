@@ -15,8 +15,7 @@ public class Homepage {
     @FindBy(xpath = "//div[@class='top-logo']")
     public static WebElement homePageHeaderLogo;
     @FindBy(xpath = "//button[@class='el-button el-button--default is-round w-100']")
-
-    public static WebElement homePageCookiesDecline;
+    public WebElement homePageCookiesDecline;
     @FindBy(xpath = "//h2[@class='text-center mb-3']")
     public static WebElement homePageHeaderText;
 
@@ -88,9 +87,6 @@ public class Homepage {
     @FindBy(xpath = "//div[@class='row equal align-items-center position-relative w-100']")
     public static WebElement homePageBodyPopularNearbyMD;//Popular nearby Seattle Mcdonalds
 
-    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[4]")
-    public static WebElement homePageBodyPopularMcDonald;
-
     @FindBy(xpath = "//div[@class='addons addons-1']")
     public static WebElement homeHomeBodyNoMinimumOrder;
 
@@ -101,7 +97,6 @@ public class Homepage {
     public static WebElement homePageBodyDeliveryOnTime;
 
     //read
-
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[1]")
     public static WebElement homePageBodyReadText;
 
@@ -113,11 +108,13 @@ public class Homepage {
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[4]")
     public static WebElement homePageBodyReadText4; // body bolumunde readbolumu Discover the Best Vegetarian Food Options in Your Area
+
     @FindBy(xpath = "//div[@class='section-join-us mt-0 mb-0']")
     public static WebElement homePageBodyReadText5;//Are you a restaurant owner?// Join us and reach new customers
     //Just a few steps to join our family
 
-    //bodynin en alti
+    @FindBy(xpath = "//div[@class='btn-white-parent non-trasparent']")
+    public static WebElement homePageBodyJoinUsLink;
     @FindBy(xpath = " //div[@class='section-mobileapp tree-columns-center d-none d-md-block']")
     public static WebElement homePageBodyBottom;
 
