@@ -1,6 +1,8 @@
 package utilities;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import pages.Admin_Dashboard;
@@ -10,10 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -417,16 +416,18 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys("123456");
         adminLogin.adminLoginSignInButton.click();
     }
-   //---------------------------------------------------------------------------------
-        public static void getmerchantLogin(String username, String password){
-        Merchant_Dashboard merchandLogin= new Merchant_Dashboard();
+
+    //---------------------------------------------------------------------------------
+    public static void getmerchantLogin(String username, String password) {
+        Merchant_Dashboard merchandLogin = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
         merchandLogin.merchantLoginUsername.sendKeys(username);
         merchandLogin.merchantLoginPassword.sendKeys(password);
         merchandLogin.merchantLoginSignin.click();
     }
+
     //Admin paneline parametreli Kullanici adi ve sifre isle giris methodu
-        public static void adminLogin (String userName, String password){
+    public static void adminLogin(String userName, String password) {
         Admin_Dashboard adminLogin = new Admin_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
         adminLogin.adminUsernameLogin.sendKeys(userName);
@@ -435,14 +436,27 @@ public class ReusableMethods {
         adminLogin.adminLoginSignInButton.click();
 
 
+    }
 
-}
-        public static void merchantLoginHasan (){
+    public static void merchantLoginHasan() {
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
-         merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
+        merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
         ReusableMethods.wait(2);
-         merchantDashboard.merchantLoginPassword.sendKeys("1234567");
-         merchantDashboard.merchantLoginSignin.click();
+        merchantDashboard.merchantLoginPassword.sendKeys("1234567");
+        merchantDashboard.merchantLoginSignin.click();
+    }
+
+    /**
+     * sets time format as (yyyy-MM-dd)
+     * returns future time as String
+     *
+     * @param date
+     */
+    public String setFutureDate(int date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, date);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return simpleDateFormat.format(calendar.getTime());
     }
 }

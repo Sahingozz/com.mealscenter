@@ -7,9 +7,7 @@ import utilities.Driver;
 
 public class Merchant_Dashboard {
 
-    public Merchant_Dashboard(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
+    public Merchant_Dashboard(){PageFactory.initElements(Driver.getDriver(),this);}
     //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
@@ -113,14 +111,14 @@ public class Merchant_Dashboard {
 
     //Dashboard>Name Box1
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[1]")
-    public WebElement nameBox;
+    public WebElement nameBox1;
 
-    //Dashboard>Name Box1
+    //Dashboard>Name Box2
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
     public WebElement nameBox2;
 
     //Dashboard>Name Box3
-    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
+    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[3]")
     public WebElement nameBox3;
 
     //Dashboard>ddm1
@@ -160,8 +158,166 @@ public class Merchant_Dashboard {
     public WebElement daysAvailableBox;
 
     //Dashboard>Promo>Coupon>AllCoupon/Expriration17
-    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
-    public WebElement expriration17;
+    @FindBy(xpath = "(//td[@data-title=\"r2c5\"])[1]")
+    public WebElement expiration17;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy (xpath = "//label[@for=\"AR_voucher_expiration\"]")
+    public WebElement expiration;
 
 
 
