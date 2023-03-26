@@ -64,7 +64,7 @@ public class ReusableMethods {
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
-            if (!el.getText().isEmpty()&&el.isDisplayed()) {
+            if (!el.getText().isEmpty()) {
                 elemTexts.add(el.getText());
             }
         }
@@ -77,7 +77,7 @@ public class ReusableMethods {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : elems) {
-            if (!el.getText().isEmpty()) {
+            if (!el.getText().isEmpty() && el.isDisplayed()) {
                 elemTexts.add(el.getText());
             }
         }
