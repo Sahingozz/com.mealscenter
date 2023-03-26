@@ -432,4 +432,18 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
 }
+    public static WebElement dashboardMenuElements(){
+
+
+        List<WebElement> merchantMenuList=Driver.getDriver().findElements(By.xpath("//body/div[1]/div[1]/div/div[4]"));
+        int count=1;
+        for (WebElement each:merchantMenuList
+        ) {
+            System.out.println(each.getText());
+            count++;
+
+        }
+
+        return null;
+    }
 }
