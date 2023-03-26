@@ -137,7 +137,7 @@ public class Admin_Dashboard {
     public WebElement adminReportsAdminCommission;
 
     //Admin Dashboard Reports > Order Earnings > Count: ?
-    @FindBy(xpath = "//h5[text()='148']")
+    @FindBy(xpath = "(//h5[@class='m-0'])[1]")
     public WebElement adminReportsOrderEarningsCount;
 
     //------------------------------------------
