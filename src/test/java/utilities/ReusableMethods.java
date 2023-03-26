@@ -3,6 +3,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 import pages.Admin_Dashboard;
 import pages.Merchant_Dashboard;
 
@@ -427,5 +428,20 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
+
+
 }
+  //Merchant paneline parametreli Kullanici adi ve sifre isle giris methodu
+    public static void merchantLoginAndsuccessfullLogin (){
+        Merchant_Dashboard merchant_dashboard=new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        merchant_dashboard.merchantUsernameLogin.sendKeys(ConfigReader.getProperty("merchanUsername"));
+
+        merchant_dashboard.merchantPasswordLogin2.sendKeys(ConfigReader.getProperty("merchanPassword"));
+
+        merchant_dashboard.merchantSignInLoginButton.click();
+
+        Assert.assertTrue((merchant_dashboard.successfullLoginElement.isDisplayed()));
+    }
+
 }
