@@ -9,12 +9,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_16 {
 
     Homepage homepage = new Homepage();
 
     @Test
-    public void testMealCenterFooterLogo() {
+    public void testMealFooterBlogWholeFamilyToLink() {
         WebDriver driver = Driver.getDriver();
         try {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -22,9 +22,9 @@ public class TC_01 {
             jse.executeScript("window.scrollBy(0,5000)");
             ReusableMethods.wait(2);
             homepage.homePageCookiesDecline.click();
-            Assert.assertTrue(homepage.homePageFooterMealsCenterLogo.isDisplayed());
-            homepage.homePageFooterMealsCenterLogo.click();
-            Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/");
+            Assert.assertTrue(homepage.homePageFooterBlogWholeFamilyLink.isDisplayed());
+            homepage.homePageFooterBlogWholeFamilyLink.click();
+            Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family");
         } finally {
             driver.quit();
         }
