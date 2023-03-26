@@ -13,7 +13,7 @@ public class Merchant_Dashboard {
     //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
-    public WebElement merchantLoginUsername;
+    public static WebElement merchantLoginUsername;
     //merchant login icin gerekli password locateri
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement merchantLoginPassword;
@@ -162,6 +162,43 @@ public class Merchant_Dashboard {
     //Dashboard>Promo>Coupon>AllCoupon/Expriration17
     @FindBy(xpath = "(//td[@class=\"available\"])[23]")
     public WebElement expriration17;
+
+    //--------------------------------------------------
+
+    // Dashboard>Orders
+    @FindBy(xpath = "//a[text()='Orders'][1]")
+    public WebElement orders;
+
+    //Dashboard>New Orders
+    @FindBy (xpath= "//li[@class='position-relative orders_new']")
+    public WebElement newOrders;
+
+    //Dashboard>New Order>Accepted
+    @FindBy (xpath = "//span[text()='Accepted']")
+    public WebElement acceptedButton;
+
+    //Dashboard>New Order>Reject
+    @FindBy (xpath = "//span[text()='Reject']")
+    public WebElement reject;
+
+    //Dashboard>New Order>Other Button
+    @FindBy (xpath = "//a[text()='other']")
+    public WebElement otherButton;
+
+    //Dashboard>New Order>Reject Other
+    @FindBy (xpath = " //span[text()='Reject order']")
+    public WebElement rejectOther;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

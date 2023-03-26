@@ -445,4 +445,13 @@ public class ReusableMethods {
          merchantDashboard.merchantLoginPassword.sendKeys("1234567");
          merchantDashboard.merchantLoginSignin.click();
     }
+
+    public static void merchantLoginErsin () {
+        Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
+        ReusableMethods.wait(2);
+        merchantDashboard.merchantLoginPassword.sendKeys("1234567");
+        merchantDashboard.merchantLoginSignin.click();
+    }
 }
