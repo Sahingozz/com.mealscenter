@@ -16,10 +16,11 @@ import utilities.Driver;
  */
 public class TC_04 {
 
+    Homepage homepage = new Homepage();
     @Test
     public void testAnyAvailableFeatureOnTheHomepage() {
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
-        Assert.assertTrue(Homepage.homePageHeaderLogo.isDisplayed());
+        Assert.assertTrue(homepage.homePageHeaderLogo.isDisplayed());
         Driver.getDriver().quit();
     }
 }

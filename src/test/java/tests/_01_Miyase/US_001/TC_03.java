@@ -16,11 +16,12 @@ import utilities.Driver;
  * -Close the page
  */
 public class TC_03 {
+    Homepage homepage = new Homepage();
 
     @Test
     public void testWebsiteIsFullLoaded() {
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
-        Assert.assertTrue(Homepage.homePageFooterQaMealsCenterLink.isDisplayed());
+        Assert.assertTrue(homepage.homePageFooterQaMealsCenterLink.isDisplayed());
         Driver.getDriver().quit();
     }
 }

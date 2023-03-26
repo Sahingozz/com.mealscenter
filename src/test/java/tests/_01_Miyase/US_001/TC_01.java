@@ -14,7 +14,7 @@ import utilities.Driver;
  */
 public class TC_01 {
     @Test
-    public void testmealCenterAccessWebsite() {
+    public void testMealCenterAccessWebsite() {
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         String expectedTitle = "Meals Center";
         String actualTitle = Driver.getDriver().getTitle();
