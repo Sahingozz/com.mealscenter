@@ -477,7 +477,7 @@ public class ReusableMethods {
          merchantDashboard.merchantLoginSignin.click();
     }
 
-    //-------------------------------------------------------------------------------------------
+
 
     public static String getScreenShotFullScreen(WebDriver driver) throws IOException {
         TakesScreenshot ts= (TakesScreenshot) driver;
@@ -497,4 +497,15 @@ public class ReusableMethods {
         }
         return dinamikDosyaYolu;
     }
+
+
+    public static void merchantLoginErsin () {
+        Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
+        ReusableMethods.wait(2);
+        merchantDashboard.merchantLoginPassword.sendKeys("1234567");
+        merchantDashboard.merchantLoginSignin.click();
+
     }
+}

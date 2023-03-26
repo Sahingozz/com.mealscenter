@@ -1,6 +1,5 @@
 package tests._06_Ersin.US_026;
 
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Merchant_Dashboard;
@@ -8,11 +7,11 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_02 {
     Merchant_Dashboard merchantDashboard=new Merchant_Dashboard();
     @Test
 
-    private void TC_01(){
+    private void TC_02(){
 
         // 1- The user goes to the Merchant panel "MerchantUrl" with the browser they open
         // 2- User enters Username and Password clicks Sign in
@@ -27,15 +26,20 @@ public class TC_01 {
 
         merchantDashboard.newOrders.click();
 
+
+        // 5- User verifies that Accepted button is visible
+        // 6- User clicks Accepted button
+
+        merchantDashboard.acceptedButton.click();
+
+
         String expectedUrl="new";
         String actualUrl= Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.contains(expectedUrl));
 
-        // 5-Kullanıcı sayfayı kapatır
-
+        // 7-Kullanıcı sayfayı kapatır
         Driver.closeDriver();
 
     }
-
 
 }
