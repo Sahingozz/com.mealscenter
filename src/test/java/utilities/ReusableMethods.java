@@ -61,7 +61,7 @@ public class ReusableMethods {
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
-            if (!el.getText().isEmpty()) {
+            if (!el.getText().isEmpty()&&el.isDisplayed()) {
                 elemTexts.add(el.getText());
             }
         }
