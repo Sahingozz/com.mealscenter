@@ -195,7 +195,7 @@ public class Homepage {
     @FindBy(xpath = "//button[@class='mt-3 btn btn-green w-100']")
     public WebElement changePasswordSubmitButton;
 
-    // Homepage panel > Name > Adress
+    // Homepage panel > Name > Adress.
     @FindBy(xpath = "//a[@class='dropdown-item with-icon-addresses']")
     public WebElement adressButton;
 

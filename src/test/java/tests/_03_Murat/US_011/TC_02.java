@@ -1,8 +1,11 @@
 package tests._03_Murat.US_011;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
@@ -49,10 +52,10 @@ public class TC_02 {
 
         // 6* Verifies that the  section exists.
 
-         String expectedUrl="https://qa.mealscenter.com/restaurants";
-        //WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
-        String actualUrl=Driver.getDriver().getCurrentUrl();
-        //Assert.assertTrue(storeYazisi.isDisplayed());
+         //String expectedUrl="https://qa.mealscenter.com/restaurants";
+        WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
+        //String actualUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(storeYazisi.isDisplayed());
         //Assert.assertEquals(expectedUrl,actualUrl);
 
         // 7* User goes to Eleven page.

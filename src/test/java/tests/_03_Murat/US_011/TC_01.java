@@ -39,8 +39,10 @@ public class TC_01 {
 
       homepage.cookiesButton.click();
 
-      // 5* User closes the page.
+      // 5* User closes the page..
 
       Driver.getDriver().close();
+
+      //git stash
   }
 }
