@@ -1,4 +1,4 @@
-package tests._04_Ayten._10_Ahmet_Gurkan.US_044;
+package tests._10_Ahmet_Gurkan.US_044;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;

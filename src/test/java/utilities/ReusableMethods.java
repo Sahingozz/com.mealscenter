@@ -436,8 +436,23 @@ public class ReusableMethods {
         adminLogin.adminLoginSignInButton.click();
 
 
-<<<<<<< HEAD
 }
+
+    public static WebElement dashboardMenuElements(){
+
+
+        List<WebElement> merchantMenuList=Driver.getDriver().findElements(By.xpath("//body/div[1]/div[1]/div/div[4]"));
+        int count=1;
+        for (WebElement each:merchantMenuList
+        ) {
+            System.out.println(each.getText());
+            count++;
+
+        }
+
+        return null;
+    }
+
   //Merchant paneline parametreli Kullanici adi ve sifre isle giris methodu
     public static void merchantLoginAndsuccessfullLogin (){
         Merchant_Dashboard merchant_dashboard=new Merchant_Dashboard();
@@ -451,9 +466,9 @@ public class ReusableMethods {
         Assert.assertTrue((merchant_dashboard.successfullLoginElement.isDisplayed()));
     }
 
-=======
 
-}
+
+
         public static void merchantLoginHasan (){
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -462,5 +477,4 @@ public class ReusableMethods {
          merchantDashboard.merchantLoginPassword.sendKeys("1234567");
          merchantDashboard.merchantLoginSignin.click();
     }
->>>>>>> main
-}
+    }

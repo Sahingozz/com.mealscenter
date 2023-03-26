@@ -1,4 +1,4 @@
-package tests._04_Ayten._10_Ahmet_Gurkan.US_045;
+package tests._10_Ahmet_Gurkan.US_045;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

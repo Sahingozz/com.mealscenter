@@ -7,9 +7,60 @@ import utilities.Driver;
 
 public class Merchant_Dashboard {
 
-    public Merchant_Dashboard(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
+
+
+        public Merchant_Dashboard(){
+            PageFactory.initElements(Driver.getDriver(),this);
+
+        }
+
+
+
+        //Merchant Dashboard/sign In
+        @FindBy(xpath = "//input[@value='Sign in']")
+        public WebElement merchantLoginSignin;
+
+        //Merchant Dashboard>sign In/merchant login text
+        @FindBy(xpath = "(//*[text()='Merchant Login'])[2]")
+        public WebElement merchantLoginText;
+
+        //Merchant Dashboard>sign In/merchant dropdown menu button
+        @FindBy(xpath = "//*[text()='Merchant']")
+        public WebElement merchantDropdownMenuButton;
+
+
+        //Merchant Dashboard/Incorrect username or password text
+        @FindBy(xpath = "//*[text()='Incorrect username or password.']")
+        public WebElement incorrectMessageText;
+
+
+        //Merchant Dashboard/forgot password text
+        @FindBy(xpath = "//*[@class='dim underline']")
+        public WebElement forgotPasswordLink;
+
+
+        //Merchant Dashboard>forgot password text/Email checkbox
+        @FindBy(xpath = "//label[@for='AR_merchant_login_email_address']")
+        public WebElement forgotPasswordEmailCheckbox;
+
+
+
+        //Merchant Dashboard>forgot password text/forgotPasswort Link RequestEmailButton
+        @FindBy(xpath = "//input[@type='submit']")
+        public WebElement forgotPasswortLinkRequestEmailButton;
+
+
+        @FindBy(xpath = "//body/div[1]/div[1]/div/div[4]")
+        public WebElement merchantMenuElements;
+
+        @FindBy(xpath = "(//*[text()='Dashboard'])[2]")
+        public WebElement dashboardPanelButton;
+
+
+
+
+
+
     //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
@@ -17,9 +68,6 @@ public class Merchant_Dashboard {
     //merchant login icin gerekli password locateri
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement merchantLoginPassword;
-    ////merchant login icin gerekli sign in  locateri
-    @FindBy(xpath = "//input[@value=\"Sign in\"]")
-    public WebElement merchantLoginSignin;
 
     //Dashboard buttonun soldaa bulunan locateri.
     @FindBy(xpath = "//a[text()='Dashboard']")
@@ -271,4 +319,5 @@ public class Merchant_Dashboard {
 
 
 }
+
 
