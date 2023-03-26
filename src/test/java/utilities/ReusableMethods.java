@@ -3,7 +3,9 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 import pages.Admin_Dashboard;
+import pages.Merchant_Dashboard;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +58,6 @@ public class ReusableMethods {
     }
 
 
-
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -80,7 +81,6 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
-
 
 
     //===============Thread.sleep Wait==============//
@@ -117,7 +117,6 @@ public class ReusableMethods {
     }
 
 
-
     //======Fluent Wait====//
     public static WebElement fluentWait(final WebElement webElement, int timeinsec) {
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getDriver())
@@ -132,15 +131,14 @@ public class ReusableMethods {
     }
 
 
-
     /**
      * Performs double click action on an element
+     *
      * @param element
      */
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
-
 
 
     /**
@@ -160,9 +158,9 @@ public class ReusableMethods {
     }
 
 
-
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
+     *
      * @param select
      * @return
      */
@@ -305,7 +303,6 @@ public class ReusableMethods {
     }
 
 
-
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -413,7 +410,7 @@ public class ReusableMethods {
     }
 
     //Zafer kullanici adi ve sifresiyle admin paneline giris
-    public static void adminLoginZafer (){
+    public static void adminLoginZafer() {
         Admin_Dashboard adminLogin = new Admin_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
         adminLogin.adminUsernameLogin.sendKeys("zafer.sahingoz");
@@ -421,17 +418,26 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys("123456");
         adminLogin.adminLoginSignInButton.click();
     }
-
-
+   //---------------------------------------------------------------------------------
+        public static void getmerchantLogin(String username, String password){
+        Merchant_Dashboard merchandLogin= new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        merchandLogin.merchantLoginUsername.sendKeys(username);
+        merchandLogin.merchantLoginPassword.sendKeys(password);
+        merchandLogin.merchantLoginSignin.click();
+    }
     //Admin paneline parametreli Kullanici adi ve sifre isle giris methodu
-    public static void adminLogin (String userName, String password){
+        public static void adminLogin (String userName, String password){
         Admin_Dashboard adminLogin = new Admin_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
         adminLogin.adminUsernameLogin.sendKeys(userName);
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
+
+
 }
+
     public static WebElement dashboardMenuElements(){
 
 
@@ -446,4 +452,29 @@ public class ReusableMethods {
 
         return null;
     }
-}
+
+  //Merchant paneline parametreli Kullanici adi ve sifre isle giris methodu
+    public static void merchantLoginAndsuccessfullLogin (){
+        Merchant_Dashboard merchant_dashboard=new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+        merchant_dashboard.merchantUsernameLogin.sendKeys(ConfigReader.getProperty("merchanUsername"));
+
+        merchant_dashboard.merchantPasswordLogin2.sendKeys(ConfigReader.getProperty("merchanPassword"));
+
+        merchant_dashboard.merchantSignInLoginButton.click();
+
+        Assert.assertTrue((merchant_dashboard.successfullLoginElement.isDisplayed()));
+    }
+
+
+
+
+        public static void merchantLoginHasan (){
+        Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
+        Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
+         merchantDashboard.merchantLoginUsername.sendKeys("7elevenAdmin");
+        ReusableMethods.wait(2);
+         merchantDashboard.merchantLoginPassword.sendKeys("1234567");
+         merchantDashboard.merchantLoginSignin.click();
+    }
+    }
