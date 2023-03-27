@@ -323,21 +323,32 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//*[text()='Fruehling Campaign ']")
     public WebElement couponNameText;
 
-    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon List Text
+    // Admin Dashboard -> Promo -> Coupon -> Coupon List Text
     @FindBy (xpath = "//h5[text()='Coupon list']")
     public WebElement couponListText;
 
-    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Couponlist results text
+    // Admin Dashboard -> Promo -> Coupon -> Couponlist results text
     @FindBy (xpath = "//div[@class='dataTables_info']")
     public WebElement couponListResultsText;
 
-    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon update button
+    // Admin Dashboard -> Promo -> Coupon -> Coupon update button
     @FindBy (xpath = "(//a[@class='btn btn-light tool_tips'])[1]")
     public WebElement couponUpdateButton;
 
 
-    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon delete button
+    // Admin Dashboard -> Promo -> Coupon -> Coupon delete button
     @FindBy (xpath = "(//a[@class='btn btn-light datatables_delete tool_tips'])[1]")
     public WebElement couponDeleteButton;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon list sort by name button
+
+    @FindBy (xpath = "//th[text()='Name']")
+    public WebElement couponSortByNameButton;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon list sort by usage button
+
+    @FindBy (xpath = "//th[text()='#Used']")
+    public WebElement couponSortByUsage;
+
 
 }

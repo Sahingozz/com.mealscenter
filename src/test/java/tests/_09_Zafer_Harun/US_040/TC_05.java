@@ -21,8 +21,10 @@ public class TC_05 {
         ReusableMethods.wait(1);
         adminLogin.couponLink.click();
 
-        Assert.assertTrue(adminLogin.couponDeleteButton.isDisplayed()
-                && adminLogin.couponDeleteButton.isEnabled());
+        Assert.assertTrue(adminLogin.couponSortByNameButton.isDisplayed()
+                && adminLogin.couponSortByNameButton.isEnabled()
+                && adminLogin.couponSortByUsage.isDisplayed()
+                && adminLogin.couponSortByUsage.isEnabled());
 
         Driver.closeDriver();
     }
