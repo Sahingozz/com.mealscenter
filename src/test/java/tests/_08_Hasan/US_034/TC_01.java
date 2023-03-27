@@ -6,8 +6,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01 {
-<<<<<<< HEAD
-=======
+
     /*
 
 
@@ -32,6 +31,6 @@ public class TC_01 {
 
 
     }
->>>>>>> main
+
 
 }

@@ -212,7 +212,7 @@ public class Merchant_Dashboard {
     public WebElement expriration17;
 
 
-    //--------------------------------------------------
+    //-----------------Ersin---------------------------------
 
     // Dashboard>Orders
     @FindBy(xpath = "//a[text()='Orders'][1]")
@@ -237,6 +237,67 @@ public class Merchant_Dashboard {
     //Dashboard>New Order>Reject Other
     @FindBy (xpath = " //span[text()='Reject order']")
     public WebElement rejectOther;
+
+    @FindBy (xpath = "//h5[text()='Order Details will show here']")
+    public WebElement acceptedOk;
+
+    @FindBy (xpath = "//button[text()='Print']")
+    public WebElement print;
+
+    @FindBy (xpath = "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[13]/div/div/div[3]/button[2]")
+    public WebElement printButton;
+
+    @FindBy (xpath = "/html/body/div[1]/div[2]/div/div/div[1]/div[8]/div[2]/div[4]/div/div[1]/div[2]/div/div[2]/div/a")
+    public  WebElement threePointButton;
+
+    @FindBy (xpath = "//a[text()= 'Contact customer']")
+    public WebElement contactCustomer;
+
+    @FindBy (xpath = "//a[text()= 'Delay Order']")
+    public WebElement delayOrder;
+
+    @FindBy (xpath = "//a[text()= 'Cancel order']")
+    public WebElement cancelOrder;
+
+    @FindBy (xpath = "//a[text()= 'Timeline']")
+    public WebElement timeline;
+
+    @FindBy (xpath = "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[1]/div[2]/div/div[2]/div/div/a[4]")
+    public WebElement downloadPdf;
+
+    @FindBy (xpath = "//button[text()='Assign Driver']")
+    public WebElement assignButton;
+
+    @FindBy (xpath= "//*[@id=\"yw0\"]/li[3]/ul/li[2]/a")
+    public WebElement ordersProcessing;
+
+    @FindBy (xpath= "//span[text()='Ready for pickup']")
+    public WebElement readyForPickup;
+
+    @FindBy (xpath= "//*[@id=\"yw0\"]/li[3]/ul/li[3]/a")
+    public WebElement ordersReady;
+
+    @FindBy (xpath= "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[2]/div[1]/div[1]/div[2]/div/div[2]/h6")
+    public WebElement deliveryOnItsWayOk;
+
+    @FindBy (xpath= " //span[text()='Delivery on its way']")
+    public WebElement deliveryOnItsWay;
+
+    @FindBy (xpath= " //span[text()='Delivered']")
+    public WebElement delivered;
+
+    @FindBy (xpath= " //*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[1]/div[1]/button[3]/span")
+    public WebElement deliveryFailed;
+
+    @FindBy (xpath= " //*[@id=\"yw0\"]/li[3]/ul/li[4]/a")
+    public WebElement completed;
+
+    @FindBy (xpath= " //h5[text()='Completed Today']")
+    public WebElement completedToday;
+
+
+
+    //----------------------------------------
 
 
     //Merchant panel login password 2
@@ -343,6 +404,8 @@ public class Merchant_Dashboard {
 
  @FindBy(xpath = "(//*[text()='Category List'])[2]")
  public WebElement CategoryList;
+
+
 
 
 

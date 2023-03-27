@@ -383,5 +383,30 @@ public WebElement anaEkranSignInButonu;
     @FindBy(xpath = "(//*[text()='Privacy policy'])[1]")
     public WebElement PrivacyPolicyGorundu;
 
+    //---------------------Ersin___________----
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div[4]/div[2]/div[3]/div[1]/div[1]/a[1]/div/img")
+    public WebElement userPageEleven;
+
+    @FindBy (xpath = "//a[@class='btn btn-grey quantity-add-cart'][1]")
+    public WebElement cokeAddCart;
+
+    @FindBy (xpath = "/html/body/div[2]/div[7]/div/div/div[3]/div/div/div[2]/a")
+    public WebElement cokeCheckout;
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div/div/div[2]/div/div/div/div[3]/div/div[2]/button")
+    public WebElement cokePlaceOrder;
+
+    @FindBy(xpath = "/html/body/div[2]/div[1]/div/div/div[1]/div/div[4]/div/a[1]/div[2]/span")
+    public  WebElement cokeCashOnDelivery;
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div/div/div[1]/div/div[4]/div/a[1]/div[2]/span")
+    public WebElement cokeAddCash;
+
+
+
+
+
+
 
 }

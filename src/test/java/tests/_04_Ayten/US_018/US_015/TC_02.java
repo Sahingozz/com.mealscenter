@@ -1,4 +1,4 @@
-package tests._04_Ayten.US_015;
+package tests._04_Ayten.US_018.US_015;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
