@@ -137,7 +137,7 @@ public class Admin_Dashboard {
     public WebElement adminReportsAdminCommission;
 
     //Admin Dashboard Reports > Order Earnings > Count: ?
-    @FindBy(xpath = "//h5[text()='148']")
+    @FindBy(xpath = "(//h5[@class='m-0'])[1]")
     public WebElement adminReportsOrderEarningsCount;
 
     //------------------------------------------
@@ -184,4 +184,81 @@ public class Admin_Dashboard {
     //Admin Dashboard -> Earnings -> Merchant Earnings -> SearchField
     @FindBy (xpath = "(//div[@class='col-sm-12 col-md-6'])[2]")
     public WebElement merchantEarningsSearchField;
+
+    //Admin meals center basligi
+    @FindBy(xpath = "//img[@class=\"img-200\"]")
+    public WebElement adminMealsCenter;
+    // Sol ust kosede bulunan profil sahibinin isminin ve emailinin locateri
+    @FindBy(xpath = "//div[@class='col-md-9 m-0 p-0']")
+    public WebElement profilName;
+    // sol ustte bulunan "Dashboard" buttonu locateri
+
+    @FindBy(xpath = "//a[text()='Dashboard']")
+    public WebElement dashboardButtonu;
+//Total Sales bolumune ait locater
+    @FindBy(xpath = "(//div[@class='report-inner'])[1]")
+    public WebElement totalSalesButtonu;
+    //Total Merchant  bolumune ait locater
+    @FindBy(xpath = "(//div[@class='report-inner'])[2]")
+    public WebElement totalMerchantButtonu;
+
+    //Total Commission bolumune ait locater
+    @FindBy(xpath = "(//div[@class='report-inner'])[3]")
+    public WebElement totalCommissionButtonu;
+
+    //Total Subscriptions bolumune ait locater
+    @FindBy(xpath = "(//div[@class='report-inner'])[4]")
+    public WebElement totalSubscriptionsButtonu;
+
+    //Total merchant sayinin bulundugu  bolumune ait locater
+    @FindBy(xpath = "//*[@id=\"vue-dashboard\"]/div[1]/div[2]/div/div/p")
+    public WebElement totalMerchantsayiButtonu;
+
+    //Today deliverd sayinin bulundugu  bolumune ait locater
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[6]")
+    public WebElement todayDeliverdLink;
+
+    //Order recevierd sayfasinin bulundugu  bolume ait locater
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[5]")
+    public WebElement orderRecevedLink;
+
+    //Total Refund sayfasinin bulundugu  bolume ait locater
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[8]")
+    public WebElement totalRefundLink;
+
+    //New customer sayfasinin bulundugu  bolume ait locater
+    @FindBy(xpath = "(//div[@class='d-flex align-items-center'])[7]")
+    public WebElement newCustomerLink;
+
+    //Sales overview  bolumune ait locater
+    @FindBy(xpath = "(//div[@class='card-body'])[11]")
+    public WebElement salesoverViewlink;
+
+    //Dashboard altinda bulunan merchant buttonu
+    @FindBy(xpath = "//li[@class='merchant']")
+    public WebElement merchantButtonu;
+    //Merchant altinda bulunan link buttonu
+    @FindBy(xpath = "//li[@class='position-relative vendor_list']")
+    public WebElement listButtonu;
+    //All Merchant basligi ait locater
+
+    @FindBy(xpath = "//a[@class=\"navbar-brand\"]")
+    public WebElement allMerchantBasligi;
+    //All merchant listesini edit etme locateri
+    @FindBy(xpath = "(//a[@class='btn btn-light tool_tips'])[1]")
+    public WebElement allMerchantListEdit;
+
+    //All merchant listesini edit etme icin email isim kisminin  locateri
+    @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
+    public WebElement editEmailIsim;
+
+    //Yaplan edit sonrasi yeni name degisiklik icin locater
+    @FindBy(xpath = "(//tr[@class='odd'])[1]")
+    public WebElement editName;
+
+    //All Merchant listesinde bulunan silme buttonu
+    @FindBy(xpath = "//a[@data-original-title=\"Delete\"]")
+    public WebElement deleteButton;
+
+
 }
