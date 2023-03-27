@@ -31,5 +31,6 @@ public class TC_06 {
             Assert.assertTrue(isSearchOk);
         }
 
+        Driver.closeDriver();
     }
 }

@@ -354,8 +354,23 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//input[@placeholder='Search']")
     public WebElement couponSearchField;
 
-    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Field
+    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Button
     @FindBy (xpath = "//button[@class='submit input-group-text border-0 ml-2 normal']")
     public WebElement couponSearchButton;
 
+    //Admin Dashboard ->Buyers ->Buyers Link
+    @FindBy (xpath = "//a[text()='Buyers']")
+    public WebElement buyersLink ;
+
+    //Admin Dashboard ->Buyers -> Customers Link
+    @FindBy (xpath = "//a[text()='Customers']")
+    public WebElement customersLink ;
+
+    //Admin Dashboard ->Buyers -> Customers List Text
+    @FindBy (xpath = "//h5[text()='Customer list']")
+    public WebElement customersListText ;
+
+    //Admin dashboard -> Buyers -> Customers List -> Showing total entries text
+    @FindBy (xpath = "//div[@id='DataTables_Table_0_info']")
+    public WebElement customersListTotalEntries;
 }
