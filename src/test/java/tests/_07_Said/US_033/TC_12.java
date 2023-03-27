@@ -1,11 +1,16 @@
 package tests._07_Said.US_033;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.devtools.v85.network.model.DataReceived;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Merchant_Dashboard;
+import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.security.SecureRandom;
+import java.util.Set;
 
 public class TC_12 {
 
@@ -20,20 +25,14 @@ public class TC_12 {
         merchant_dashboard.couponLink.click();
         merchant_dashboard.addNewButton.click();
 
-        merchant_dashboard.nameBox1.sendKeys("checkmedeals");
-        Select select = new Select(merchant_dashboard.ddm1);
-        select.selectByIndex(1);
-        merchant_dashboard.nameBox2.clear();
-        merchant_dashboard.nameBox2.sendKeys("20.222");
+        Select select1 = new Select(merchant_dashboard.couponOptions_ddmX);
+        select1.selectByIndex(1);
+        String actualresult=select1.getFirstSelectedOption().getText();
+        String expectedresult ="Use only once";
+        Assert.assertEquals(actualresult,expectedresult);
 
-        merchant_dashboard.nameBox3.clear();
-        merchant_dashboard.nameBox3.sendKeys("3");
+        Driver.closeDriver();
 
-        merchant_dashboard.daysAvailableBox.sendKeys("Monday"+ Keys.ENTER);
-        merchant_dashboard.expiration.click();
-        ReusableMethods.wait(2);
-        merchant_dashboard.expiration17.click();
-        merchant_dashboard.couponOptions_ddmX.click();
 
 
 

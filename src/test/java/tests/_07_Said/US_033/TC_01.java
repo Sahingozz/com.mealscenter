@@ -9,7 +9,6 @@ import utilities.ReusableMethods;
 public class TC_01 {
 
 //    It should be verified that there is a Promo tab under Dashboard.
-
     @Test
     public void TC01(){
         ReusableMethods.merchantLoginHasan();

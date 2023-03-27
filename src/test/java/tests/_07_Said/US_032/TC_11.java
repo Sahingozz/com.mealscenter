@@ -11,7 +11,7 @@ import utilities.ReusableMethods;
 public class TC_11 {
 
 
-    //    It should be verified that "publish" can be selected as Status.
+    //    It should be verified that "Draft" can be selected as Status.
     @Test
     public void test11() {
         ReusableMethods.merchantLoginHasan();

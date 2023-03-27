@@ -18,15 +18,9 @@ public class TC_08 {
          Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
 
          merchant_dashboard.attributesLink.click();
-         merchant_dashboard.attributesSizeLink.click();
-         merchant_dashboard.addNewButton.click();
-         merchant_dashboard.nameBox1.sendKeys(ConfigReader.getProperty("merchantSize"));
-         Select select = new Select(merchant_dashboard.ddm1);
-         select.selectByVisibleText("Publish");
-         merchant_dashboard.saveButton.click();
-         String actualUrl= Driver.getDriver().getCurrentUrl();
-         String expectedUrl="https://qa.mealscenter.com/backoffice/attrmerchant/size_list";
-         Assert.assertEquals(actualUrl,expectedUrl);
+         merchant_dashboard.attributesIngredientsLink.click();
+         Assert.assertTrue(merchant_dashboard.attributesIngredientsLink.isDisplayed());
+
          Driver.closeDriver();
 
 

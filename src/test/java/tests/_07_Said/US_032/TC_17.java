@@ -36,6 +36,14 @@ public class TC_17 {
         System.out.println("num = " + num);
         Assert.assertTrue(num>0);
 
+        //delete
+        Assert.assertTrue(merchant_dashboard.deleteButton.isEnabled());
+        Assert.assertTrue(merchant_dashboard.deleteButtonIcon.isEnabled());
+        merchant_dashboard.deleteButtonIcon.click();
+        ReusableMethods.wait(2);
+        merchant_dashboard.deleteButton.click();
+        ReusableMethods.wait(2);
+
 
         Driver.closeDriver();
     }

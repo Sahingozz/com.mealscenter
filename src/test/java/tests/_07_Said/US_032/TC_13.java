@@ -20,11 +20,7 @@ public class TC_13 {
 
         merchant_dashboard.attributesLink.click();
         merchant_dashboard.attributesCookingReferenceLink.click();
-        merchant_dashboard.addNewButton.click();
-        merchant_dashboard.nameBox1.sendKeys(ConfigReader.getProperty("merchantSize"));
-        Select select = new Select(merchant_dashboard.ddm1);
-        select.selectByVisibleText("Draft");
-        merchant_dashboard.saveButton.click();
+
         String actualUrl= Driver.getDriver().getCurrentUrl();
         String expectedUrl="https://qa.mealscenter.com/backoffice/attrmerchant/cookingref_list";
         Assert.assertEquals(actualUrl,expectedUrl);

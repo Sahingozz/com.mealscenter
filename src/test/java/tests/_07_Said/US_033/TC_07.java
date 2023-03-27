@@ -17,7 +17,7 @@ public void TC07() {
     merchant_dashboard.couponLink.click();
     merchant_dashboard.addNewButton.click();
 
-    merchant_dashboard.nameBox1.sendKeys("checkmedeals");
+
     Select select = new Select(merchant_dashboard.ddm1);
     select.selectByIndex(1);
       String actualCouponType = select.getFirstSelectedOption().getText();

@@ -27,6 +27,14 @@ public void TC07() {
     merchant_dashboard.saveButton.click();
     ReusableMethods.wait(2);
 
+    //delete
+    Assert.assertTrue(merchant_dashboard.deleteButton.isEnabled());
+    Assert.assertTrue(merchant_dashboard.deleteButtonIcon.isEnabled());
+    merchant_dashboard.deleteButtonIcon.click();
+    ReusableMethods.wait(2);
+    merchant_dashboard.deleteButton.click();
+    ReusableMethods.wait(2);
+
     Driver.closeDriver();
 
 }

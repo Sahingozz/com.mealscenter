@@ -481,7 +481,7 @@ public class ReusableMethods {
 
         LocalDateTime ldt=LocalDateTime.now();
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
-        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+".jpg";
+        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"Dynamik Bilgi girilmeli"+".jpg";
 
         //dosya yolu "target/tumSayfaSs20230227114813"
         File tumSayfaSs=new File(dinamikDosyaYolu);
@@ -512,7 +512,7 @@ public class ReusableMethods {
      *
      * @param date
      */
-    public String setFutureDate(int date) {
+    public static String setFutureDate(int date) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE, date);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

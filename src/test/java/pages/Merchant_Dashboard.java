@@ -11,7 +11,6 @@ public class Merchant_Dashboard {
         public Merchant_Dashboard(){
             PageFactory.initElements(Driver.getDriver(),this);
         }
-
         //Merchant Dashboard/sign In
         @FindBy(xpath = "//input[@value='Sign in']")
         public WebElement merchantLoginSignin;
@@ -169,7 +168,7 @@ public class Merchant_Dashboard {
     public WebElement ddm2;
 
     //Dashboard>Promo>Coupon>AllCoupon/Coupon Options ddm
-    @FindBy(xpath = "//select[@class=\"form-control custom-select form-control-select coupon_options\"]")
+    @FindBy(css = "#AR_voucher_used_once")
     public WebElement couponOptions_ddmX;
 
     //Dashboard>Attributes>Size & Ingredients & Cooking Reference /Save button
@@ -203,6 +202,14 @@ public class Merchant_Dashboard {
 
     @FindBy (xpath = "//label[@for=\"AR_voucher_expiration\"]")
     public WebElement expiration;
+
+    // Dashboard>Promo>Coupon//Delete icon button
+    @FindBy(xpath = "(//a[@data-original-title=\"Delete\"])[1]")
+    public WebElement deleteButtonIcon;
+
+    // Dashboard>Promo>Coupon//Delete button
+    @FindBy(xpath = "//a[@class=\"btn btn-green item_delete\"]")
+    public WebElement deleteButton;
 
 
     //--------------------------------------------------
@@ -324,7 +331,6 @@ public class Merchant_Dashboard {
  // Merchant Dashboard/Overview of Review
  @FindBy(xpath = "//*[text()='Overview of Review']")
  public WebElement OverviewOfReview;
-
 
  // Merchant Dashboard/Food
  @FindBy(xpath = "//*[text()='Food']")

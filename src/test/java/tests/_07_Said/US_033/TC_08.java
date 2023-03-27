@@ -18,13 +18,11 @@ public class TC_08 {
         merchant_dashboard.couponLink.click();
         merchant_dashboard.addNewButton.click();
 
-        merchant_dashboard.nameBox1.sendKeys("checkmedeals");
-        Select select = new Select(merchant_dashboard.ddm1);
-        select.selectByIndex(1);
         merchant_dashboard.nameBox2.clear();
         merchant_dashboard.nameBox2.sendKeys("2.2");
         Assert.assertTrue(merchant_dashboard.nameBox2.isEnabled());
         ReusableMethods.wait(3);
+        Driver.closeDriver();
 
     }
 

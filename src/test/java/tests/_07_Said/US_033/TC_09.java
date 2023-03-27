@@ -1,9 +1,11 @@
 package tests._07_Said.US_033;
 
+import org.openqa.selenium.devtools.v85.network.model.DataReceived;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Merchant_Dashboard;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_09 {
@@ -17,16 +19,12 @@ public class TC_09 {
         merchant_dashboard.couponLink.click();
         merchant_dashboard.addNewButton.click();
 
-        merchant_dashboard.nameBox1.sendKeys("checkmedeals");
-        Select select = new Select(merchant_dashboard.ddm1);
-        select.selectByIndex(1);
-        merchant_dashboard.nameBox2.clear();
-        merchant_dashboard.nameBox2.sendKeys("20.222");
-
         merchant_dashboard.nameBox3.clear();
         merchant_dashboard.nameBox3.sendKeys("3");
 
         Assert.assertTrue(merchant_dashboard.nameBox3.isEnabled());
         ReusableMethods.wait(3);
+
+        Driver.closeDriver();
     }
 }

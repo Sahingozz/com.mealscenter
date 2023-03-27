@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 public class TC_15 {
 
 
-//    Enter information in the ""Name"" box on the All Cooking Reference page
+//    Enter information in the "Name box" on the "All Cooking Reference" page
 //    accessibility must be verified
 
     @Test

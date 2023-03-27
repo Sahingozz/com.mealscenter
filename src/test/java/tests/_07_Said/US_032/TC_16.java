@@ -11,7 +11,7 @@ import utilities.ReusableMethods;
 public class TC_16 {
 
 
-//    It should be confirmed that publish can be selected as status.
+//    It should be confirmed that Draft can be selected as status.
 
     @Test
     public void test11() {
