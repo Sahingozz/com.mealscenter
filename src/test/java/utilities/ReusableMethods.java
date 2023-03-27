@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -75,7 +77,7 @@ public class ReusableMethods {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : elems) {
-            if (!el.getText().isEmpty()) {
+            if (!el.getText().isEmpty() && el.isDisplayed()) {
                 elemTexts.add(el.getText());
             }
         }
@@ -434,9 +436,8 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
+    }
 
-
-}
 
     public static WebElement dashboardMenuElements(){
 
@@ -467,8 +468,6 @@ public class ReusableMethods {
     }
 
 
-
-
         public static void merchantLoginHasan (){
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -479,6 +478,27 @@ public class ReusableMethods {
     }
 
 
+
+    public static String getScreenShotFullScreen(WebDriver driver) throws IOException {
+        TakesScreenshot ts= (TakesScreenshot) driver;
+
+        LocalDateTime ldt=LocalDateTime.now();
+        DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
+        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"US_37 TC_4"+".jpg";
+
+        //dosya yolu "target/tumSayfaSs20230227114813"
+        File tumSayfaSs=new File(dinamikDosyaYolu);
+
+        File gecici=ts.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(gecici,tumSayfaSs);
+        }catch (IOException e){
+
+        }
+        return dinamikDosyaYolu;
+    }
+
+
     public static void merchantLoginErsin () {
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -486,5 +506,6 @@ public class ReusableMethods {
         ReusableMethods.wait(2);
         merchantDashboard.merchantLoginPassword.sendKeys("1234567");
         merchantDashboard.merchantLoginSignin.click();
+
     }
 }
