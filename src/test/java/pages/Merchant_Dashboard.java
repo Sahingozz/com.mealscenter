@@ -8,14 +8,9 @@ import utilities.Driver;
 public class Merchant_Dashboard {
 
 
-
         public Merchant_Dashboard(){
             PageFactory.initElements(Driver.getDriver(),this);
-
         }
-
-
-
         //Merchant Dashboard/sign In
         @FindBy(xpath = "//input[@value='Sign in']")
         public WebElement merchantLoginSignin;
@@ -27,7 +22,6 @@ public class Merchant_Dashboard {
         //Merchant Dashboard>sign In/merchant dropdown menu button
         @FindBy(xpath = "//*[text()='Merchant']")
         public WebElement merchantDropdownMenuButton;
-
 
         //Merchant Dashboard/Incorrect username or password text
         @FindBy(xpath = "//*[text()='Incorrect username or password.']")
@@ -55,13 +49,7 @@ public class Merchant_Dashboard {
 
         @FindBy(xpath = "(//*[text()='Dashboard'])[2]")
         public WebElement dashboardPanelButton;
-
-
-
-
-
-
-    //----------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
     public static WebElement merchantLoginUsername;
@@ -161,14 +149,14 @@ public class Merchant_Dashboard {
 
     //Dashboard>Name Box1
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[1]")
-    public WebElement nameBox;
+    public WebElement nameBox1;
 
-    //Dashboard>Name Box1
+    //Dashboard>Name Box2
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
     public WebElement nameBox2;
 
     //Dashboard>Name Box3
-    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
+    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[3]")
     public WebElement nameBox3;
 
     //Dashboard>ddm1
@@ -180,7 +168,7 @@ public class Merchant_Dashboard {
     public WebElement ddm2;
 
     //Dashboard>Promo>Coupon>AllCoupon/Coupon Options ddm
-    @FindBy(xpath = "//select[@class=\"form-control custom-select form-control-select coupon_options\"]")
+    @FindBy(css = "#AR_voucher_used_once")
     public WebElement couponOptions_ddmX;
 
     //Dashboard>Attributes>Size & Ingredients & Cooking Reference /Save button
@@ -208,8 +196,20 @@ public class Merchant_Dashboard {
     public WebElement daysAvailableBox;
 
     //Dashboard>Promo>Coupon>AllCoupon/Expriration17
-    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
-    public WebElement expriration17;
+    @FindBy(xpath = "(//td[@data-title=\"r2c5\"])[1]")
+    public WebElement expiration17;
+
+
+    @FindBy (xpath = "//label[@for=\"AR_voucher_expiration\"]")
+    public WebElement expiration;
+
+    // Dashboard>Promo>Coupon//Delete icon button
+    @FindBy(xpath = "(//a[@data-original-title=\"Delete\"])[1]")
+    public WebElement deleteButtonIcon;
+
+    // Dashboard>Promo>Coupon//Delete button
+    @FindBy(xpath = "//a[@class=\"btn btn-green item_delete\"]")
+    public WebElement deleteButton;
 
 
     //-----------------Ersin---------------------------------
@@ -393,7 +393,6 @@ public class Merchant_Dashboard {
  @FindBy(xpath = "//*[text()='Overview of Review']")
  public WebElement OverviewOfReview;
 
-
  // Merchant Dashboard/Food
  @FindBy(xpath = "//*[text()='Food']")
  public WebElement FoodLink;
@@ -410,5 +409,4 @@ public class Merchant_Dashboard {
 
 
 }
-
 
