@@ -184,4 +184,70 @@ public class Admin_Dashboard {
     //Admin Dashboard -> Earnings -> Merchant Earnings -> SearchField
     @FindBy (xpath = "(//div[@class='col-sm-12 col-md-6'])[2]")
     public WebElement merchantEarningsSearchField;
+
+    @FindBy(xpath = "//a[text()='Buyers']" )
+    public WebElement buyers;
+
+    @FindBy(xpath = "//a[text()='Reviews']")
+    public WebElement reviews;
+
+    @FindBy (xpath = "(//th[@width='15%'])[1]")
+    public WebElement reviewsMerchant;
+
+    @FindBy(xpath = "//td[text()='Vegan Season']")
+    public WebElement reviewsVersionSeason;
+
+    @FindBy(xpath = "//th[@width='30%']")
+    public WebElement reviewsReviews;
+
+    @FindBy (xpath = "//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[3]/h6")
+    public WebElement itwasnice;
+
+    @FindBy(xpath = "//a[@data-id='20']")
+    public WebElement actionsDelete;
+
+    @FindBy(xpath = "(//a[@data-toggle='tooltip'])[1]")
+    public WebElement actionsUpdate;
+
+    @FindBy(xpath = "//a[text()='All Review']")
+    public WebElement allReview;
+
+    @FindBy(xpath = "(//a[@data-placement='top'])[2]")
+    public WebElement deleteConfirmation;
+
+    @FindBy(xpath = "//button[@class='btn']")
+    public WebElement cancel;
+
+    @FindBy(xpath = "//a[text()='Merchant Registration']")
+    public WebElement merchantRegistration;
+
+    @FindBy(xpath = "//h5[text()='Merchant Registration']")
+    public WebElement merchantRegistrationText;
+
+    @FindBy(xpath = "//th[@width='25%']")
+    public WebElement merchantRegistrationName;
+
+    @FindBy(xpath = "(//td[@class='sorting_1'])[1]")
+    public WebElement name_67899Pendingforapproval;
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement startEndDate;
+
+    @FindBy(xpath = "//div[text()='All Status']")
+    public WebElement allStatus;
+
+    @FindBy(xpath = "(//a[@role='option'])[1]")
+    public WebElement allStatusActive;
+
+    @FindBy(xpath = "//p[text()='7-Eleven']")
+    public WebElement getAllStatusActive7Eleven;
+
+
+
+
+
+
+
+
+
 }
