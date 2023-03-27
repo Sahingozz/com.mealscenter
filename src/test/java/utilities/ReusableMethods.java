@@ -481,11 +481,11 @@ public class ReusableMethods {
 
         LocalDateTime ldt=LocalDateTime.now();
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
-<<<<<<< HEAD
+
         String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"Dynamik Bilgi girilmeli"+".jpg";
-=======
-        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"US_37 TC_4"+".jpg";
->>>>>>> main
+
+
+
 
         //dosya yolu "target/tumSayfaSs20230227114813"
         File tumSayfaSs=new File(dinamikDosyaYolu);
@@ -509,7 +509,7 @@ public class ReusableMethods {
         merchantDashboard.merchantLoginSignin.click();
 
     }
-<<<<<<< HEAD
+
 
     /**
      * sets time format as (yyyy-MM-dd)
@@ -524,6 +524,6 @@ public class ReusableMethods {
         return simpleDateFormat.format(calendar.getTime());
     }
 }
-=======
-}
->>>>>>> main
+
+
+
