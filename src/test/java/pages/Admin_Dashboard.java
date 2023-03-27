@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -373,4 +374,77 @@ public class Admin_Dashboard {
     //Admin dashboard -> Buyers -> Customers List -> Showing total entries text
     @FindBy (xpath = "//div[@id='DataTables_Table_0_info']")
     public WebElement customersListTotalEntries;
+
+    //Admin dashboard -> Buyers -> Customers List -> sorting list by name
+    @FindBy (xpath = "//th[text()='Name']")
+    public WebElement customersListSortbyName;
+
+    //Admin dashboard -> Buyers -> Customers List ->Add new customer button
+    @FindBy (xpath = "//a[@class='btn btn-black btn-circle']")
+    public WebElement addNewCustomerButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> updating customer Info
+    @FindBy (xpath = "//a[@class='btn btn-light tool_tips']")
+    public WebElement customerInfoUpdateButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer First Name
+    @FindBy (xpath = "//input[@id='AR_client_first_name']" )
+    public WebElement firstName ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer Last Name
+    @FindBy (xpath = "//input[@id='AR_client_last_name']" )
+    public WebElement lastName ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer email
+    @FindBy (xpath = "//input[@id='AR_client_email_address']" )
+    public WebElement emailAdresse ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer contactPhone
+    @FindBy (xpath = "//input[@id='AR_client_contact_phone']" )
+    public WebElement contactPhone ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer passWord
+    @FindBy (xpath = "//input[@id='AR_client_npassword']" )
+    public WebElement passWord ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer confirmPassword
+    @FindBy (xpath = "//input[@id='AR_client_cpassword']" )
+    public WebElement confirmPassWord ;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload
+    @FindBy (xpath = "//button[text()='Browse']")
+    public WebElement browseForPhotoUpload;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload->New Photo Upload
+    @FindBy (xpath = "//a[text()='Upload New']")
+    public WebElement newPhotoUpload;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload->New Photo Upload->Select Files
+    @FindBy (xpath = "//a[@class='btn btn-green fileinput-button dz-clickable'")
+    public WebElement selectFiles;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload
+    // ->New Photo Upload->Select Files->AddFiles Butonu
+    @FindBy (xpath = "//span[text()='Add Files']")
+    public  WebElement addFilesButonu;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer status DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select']")
+    public WebElement newCustomerClassDDM;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer save Button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement newCustomerSaveButton;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer search Field
+    @FindBy (xpath = "//input[@placeholder='Search']")
+    public WebElement customerSearchField;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer search 1st result
+    @FindBy (className = "odd")
+    public WebElement customerSearch1stResult;
+
+
+
+
 }

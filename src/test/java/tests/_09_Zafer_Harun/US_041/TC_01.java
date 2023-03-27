@@ -30,7 +30,9 @@ public class TC_01 {
 
         Assert.assertTrue(adminLogin.customersListTotalEntries.getText().contains(expectedText1)
                 && adminLogin.customersListTotalEntries.getText().contains(expectedText2)
-                && adminLogin.customersListText.isDisplayed());
+                && adminLogin.customersListText.isDisplayed()
+                && adminLogin.customersListSortbyName.isDisplayed()
+                && adminLogin.customersListSortbyName.isEnabled());
 
                Driver.closeDriver();
     }
