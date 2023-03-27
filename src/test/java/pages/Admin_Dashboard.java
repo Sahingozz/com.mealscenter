@@ -266,17 +266,78 @@ public class Admin_Dashboard {
     public WebElement promoLink;
 
     //Admin Dashboard - > Promo Link -> Coupon Link
-    @FindBy (xpath = "//a[text()='Promo']")
+    @FindBy (xpath = "//a[text()='Coupon']")
     public WebElement couponLink;
 
     // Admin Dashboard -> Promo Link -> Coupon Link - > Add new Button
-    @FindBy (xpath = "i[@class='zmdi zmdi-plus']")
+    @FindBy (xpath = "//i[@class='zmdi zmdi-plus']")
     public WebElement  addNewCouponButton ;
 
     // Admin Dashboard -> Promo->Cupon->Add new coupon->Coupon Name field
-    @FindBy (xpath = "//label[@for='AR_voucher_voucher_name']")
+    @FindBy (xpath = "(//input[@type='text'])[1]")
     public WebElement addCouponNameField;
 
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->CouponType Drop Down Menu
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select']")
+    public WebElement couponTypeDDM;
 
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Coupon Amount Field
+    @FindBy (xpath = "(//input[@type='text'])[2]")
+    public WebElement couponAmountField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Min Order Field
+    @FindBy (xpath = "(//input[@type='text'])[3]")
+    public WebElement minOrdertField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Days Available DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select " +
+            "select_two select2-hidden-accessible']")
+    public WebElement daysAvailableDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> Applicable merchants
+    @FindBy (xpath = "//span[@aria-owns='select2-AR_voucher_apply_to_merchant-results']")
+    public WebElement couponApplicableToMerchant;
+
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon expiration date
+    @FindBy (xpath = "//input[@id='AR_voucher_expiration']")
+    public WebElement couponExpirationDDM ;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon expiration date
+    @FindBy (xpath = "//td[@data-title='r5c5']")
+    public WebElement couponExpiryDate;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon Options DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select coupon_options']")
+    public WebElement couponOptionsDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon status drop down menu
+    @FindBy (xpath = "//select[@id='AR_voucher_status']")
+    public WebElement couponStatusDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement couponSaveButton ;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon Name Text
+    @FindBy (xpath = "//*[text()='Fruehling Campaign ']")
+    public WebElement couponNameText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon List Text
+    @FindBy (xpath = "//h5[text()='Coupon list']")
+    public WebElement couponListText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Couponlist results text
+    @FindBy (xpath = "//div[@class='dataTables_info']")
+    public WebElement couponListResultsText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon update button
+    @FindBy (xpath = "(//a[@class='btn btn-light tool_tips'])[1]")
+    public WebElement couponUpdateButton;
+
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon delete button
+    @FindBy (xpath = "(//a[@class='btn btn-light datatables_delete tool_tips'])[1]")
+    public WebElement couponDeleteButton;
 
 }
