@@ -49,6 +49,8 @@ public class TC_02 {
 
         Assert.assertTrue(adminLogin.customerSearch1stResult.getText().contains(firstName+" "+lastName));
 
+        Driver.closeDriver();
+
 
     }
 }

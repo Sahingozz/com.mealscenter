@@ -383,10 +383,6 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//a[@class='btn btn-black btn-circle']")
     public WebElement addNewCustomerButton;
 
-    //Admin dashboard -> Buyers -> Customers List -> updating customer Info
-    @FindBy (xpath = "//a[@class='btn btn-light tool_tips']")
-    public WebElement customerInfoUpdateButton;
-
     //Admin dashboard -> Buyers -> Customers List -> new customer First Name
     @FindBy (xpath = "//input[@id='AR_client_first_name']" )
     public WebElement firstName ;
@@ -444,7 +440,17 @@ public class Admin_Dashboard {
     @FindBy (className = "odd")
     public WebElement customerSearch1stResult;
 
+    //Admin dashboard -> Buyers -> Customers List -> updating customer Info
+    @FindBy (xpath = "//a[@class='btn btn-light tool_tips']")
+    public WebElement customerInfoUpdateButton;
 
+    //Admin dashboard -> Buyers -> Customers List -> updating info save button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement customerInfoUpdateSaveButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> updated message
+    @FindBy (xpath = "//div[@class='alert alert-success']")
+    public WebElement updatedMessage;
 
 
 }
