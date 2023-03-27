@@ -260,5 +260,23 @@ public class Admin_Dashboard {
     @FindBy(xpath = "//a[@data-original-title=\"Delete\"]")
     public WebElement deleteButton;
 
+//-------------------------------------------------------------
+    //Admin Dashboard - > Promo Link
+    @FindBy (xpath = "//a[text()='Promo']")
+    public WebElement promoLink;
+
+    //Admin Dashboard - > Promo Link -> Coupon Link
+    @FindBy (xpath = "//a[text()='Promo']")
+    public WebElement couponLink;
+
+    // Admin Dashboard -> Promo Link -> Coupon Link - > Add new Button
+    @FindBy (xpath = "i[@class='zmdi zmdi-plus']")
+    public WebElement  addNewCouponButton ;
+
+    // Admin Dashboard -> Promo->Cupon->Add new coupon->Coupon Name field
+    @FindBy (xpath = "//label[@for='AR_voucher_voucher_name']")
+    public WebElement addCouponNameField;
+
+
 
 }
