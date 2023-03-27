@@ -350,5 +350,12 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//th[text()='#Used']")
     public WebElement couponSortByUsage;
 
+    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Field
+    @FindBy (xpath = "//input[@placeholder='Search']")
+    public WebElement couponSearchField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Field
+    @FindBy (xpath = "//button[@class='submit input-group-text border-0 ml-2 normal']")
+    public WebElement couponSearchButton;
 
 }
