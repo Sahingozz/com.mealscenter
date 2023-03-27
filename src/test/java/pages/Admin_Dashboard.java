@@ -452,5 +452,13 @@ public class Admin_Dashboard {
     @FindBy (xpath = "//div[@class='alert alert-success']")
     public WebElement updatedMessage;
 
+    //Admin dashboard -> Buyers -> Customers List -> delete Customer
+    @FindBy (xpath = "//a[@data-original-title='Delete']")
+    public WebElement customerDeleteButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> delete Customer Confirm button
+    @FindBy (xpath = "//a[@class='btn btn-green item_delete']")
+    public WebElement customerDeleteConfirm;
+
 
 }

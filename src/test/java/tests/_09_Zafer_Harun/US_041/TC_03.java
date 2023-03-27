@@ -3,6 +3,7 @@ package tests._09_Zafer_Harun.US_041;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_03 {
@@ -25,5 +26,7 @@ public class TC_03 {
         adminLogin.contactPhone.sendKeys("1010101010");
         adminLogin.customerInfoUpdateSaveButton.click();
         Assert.assertTrue(adminLogin.updatedMessage.isDisplayed());
+
+        Driver.closeDriver();
     }
     }
