@@ -7,8 +7,11 @@ import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_12 {
+import java.io.IOException;
+
+public class TC_12 extends TestBaseReport {
 
     /*-----------------------------------------------------------------------------------
     -Reports menüsünden “Merchant Sales”  bölümüne gidildiğinde filtre kullanarak Merchant ismi McDonald's olana göre sıralanabildiği doğrulanmalı
@@ -19,16 +22,21 @@ public class TC_12 {
     Admin_Dashboard adminDashboard=new Admin_Dashboard();
 
     @Test
-    public void TC12(){
+    public void TC12() throws IOException {
+
+        extentTest= extentReports.createTest("TC_12", "ilgili alana gidildiginde secilen isme gore liste siralanmali");
 
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
+        extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
         adminDashboard.adminReportsMerchantSales.click();
+        extentTest.info("Merchant Sales linkine tiklandi");
 
         //-Merchant Sales Report yazisinin altinda bulunan sari renkli filtreleme tusuna basin
         adminDashboard.adminReportsMerchantSalesYellowFilter.click();
@@ -39,19 +47,26 @@ public class TC_12 {
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.ENTER)
                 .sendKeys(Keys.ENTER).perform();
+        extentTest.info("By Marchant basligi altinda McDonalds secildi");
 
         //- Filtreyi uygulayin
         adminDashboard.adminFiltersApply.click();
+        extentTest.info("Filtre uygulandi");
 
         //- Yeni listede ilk gelenin "Mcdonalds" gozuktugunu test edin
         String expectedMerchant="McDonalds";
         String actualMerchant=adminDashboard.adminMerchantColumn.getText();
+        ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
+        extentTest.info("Screenshot alindi");
         Assert.assertEquals(expectedMerchant,actualMerchant);
+        extentTest.info("Yeni listede ilk gelenin Mcdonalds gozuktugunu test edildi");
 
         ReusableMethods.wait(2);
 
         //- Sayfayi kapatin
         Driver.closeDriver();
+        extentTest.info("Sayfa Kapatildi");
+        extentTest.pass("Basarili sekilde siralandigi Test edildi");
 
         /*
         49. satirda gerceklesen bug nedeniyle test fail olmustur.
