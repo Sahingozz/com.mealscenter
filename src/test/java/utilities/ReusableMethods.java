@@ -484,7 +484,7 @@ public class ReusableMethods {
 
         LocalDateTime ldt=LocalDateTime.now();
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
-        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"US_37 TC_4"+".jpg";
+        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"US_21 TC_05"+".jpg";
 
         //dosya yolu "target/tumSayfaSs20230227114813"
         File tumSayfaSs=new File(dinamikDosyaYolu);

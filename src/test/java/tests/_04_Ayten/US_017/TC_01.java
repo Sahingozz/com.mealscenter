@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TC_01 {
       /* - The user opens the browser and enters: https://qa.mealscenter.com/
@@ -31,6 +32,7 @@ public class TC_01 {
         homepage.usernameCheckbox.sendKeys(ConfigReader.getProperty("userEmail") + Keys.ENTER);
         homepage.passwordCheckbox.sendKeys(ConfigReader.getProperty("userPassword"));
         homepage.signInButton2.click();
+        ReusableMethods.wait(2);
         String expectedUrl = "https://qa.mealscenter.com/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
