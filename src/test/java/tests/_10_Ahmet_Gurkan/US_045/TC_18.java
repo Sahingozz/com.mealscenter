@@ -34,6 +34,7 @@ public class TC_18 extends TestBaseReport {
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
+        ReusableMethods.wait(1);
         Assert.assertTrue(adminDashboard.adminReportsOrderEarnings.isDisplayed());
         adminDashboard.adminReportsOrderEarnings.click();
         extentTest.info("Order Earnings linkine tiklandi");

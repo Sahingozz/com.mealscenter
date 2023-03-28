@@ -33,6 +33,7 @@ public class TC_15 extends TestBaseReport {
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
+        ReusableMethods.wait(1);
         Assert.assertTrue(adminDashboard.adminReportsMerchantSales.isDisplayed());
         adminDashboard.adminReportsMerchantSales.click();
         extentTest.info("Merchant Sales linkine tiklandi");
