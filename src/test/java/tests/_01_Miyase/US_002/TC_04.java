@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
-public class TC_04 {
+public class TC_04 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
@@ -18,12 +19,13 @@ public class TC_04 {
 
     @Test
     public void testMealCenterAccessShoppingCart() {
+        extentTest= extentReports.createTest("US_002-TC_04", "testMealCenterAccessShoppingCart");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderCart.isDisplayed());
         homepage.homePageHeaderCart.click();
         Assert.assertTrue(homepage.shoppingBagSection.isDisplayed());
-        Driver.getDriver().quit();
+        extentTest.pass("Test pass");
     }
 
 }

@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
-public class TC_05 {
+public class TC_05 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
@@ -18,10 +19,11 @@ public class TC_05 {
 
     @Test
     public void testMealCenterHomePageHeaderText() {
+        extentTest= extentReports.createTest("US_002-TC_05", "testMealCenterHomePageHeaderText");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderText.isDisplayed());
-        Driver.getDriver().quit();
+        extentTest.pass("Test pass");
     }
 
 }
