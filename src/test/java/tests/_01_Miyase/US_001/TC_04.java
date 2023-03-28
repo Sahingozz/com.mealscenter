@@ -20,8 +20,10 @@ public class TC_04 extends TestBaseReport {
 
     @Test
     public void testAnyAvailableFeatureOnTheHomepage() {
+        extentTest= extentReports.createTest("US_001-TC_04", "Check a random property from Homepage");
         Homepage homepage = new Homepage();
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         Assert.assertTrue(homepage.homePageHeaderLogo.isDisplayed());
+        extentTest.pass("Test pass");
     }
 }

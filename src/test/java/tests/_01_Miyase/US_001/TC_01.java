@@ -1,6 +1,7 @@
 package tests._01_Miyase.US_001;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -16,11 +17,11 @@ import utilities.TestBaseReport;
 public class TC_01 extends TestBaseReport {
     @Test
     public void testMealCenterAccessWebsite() {
+        extentTest= extentReports.createTest("US_001-TC_01", "Go To Homepage");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         String expectedTitle = "Meals Center";
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertTrue(expectedTitle.contains(actualTitle));
-
+        extentTest.pass("Test pass");
     }
-
 }

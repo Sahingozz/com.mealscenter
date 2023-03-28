@@ -20,7 +20,9 @@ public class TC_03 extends TestBaseReport {
 
     @Test
     public void testWebsiteIsFullLoaded() {
+        extentTest= extentReports.createTest("US_001-TC_03", "Check if the Homepage fully loaded");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         Assert.assertTrue(homepage.homePageFooterQaMealsCenterLink.isDisplayed());
+        extentTest.pass("Test pass");
     }
 }
