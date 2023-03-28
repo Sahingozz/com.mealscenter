@@ -31,13 +31,14 @@ public class TC_04 {
         //  - Click the Change password button on the profile page
         merchant_dashboard.profilechange_passwort.click();
 
-        //  - On the change_passwort page that opens, information can be entered in the Old Password, New Password, Confirm New Password textboxes and the changes are saved.
+        //  - On the change_passwort page that opens, information can be entered in the Old Password, New Password,
+        //  Confirm New Password textboxes and the changes are saved.
         merchant_dashboard.profilechange_OldPassword.sendKeys(ConfigReader.getProperty("profilechangeOldPassword"));
         merchant_dashboard.profilechange_NewPassword.sendKeys(ConfigReader.getProperty("profilechangeNewPassword"));
         merchant_dashboard.profilechange_ConfirmPassword.sendKeys(ConfigReader.getProperty("profilechangeConfirmPassword"));
-
+        merchant_dashboard.profilechangeSaveButton.click();
         //  - User closes the page
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
     }
 

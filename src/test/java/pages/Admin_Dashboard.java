@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -324,6 +325,209 @@ public class Admin_Dashboard {
     //All Merchant listesinde bulunan silme buttonu
     @FindBy(xpath = "//a[@data-original-title=\"Delete\"]")
     public WebElement deleteButton;
+
+//-------------------------------------------------------------
+    //Admin Dashboard - > Promo Link
+    @FindBy (xpath = "//a[text()='Promo']")
+    public WebElement promoLink;
+
+    //Admin Dashboard - > Promo Link -> Coupon Link
+    @FindBy (xpath = "//a[text()='Coupon']")
+    public WebElement couponLink;
+
+    // Admin Dashboard -> Promo Link -> Coupon Link - > Add new Button
+    @FindBy (xpath = "//i[@class='zmdi zmdi-plus']")
+    public WebElement  addNewCouponButton ;
+
+    // Admin Dashboard -> Promo->Cupon->Add new coupon->Coupon Name field
+    @FindBy (xpath = "(//input[@type='text'])[1]")
+    public WebElement addCouponNameField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->CouponType Drop Down Menu
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select']")
+    public WebElement couponTypeDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Coupon Amount Field
+    @FindBy (xpath = "(//input[@type='text'])[2]")
+    public WebElement couponAmountField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Min Order Field
+    @FindBy (xpath = "(//input[@type='text'])[3]")
+    public WebElement minOrdertField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->Days Available DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select " +
+            "select_two select2-hidden-accessible']")
+    public WebElement daysAvailableDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> Applicable merchants
+    @FindBy (xpath = "//span[@aria-owns='select2-AR_voucher_apply_to_merchant-results']")
+    public WebElement couponApplicableToMerchant;
+
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon expiration date
+    @FindBy (xpath = "//input[@id='AR_voucher_expiration']")
+    public WebElement couponExpirationDDM ;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon expiration date
+    @FindBy (xpath = "//td[@data-title='r5c5']")
+    public WebElement couponExpiryDate;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon Options DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select coupon_options']")
+    public WebElement couponOptionsDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon ->coupon status drop down menu
+    @FindBy (xpath = "//select[@id='AR_voucher_status']")
+    public WebElement couponStatusDDM;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement couponSaveButton ;
+
+    // Admin Dashboard -> Promo -> Coupon -> Add new Coupon -> save ->Coupon Name Text
+    @FindBy (xpath = "//*[text()='Fruehling Campaign ']")
+    public WebElement couponNameText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon List Text
+    @FindBy (xpath = "//h5[text()='Coupon list']")
+    public WebElement couponListText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Couponlist results text
+    @FindBy (xpath = "//div[@class='dataTables_info']")
+    public WebElement couponListResultsText;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon update button
+    @FindBy (xpath = "(//a[@class='btn btn-light tool_tips'])[1]")
+    public WebElement couponUpdateButton;
+
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon delete button
+    @FindBy (xpath = "(//a[@class='btn btn-light datatables_delete tool_tips'])[1]")
+    public WebElement couponDeleteButton;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon list sort by name button
+
+    @FindBy (xpath = "//th[text()='Name']")
+    public WebElement couponSortByNameButton;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon list sort by usage button
+
+    @FindBy (xpath = "//th[text()='#Used']")
+    public WebElement couponSortByUsage;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Field
+    @FindBy (xpath = "//input[@placeholder='Search']")
+    public WebElement couponSearchField;
+
+    // Admin Dashboard -> Promo -> Coupon -> Coupon Search Button
+    @FindBy (xpath = "//button[@class='submit input-group-text border-0 ml-2 normal']")
+    public WebElement couponSearchButton;
+
+    //Admin Dashboard ->Buyers ->Buyers Link
+    @FindBy (xpath = "//a[text()='Buyers']")
+    public WebElement buyersLink ;
+
+    //Admin Dashboard ->Buyers -> Customers Link
+    @FindBy (xpath = "//a[text()='Customers']")
+    public WebElement customersLink ;
+
+    //Admin Dashboard ->Buyers -> Customers List Text
+    @FindBy (xpath = "//h5[text()='Customer list']")
+    public WebElement customersListText ;
+
+    //Admin dashboard -> Buyers -> Customers List -> Showing total entries text
+    @FindBy (xpath = "//div[@id='DataTables_Table_0_info']")
+    public WebElement customersListTotalEntries;
+
+    //Admin dashboard -> Buyers -> Customers List -> sorting list by name
+    @FindBy (xpath = "//th[text()='Name']")
+    public WebElement customersListSortbyName;
+
+    //Admin dashboard -> Buyers -> Customers List ->Add new customer button
+    @FindBy (xpath = "//a[@class='btn btn-black btn-circle']")
+    public WebElement addNewCustomerButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer First Name
+    @FindBy (xpath = "//input[@id='AR_client_first_name']" )
+    public WebElement firstName ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer Last Name
+    @FindBy (xpath = "//input[@id='AR_client_last_name']" )
+    public WebElement lastName ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer email
+    @FindBy (xpath = "//input[@id='AR_client_email_address']" )
+    public WebElement emailAdresse ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer contactPhone
+    @FindBy (xpath = "//input[@id='AR_client_contact_phone']" )
+    public WebElement contactPhone ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer passWord
+    @FindBy (xpath = "//input[@id='AR_client_npassword']" )
+    public WebElement passWord ;
+
+    //Admin dashboard -> Buyers -> Customers List -> new customer confirmPassword
+    @FindBy (xpath = "//input[@id='AR_client_cpassword']" )
+    public WebElement confirmPassWord ;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload
+    @FindBy (xpath = "//button[text()='Browse']")
+    public WebElement browseForPhotoUpload;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload->New Photo Upload
+    @FindBy (xpath = "//a[text()='Upload New']")
+    public WebElement newPhotoUpload;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload->New Photo Upload->Select Files
+    @FindBy (xpath = "//a[@class='btn btn-green fileinput-button dz-clickable'")
+    public WebElement selectFiles;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->Browse for photo upload
+    // ->New Photo Upload->Select Files->AddFiles Butonu
+    @FindBy (xpath = "//span[text()='Add Files']")
+    public  WebElement addFilesButonu;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer status DDM
+    @FindBy (xpath = "//select[@class='form-control custom-select form-control-select']")
+    public WebElement newCustomerClassDDM;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer save Button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement newCustomerSaveButton;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer search Field
+    @FindBy (xpath = "//input[@placeholder='Search']")
+    public WebElement customerSearchField;
+
+    //Admin ->DAshboard->Buyers->Customers->Add customer->customer search 1st result
+    @FindBy (className = "odd")
+    public WebElement customerSearch1stResult;
+
+    //Admin dashboard -> Buyers -> Customers List -> updating customer Info
+    @FindBy (xpath = "//a[@class='btn btn-light tool_tips']")
+    public WebElement customerInfoUpdateButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> updating info save button
+    @FindBy (xpath = "//input[@value='Save']")
+    public WebElement customerInfoUpdateSaveButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> updated message
+    @FindBy (xpath = "//div[@class='alert alert-success']")
+    public WebElement updatedMessage;
+
+    //Admin dashboard -> Buyers -> Customers List -> delete Customer
+    @FindBy (xpath = "//a[@data-original-title='Delete']")
+    public WebElement customerDeleteButton;
+
+    //Admin dashboard -> Buyers -> Customers List -> delete Customer Confirm button
+    @FindBy (xpath = "//a[@class='btn btn-green item_delete']")
+    public WebElement customerDeleteConfirm;
+
+    //Admin dashboard -> Buyers -> Customers List -> customer list's first element
+    @FindBy (className = "odd")
+    public WebElement customerList1stElement;
 
 
 
