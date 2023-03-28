@@ -18,19 +18,21 @@ public class TC_06 {
     @Test
     public void TC_06_CouponSearchField(){
         ReusableMethods.adminLoginZafer();
-        adminLogin.promoLink.click();
+        adminLogin.buyersLink.click();
         ReusableMethods.wait(1);
-        adminLogin.couponLink.click();
-        String listResultText=adminLogin.couponListResultsText.getText();
-        adminLogin.couponSearchField.sendKeys("xyz"+ Keys.ENTER);
-        String searchResultsText=Driver.getDriver()
-                .findElement(By.xpath("//div[@class='dataTables_info']")).getText();
-        boolean isSearchOk;
-        if(listResultText.equals(searchResultsText)){
-            isSearchOk=false;
-            Assert.assertTrue(isSearchOk);
-        }
+        adminLogin.customersLink.click();
+
+        // taking the first element's full text->converting to array->taking the 1st index (Lastname)
+        String firstElementText = adminLogin.customerList1stElement.getText();
+        String [] firstElement = firstElementText.split(" ");
+        String lastName = firstElement[1];
+        //search lastname in the search box
+        adminLogin.customerSearchField.sendKeys(lastName);
+
+        Assert.assertTrue(adminLogin.customerSearch1stResult.getText().contains(lastName));
 
         Driver.closeDriver();
+
     }
 }
+
