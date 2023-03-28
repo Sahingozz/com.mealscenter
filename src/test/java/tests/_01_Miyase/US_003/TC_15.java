@@ -8,8 +8,9 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_15 {
+public class TC_15 extends TestBaseReport {
 
     Homepage homepage = new Homepage();
 
@@ -20,6 +21,6 @@ public class TC_15 {
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homeHomeBodyNoMinimumOrder.isDisplayed());
-        driver.quit();
+        
     }
 }

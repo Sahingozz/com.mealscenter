@@ -8,8 +8,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_13 {
+public class TC_13 extends TestBaseReport {
+    /**
+     * Open your browser to access the website
+     * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
+     * -Go to Url on your browser to confirm the entered URL
+     * -Verify that all functionalities in the body section are visible
+     * -Close the page
+     */
 
     Homepage homepage = new Homepage();
 
@@ -20,6 +28,6 @@ public class TC_13 {
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyPopularNearbyText.isDisplayed());
-        driver.quit();
+        
     }
 }
