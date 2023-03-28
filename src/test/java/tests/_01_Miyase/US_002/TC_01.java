@@ -22,12 +22,14 @@ public class TC_01 extends TestBaseReport {
 
     @Test(priority = 1)
     public void testMealCenterAccessWebsite() {
+        extentTest= extentReports.createTest("US_002-TC_01", "testMealCenterAccessWebsite");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderLogo.isDisplayed());
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/");
+        extentTest.pass("Test pass");
     }
 
 

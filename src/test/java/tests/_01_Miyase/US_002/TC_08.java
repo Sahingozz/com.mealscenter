@@ -19,11 +19,13 @@ public class TC_08 extends TestBaseReport {
     Homepage homepage = new Homepage();
 
     @Test
-    public void testMealCenterVerfiySearchIsWorking() {
+    public void testMealCenterVerifySearchIsWorking() {
+        extentTest= extentReports.createTest("US_002-TC_08", "testMealCenterVerifySearchIsWorking");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderSearchBanner.isDisplayed());
         homepage.homePageHeaderSearchBanner.click();
+        extentTest.pass("Test pass");
     }
 
 }

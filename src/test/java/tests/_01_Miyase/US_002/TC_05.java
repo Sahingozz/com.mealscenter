@@ -19,9 +19,11 @@ public class TC_05 extends TestBaseReport {
 
     @Test
     public void testMealCenterHomePageHeaderText() {
+        extentTest= extentReports.createTest("US_002-TC_05", "testMealCenterHomePageHeaderText");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderText.isDisplayed());
+        extentTest.pass("Test pass");
     }
 
 }
