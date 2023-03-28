@@ -1,15 +1,19 @@
 package tests._05_Gulhayat.US_025;
 
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Merchant_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
+
+
+public class TC_02 {
 
     @Test
-    public void merchantItem_01() {
+    public void merchantItem_02() {
         // - The user goes to the "Merchant login", which is the merchand panel, with the browser he opens
         //  - User enters "username" and "password" and clicks "Sign in" button
 
@@ -25,17 +29,19 @@ public class TC_01 {
         String expectedUrl = "https://qa.mealscenter.com/backoffice/food/items";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
-        //   Verifies that the User Item list can be displayed
-        merchant_dashboard.ItemsList.isDisplayed();
+        //   User confirms that a new item can be added
+        merchant_dashboard.ItemAdd.click();
+        merchant_dashboard.ItemAddNameTexBox.sendKeys("cheetos");
+        merchant_dashboard.ItemAddCategorySnacks.click();
+
+       merchant_dashboard.ItemAddSaveButtonu.click();
 
         //  - User closes the page
-        Driver.closeDriver();
+          Driver.closeDriver();
 
 
 
 
 
     }
-
-
 }

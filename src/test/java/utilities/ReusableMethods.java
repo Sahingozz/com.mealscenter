@@ -435,8 +435,6 @@ public class ReusableMethods {
         adminLogin.adminPasswordLogin.sendKeys(password);
         adminLogin.adminLoginSignInButton.click();
 
-
-<<<<<<< HEAD
 }
   //Merchant paneline parametreli Kullanici adi ve sifre isle giris methodu
     public static void merchantLoginAndsuccessfullLogin (){
@@ -451,9 +449,9 @@ public class ReusableMethods {
         Assert.assertTrue((merchant_dashboard.successfullLoginElement.isDisplayed()));
     }
 
-=======
 
-}
+
+
         public static void merchantLoginHasan (){
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -462,5 +460,5 @@ public class ReusableMethods {
          merchantDashboard.merchantLoginPassword.sendKeys("1234567");
          merchantDashboard.merchantLoginSignin.click();
     }
->>>>>>> main
+
 }

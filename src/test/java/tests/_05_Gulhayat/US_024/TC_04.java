@@ -1,4 +1,4 @@
-package tests._05_Gulhayat.US_025;
+package tests._05_Gulhayat.US_024;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,36 +6,27 @@ import pages.Merchant_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_01 {
-
+public class TC_04 {
     @Test
-    public void merchantItem_01() {
+    public void merchantCategory_03() {
         // - The user goes to the "Merchant login", which is the merchand panel, with the browser he opens
         //  - User enters "username" and "password" and clicks "Sign in" button
-
-
         ReusableMethods.merchantLoginAndsuccessfullLogin();
 
-        //  - User clicks the items link under Food on the Dashboard page
+        //  - User clicks on the category link
         Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
         merchant_dashboard.FoodLink.click();
-        merchant_dashboard.ItemsLink.click();
+        merchant_dashboard.CategoryLink.click();
 
-        //  - User verifies on Items page
-        String expectedUrl = "https://qa.mealscenter.com/backoffice/food/items";
+        //  - Verifies that you are on the Category page
+        String expectedUrl = "https://qa.mealscenter.com/backoffice/food/category";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
-        //   Verifies that the User Item list can be displayed
-        merchant_dashboard.ItemsList.isDisplayed();
+        //   Verify that the categories are delete
+        merchant_dashboard.CategoryDelete.isEnabled();
 
-        //  - User closes the page
+        //  - user closes the page
         Driver.closeDriver();
 
-
-
-
-
     }
-
-
 }
