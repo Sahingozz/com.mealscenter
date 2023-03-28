@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
-public class TC_02 {
+public class TC_02 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
@@ -23,7 +24,6 @@ public class TC_02 {
         Assert.assertTrue(homepage.homePageHeaderSignIn.isDisplayed());
         homepage.homePageHeaderSignIn.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/account/login");
-        Driver.getDriver().quit();
     }
 
 }

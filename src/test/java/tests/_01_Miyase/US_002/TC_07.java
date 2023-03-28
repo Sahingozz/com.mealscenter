@@ -6,12 +6,13 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_07 {
+public class TC_07 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
-     * -Navigate to the website
+     * -Go to Url on your browser to confirm the entered URL
      * -Verify that the search bar is working
      * -Close the page
      */
@@ -27,7 +28,6 @@ public class TC_07 {
         homepage.homePageSearchResultsFirstResult.click();
         ReusableMethods.wait(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/restaurants");
-        Driver.getDriver().quit();
     }
 
 }

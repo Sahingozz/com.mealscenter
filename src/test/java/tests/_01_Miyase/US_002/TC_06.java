@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
-public class TC_06 {
+public class TC_06 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
@@ -22,7 +23,6 @@ public class TC_06 {
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderSearchBox.isDisplayed());
         Assert.assertTrue(homepage.homePageHeaderSearchBox.isEnabled());
-        Driver.getDriver().quit();
     }
 
 }
