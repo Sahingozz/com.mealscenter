@@ -23,6 +23,7 @@ public class TC_02 extends TestBaseReport{
 
     @Test
     public void testAccessWebsiteFromDifferentBrowsers() {
+        extentTest= extentReports.createTest("US_001-TC_02", "Go To Homepage from various Browsers");
         WebDriver driver;
 
         //Open the website in Chrome
@@ -51,6 +52,6 @@ public class TC_02 extends TestBaseReport{
         String fireFoxTitle = driver.getTitle();
         Assert.assertTrue(fireFoxTitle.contains(expectedTitle));
         driver.quit();
-
+        extentTest.pass("Test pass");
     }
 }
