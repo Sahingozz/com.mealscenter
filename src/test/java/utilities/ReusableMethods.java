@@ -491,7 +491,10 @@ public class ReusableMethods {
         LocalDateTime ldt=LocalDateTime.now();
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
 
+
+
         String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"Dynamik Bilgi girilmeli"+".jpg";
+
 
 
 
