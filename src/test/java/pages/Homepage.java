@@ -42,7 +42,7 @@ public class Homepage {
     @FindBy(xpath = "//div[@id='main-search-banner']")
     public static WebElement homePageHeaderSearchBanner;
 
-    //body
+    //Body
     @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
     public static WebElement homePageBodyAmerican;
 
@@ -83,10 +83,29 @@ public class Homepage {
     public static WebElement homePageBodyMenuDropDownVegetarian;
 
     @FindBy(xpath = "//h5[@class='m-0 section-title']")
-    public static WebElement homePageBodyPopularNearbyText;//Popular nearby Seattle Mcdonalds
-    @FindBy(xpath = "//div[@class='row equal align-items-center position-relative w-100']")
-    public static WebElement homePageBodyPopularNearbyMD;//Popular nearby Seattle Mcdonalds
+    public static WebElement homePageBodyPopularNearbyText;
 
+    @FindBy(xpath = "(//div[@class='owl-item active'])[1]")
+    public static WebElement homePageBodyPopular1;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[2]")
+    public static WebElement homePageBodyPopular2;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[3]")
+    public static WebElement homePageBodyPopular3;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[4]")
+    public static WebElement homePageBodyPopular4;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[5]")
+    public static WebElement homePageBodyPopular5;
+
+    @FindBy(xpath = "(//div[@class='owl-item active'])[6]")
+    public static WebElement homePageBodyNew1;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[7]")
+    public static WebElement homePageBodyNew2;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[8]")
+    public static WebElement homePageBodyNew3;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[9]")
+    public static WebElement homePageBodyNew4;
+    @FindBy(xpath = "(//div[@class='owl-item active'])[10]")
+    public static WebElement homePageBodyNew5;
     @FindBy(xpath = "//div[@class='addons addons-1']")
     public static WebElement homeHomeBodyNoMinimumOrder;
 
@@ -96,7 +115,7 @@ public class Homepage {
     @FindBy(xpath = "//div[@class='addons addons-3']")
     public static WebElement homePageBodyDeliveryOnTime;
 
-    //read
+    //Read
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[1]")
     public static WebElement homePageBodyReadText;
 
@@ -104,14 +123,12 @@ public class Homepage {
     public static WebElement homePageBodyReadText2;
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[3]")
-    public static WebElement homePageBodyReadText3;// body bolumunde readbolumu How to Eat Healthy with Food Delivery
+    public static WebElement homePageBodyReadText3;
 
     @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[4]")
-    public static WebElement homePageBodyReadText4; // body bolumunde readbolumu Discover the Best Vegetarian Food Options in Your Area
-
+    public static WebElement homePageBodyReadText4;
     @FindBy(xpath = "//div[@class='section-join-us mt-0 mb-0']")
-    public static WebElement homePageBodyReadText5;//Are you a restaurant owner?// Join us and reach new customers
-    //Just a few steps to join our family
+    public static WebElement homePageBodyReadText5;
 
     @FindBy(xpath = "//div[@class='btn-white-parent non-trasparent']")
     public static WebElement homePageBodyJoinUsLink;
@@ -119,7 +136,7 @@ public class Homepage {
     public static WebElement homePageBodyBottom;
 
 
-    //footer
+    //Footer
     @FindBy(xpath = " //div[@class='footer-logo']")
     public static WebElement homePageFooterMealsCenterLogo;
 
@@ -160,7 +177,7 @@ public class Homepage {
     @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family']")
     public static WebElement homePageFooterBlogWholeFamilyLink;
 
-    //footer of footer
+    //Footer of footer
 
     @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/app-store@2x.png']")
     public static WebElement homePageFooterAppStore;
