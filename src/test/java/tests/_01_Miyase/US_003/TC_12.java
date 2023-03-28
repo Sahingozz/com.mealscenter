@@ -24,6 +24,7 @@ public class TC_12 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessVegetarianCuisine() {
+        extentTest= extentReports.createTest("US_003-TC_12", "testMealCenterAccessVegetarianCuisine");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
@@ -35,6 +36,6 @@ public class TC_12 extends TestBaseReport {
         homepage.homePageBodyMenuDropDownVegetarian.click();
         ReusableMethods.wait(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/vegetarian");
-        
+        extentTest.pass("Test pass");
     }
 }

@@ -24,6 +24,7 @@ public class TC_11 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessHalalCuisine() {
+        extentTest= extentReports.createTest("US_003-TC_11", "testMealCenterAccessHalalCuisine");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
@@ -35,6 +36,6 @@ public class TC_11 extends TestBaseReport {
         homepage.homePageBodyMenuDropDownHalal.click();
         ReusableMethods.wait(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/pizza");
-        
+        extentTest.pass("Test pass");
     }
 }

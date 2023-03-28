@@ -24,11 +24,12 @@ public class TC_24 extends TestBaseReport {
 
     @Test
     public void testMealCenterDiscoverHealthyFood() {
+        extentTest= extentReports.createTest("US_003-TC_24", "testMealCenterDiscoverHealthyFood");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyBottom.isDisplayed());
-        
+        extentTest.pass("Test pass");
     }
 }

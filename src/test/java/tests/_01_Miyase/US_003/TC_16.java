@@ -23,11 +23,12 @@ public class TC_16 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyTrackYourDelivery() {
+        extentTest= extentReports.createTest("US_003-TC_16", "testMealCenterVerifyTrackYourDelivery");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyTrackYourDelivery.isDisplayed());
-        
+        extentTest.pass("Test pass");
     }
 }
