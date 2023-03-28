@@ -1,14 +1,12 @@
 package tests._03_Murat.US_013;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.Homepage;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
-import utilities.TestBaseReport;
+import utilities.*;
 
 public class TC_03 extends TestBaseReport {
 
@@ -38,7 +36,7 @@ public class TC_03 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         // 4* User type New Orleans into the search engine and search.
-
+ReusableMethods.wait(2);
         homepage.cookiesButton.click();
 
         actions.sendKeys(homepage.searchButton)
@@ -51,9 +49,10 @@ public class TC_03 extends TestBaseReport {
 
 
         // 5* User clicks Vegan Season on the page that comes up.
-
-         actions.sendKeys(Keys.END).perform();
-       homepage.veganSeasonButton.click();
+        //JSUtilities.clickWithJS(Driver.getDriver(),homepage.veganSeasonButton);
+       // JSUtilities.scrollToElement(Driver.getDriver(),homepage.veganSeasonButton);
+        actions.sendKeys(Keys.END).perform();
+        homepage.veganSeasonButton.click();
 
         extentTest.info("Vegan Season sayfasina gidildi");
 

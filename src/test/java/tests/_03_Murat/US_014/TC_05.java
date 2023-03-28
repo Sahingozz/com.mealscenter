@@ -10,6 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
+import java.io.IOException;
+
 public class TC_05 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
@@ -35,6 +37,7 @@ public class TC_05 extends TestBaseReport {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
@@ -48,6 +51,11 @@ public class TC_05 extends TestBaseReport {
         // 5* User deletes current payment method.
 
         homepage.paymentDeleteButton.click();
+        try {
+            ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
+        } catch (IOException e) {
+
+        }
         // bug var
         // odeme yontemi silinmedi
         extentTest.info("odeme yontemi silinmedi");

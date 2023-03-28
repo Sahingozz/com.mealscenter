@@ -24,7 +24,11 @@ public class TestBaseReport {
         extentReports = new ExtentReports(); // Raporlamayi baslatir
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_012_TC_05"+".html";
+
+        String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_014_TC_10"+".html";
+
+
+
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
@@ -53,5 +57,14 @@ public class TestBaseReport {
     @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
+    }
+
+    public String className(){
+        String className= getClass().getSimpleName();
+        return className;
+    }
+    public String packageName(){
+        String packageName= getClass().getPackage().getName();
+        return packageName;
     }
 }

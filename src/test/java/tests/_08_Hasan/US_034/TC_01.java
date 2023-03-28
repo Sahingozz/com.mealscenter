@@ -6,6 +6,9 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01 {
+
+
+
     /*
 
 
@@ -18,9 +21,8 @@ public class TC_01 {
      */
 
 
-
     @Test
-    public void TC_01(){
+    public void TC_01() {
         //- Kullanıcı açtığı browserla admin paneli olan "Merchant Url" ye gider
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine tıklar
         //-Kullanıcı sayfayı kapatır
@@ -28,8 +30,8 @@ public class TC_01 {
         Driver.closeDriver();
 
 
-
     }
-
-
 }
+
+
+

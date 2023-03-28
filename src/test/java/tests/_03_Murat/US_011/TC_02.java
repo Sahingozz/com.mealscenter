@@ -53,6 +53,7 @@ public class TC_02 extends TestBaseReport {
         actions.sendKeys(homepage.searchButton)
                 .sendKeys("New Orleans").perform();
         homepage.newOrleansButton.click();
+        ReusableMethods.wait(2);
 
         // 6* Verifies that the  section exists.
 
