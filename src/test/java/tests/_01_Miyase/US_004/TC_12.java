@@ -24,6 +24,7 @@ public class TC_12 extends TestBaseReport {
 
     @Test
     public void testMealCenterFooterBlogList() {
+        extentTest= extentReports.createTest("US_004-TC_12", "testMealCenterFooterBlogList");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -32,6 +33,7 @@ public class TC_12 extends TestBaseReport {
         ReusableMethods.wait(2);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(Homepage.homePageFooterBlogList.isDisplayed());
+        extentTest.pass("Test pass");
 
     }
 }

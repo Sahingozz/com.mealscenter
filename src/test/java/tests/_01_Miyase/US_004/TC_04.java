@@ -26,6 +26,7 @@ public class TC_04 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyFooterTermsAndConditionsLink() {
+        extentTest= extentReports.createTest("US_004-TC_04", "testMealCenterVerifyFooterTermsAndConditionsLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -36,6 +37,7 @@ public class TC_04 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageFooterTermsAndConditionsLink.isDisplayed());
         homepage.homePageFooterTermsAndConditionsLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/terms-and-conditions");
+        extentTest.pass("Test pass");
 
     }
 }

@@ -25,6 +25,7 @@ public class TC_14 extends TestBaseReport {
 
     @Test
     public void testMealFooterBlogHowToLink() {
+        extentTest= extentReports.createTest("US_004-TC_14", "testMealFooterBlogHowToLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_14 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterBlogHowToLink.isDisplayed());
         Homepage.homePageFooterBlogHowToLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/how-to-eat-healthy-with-food-delivery");
+        extentTest.pass("Test pass");
 
     }
 }

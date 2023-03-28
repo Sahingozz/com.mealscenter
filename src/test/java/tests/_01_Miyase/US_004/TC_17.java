@@ -25,6 +25,7 @@ public class TC_17 extends TestBaseReport {
 
     @Test
     public void testMealFooterAppStore() {
+        extentTest= extentReports.createTest("US_004-TC_17", "testMealFooterAppStore");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_17 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterAppStore.isDisplayed());
         Homepage.homePageFooterAppStore.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.apple.com/de/app-store/");
+        extentTest.pass("Test pass");
 
     }
 }

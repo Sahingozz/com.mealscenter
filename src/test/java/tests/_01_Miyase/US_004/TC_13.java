@@ -26,6 +26,7 @@ public class TC_13 extends TestBaseReport {
 
     @Test
     public void testMealFooterBlogDiscoveryLink() {
+        extentTest= extentReports.createTest("US_004-TC_13", "testMealFooterBlogDiscoveryLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -36,6 +37,7 @@ public class TC_13 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterBlogDiscoverLink.isDisplayed());
         Homepage.homePageFooterBlogDiscoverLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/discover-the-best-vegetarian-food-delivery-options-in-your-area");
+        extentTest.pass("Test pass");
 
     }
 }

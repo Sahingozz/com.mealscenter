@@ -28,8 +28,8 @@ public class TC_08 extends TestBaseReport {
 
     @Test
     public void testMealFooterSocialMediaInstagramLink() {
+        extentTest= extentReports.createTest("US_004-TC_08", "testMealFooterSocialMediaInstagramLink");
         WebDriver driver = Driver.getDriver();
-
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         driver.get(ConfigReader.getProperty("homePageUrl"));
         jse.executeScript("window.scrollBy(0,5000)");
@@ -41,6 +41,6 @@ public class TC_08 extends TestBaseReport {
         browserTabs.addAll(driver.getWindowHandles());
         driver.switchTo().window(browserTabs.get(1));
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.instagram.com/");
-
+        extentTest.pass("Test pass");
     }
 }

@@ -28,6 +28,7 @@ public class TC_07 extends TestBaseReport {
 
     @Test
     public void testMealCenterFooterSocialMediaFacebookLink() {
+        extentTest= extentReports.createTest("US_004-TC_07", "testMealCenterFooterSocialMediaFacebookLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -41,6 +42,7 @@ public class TC_07 extends TestBaseReport {
         browserTabs.addAll(driver.getWindowHandles());
         driver.switchTo().window(browserTabs.get(1));
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.facebook.com/");
+        extentTest.pass("Test pass");
 
     }
 }

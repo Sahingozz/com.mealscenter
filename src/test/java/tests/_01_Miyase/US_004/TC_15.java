@@ -25,6 +25,7 @@ public class TC_15 extends TestBaseReport {
 
     @Test
     public void testMealFooterBlogBenefitsToLink() {
+        extentTest= extentReports.createTest("US_004-TC_15", "testMealFooterBlogBenefitsToLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_15 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterBlogBenefitsLink.isDisplayed());
         Homepage.homePageFooterBlogBenefitsLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle");
+        extentTest.pass("Test pass");
 
     }
 }

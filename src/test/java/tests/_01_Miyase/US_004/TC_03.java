@@ -26,6 +26,7 @@ public class TC_03 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyFooterContactUsLink() {
+        extentTest= extentReports.createTest("US_004-TC_03", "testMealCenterVerifyFooterContactUsLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -36,6 +37,7 @@ public class TC_03 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageFooterContactUsLink.isDisplayed());
         homepage.homePageFooterContactUsLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/contactus");
+        extentTest.pass("Test pass");
 
 
     }
