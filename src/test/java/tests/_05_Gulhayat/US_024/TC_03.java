@@ -6,10 +6,10 @@ import pages.Merchant_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC_02 {
+public class TC_03 {
 
     @Test
-    public void merchantCategory_02() {
+    public void merchantCategory_03() {
         // - The user goes to the "Merchant login", which is the merchand panel, with the browser he opens
         //  - User enters "username" and "password" and clicks "Sign in" button
         ReusableMethods.merchantLoginAndsuccessfullLogin();
@@ -23,10 +23,12 @@ public class TC_02 {
         String expectedUrl = "https://qa.mealscenter.com/backoffice/food/category";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
-        //  Verifies that a new catagory can be added
-        merchant_dashboard.CategoryAdd.click();
-        merchant_dashboard.CategoryAddnameTextBox.sendKeys("abc");
-        merchant_dashboard.CategoryAddDascriptionTextBox.sendKeys("abc");
+        //   Verify that the categories are update
+        merchant_dashboard.CategoryUpdate.click();
+        merchant_dashboard.CategoryAddnameTextBox.clear();
+        merchant_dashboard.CategoryAddnameTextBox.sendKeys("abcdef");
+        merchant_dashboard.CategoryAddDascriptionTextBox.clear();
+        merchant_dashboard.CategoryAddDascriptionTextBox.sendKeys("abcdef");
         merchant_dashboard.CategoryAddSaveButton.click();
 
         //  - user closes the page
