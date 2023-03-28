@@ -18,7 +18,6 @@ public class TC_01 {
      */
 
 
-
     @Test
     public void TC_01(){
         //- Kullanıcı açtığı browserla admin paneli olan "Merchant Url" ye gider

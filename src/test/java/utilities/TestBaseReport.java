@@ -24,7 +24,7 @@ public class TestBaseReport {
         extentReports = new ExtentReports(); // Raporlamayi baslatir
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String filePath = System.getProperty("user.dir") + "/test-output/Rapor"+"US_045_TC_20"+".html";
+        String filePath = System.getProperty("user.dir") + "/report-US-hasan_34-35-36-37/Rapor"+"US_37_TC_01"+".html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
@@ -36,7 +36,6 @@ public class TestBaseReport {
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
-
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException, IOException {
         if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa

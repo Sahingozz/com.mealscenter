@@ -5,25 +5,28 @@ import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_01 {
+public class TC_01 extends TestBaseReport {
     Admin_Dashboard adminDashboard=new Admin_Dashboard();
     @Test
     public void TC01(){
+        extentTest=extentReports.createTest("US_36 TC_01","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
         // - Kullanıcı açtığı browserla admin paneli olan "AdminUrl" ye gider
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
+        extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkinini tiklanabilir ve gorunur oldugunu dogrular.
         adminDashboard.dashboardButtonu.click();
         Assert.assertTrue(adminDashboard.dashboardButtonu.isDisplayed());
-
         String expected ="Dashboard";
         String actual=adminDashboard.dashboardButtonu.getText();
         Assert.assertTrue(actual.contains(expected));
-
+        extentTest.info("Dashboard sayfasina tiklandi ve sayfanin gorunur oldugu dogrulandi");
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
-
+        extentTest.info("Sayfa kapatildi");
+        extentTest.pass("Test hatasiz gerceklesti");
     }
 
 }
