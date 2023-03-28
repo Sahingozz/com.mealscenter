@@ -15,7 +15,7 @@ public class TC_01 {
 
 
         //"https://qa.mealscenter.com/"  sitesine git
-        Driver.getDriver().get(ConfigReader.getProperty("mealsUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("mealUrl"));
         //Ana sayfanin en alt kisminda Privacy policy Butonuna tikla
         JavascriptExecutor jse=(JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].scrollIntoView();",mealsCenterpage.Privacy_Policiy );
