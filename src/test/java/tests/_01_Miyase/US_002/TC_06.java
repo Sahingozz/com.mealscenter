@@ -19,10 +19,12 @@ public class TC_06 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessSearchBox() {
+        extentTest= extentReports.createTest("US_002-TC_06", "testMealCenterAccessSearchBox");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderSearchBox.isDisplayed());
         Assert.assertTrue(homepage.homePageHeaderSearchBox.isEnabled());
+        extentTest.pass("Test pass");
     }
 
 }

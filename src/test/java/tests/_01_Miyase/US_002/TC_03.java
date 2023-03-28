@@ -19,11 +19,13 @@ public class TC_03 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessBasket() {
+        extentTest= extentReports.createTest("US_002-TC_03", "testMealCenterAccessBasket");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderShoppingBag.isDisplayed());
         homepage.homePageHeaderShoppingBag.click();
         Assert.assertTrue(homepage.shoppingBagSection.isDisplayed());
+        extentTest.pass("Test pass");
     }
 
 

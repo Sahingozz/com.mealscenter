@@ -19,11 +19,13 @@ public class TC_02 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessSigIn() {
+        extentTest= extentReports.createTest("US_002-TC_02", "testMealCenterAccessSigIn");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageHeaderSignIn.isDisplayed());
         homepage.homePageHeaderSignIn.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/account/login");
+        extentTest.pass("Test pass");
     }
 
 }

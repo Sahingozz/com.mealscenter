@@ -19,7 +19,8 @@ public class TC_07 extends TestBaseReport {
     Homepage homepage = new Homepage();
 
     @Test
-    public void testMealCenterVerfiySearchIsWorking() {
+    public void testMealCenterVerifySearchIsWorking() {
+        extentTest= extentReports.createTest("US_002-TC_07", "testMealCenterVerifySearchIsWorking");
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
         homepage.homePageHeaderSearchBox.click();
@@ -28,6 +29,7 @@ public class TC_07 extends TestBaseReport {
         homepage.homePageSearchResultsFirstResult.click();
         ReusableMethods.wait(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/restaurants");
+        extentTest.pass("Test pass");
     }
 
 }
