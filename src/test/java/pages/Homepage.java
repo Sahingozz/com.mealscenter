@@ -431,7 +431,7 @@ public WebElement dropdownMenuLink;
     public WebElement sichuaneseButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season
-    @FindBy(xpath = "(//*[@class='el-image__inner'])[10]")
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/vegan-season'])[3]")
     public WebElement veganSeasonButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa
@@ -442,9 +442,18 @@ public WebElement dropdownMenuLink;
     @FindBy(xpath = "(//div[@class='modal-footer justify-content-start'])[9]")
     public WebElement newOrderButton;
 
+
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout
     @FindBy(xpath = "//a[@class='btn btn-green w-100 pointer d-flex justify-content-between']")
     public WebElement checkOutButton;
+
+    //homepage-order-checkout-cashondeliverylinktext
+    @FindBy (xpath = "(//*[text()='Cash On delivery'])[2]")
+    public WebElement cashOnDeliveryLinkText;
+
+    //Homepage->Order->Vegan->addCashButton
+    @FindBy (xpath = "//span[text()='Add Cash']")
+    public WebElement addCashButtonVegan;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe
     @FindBy(xpath = "(//div[@class='flexcol mr-0 mr-lg-2 payment-logo-wrap'])[2]")
