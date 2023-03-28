@@ -8,14 +8,9 @@ import utilities.Driver;
 public class Merchant_Dashboard {
 
 
-
         public Merchant_Dashboard(){
             PageFactory.initElements(Driver.getDriver(),this);
-
         }
-
-
-
         //Merchant Dashboard/sign In
         @FindBy(xpath = "//input[@value='Sign in']")
         public WebElement merchantLoginSignin;
@@ -27,7 +22,6 @@ public class Merchant_Dashboard {
         //Merchant Dashboard>sign In/merchant dropdown menu button
         @FindBy(xpath = "//*[text()='Merchant']")
         public WebElement merchantDropdownMenuButton;
-
 
         //Merchant Dashboard/Incorrect username or password text
         @FindBy(xpath = "//*[text()='Incorrect username or password.']")
@@ -55,13 +49,7 @@ public class Merchant_Dashboard {
 
         @FindBy(xpath = "(//*[text()='Dashboard'])[2]")
         public WebElement dashboardPanelButton;
-
-
-
-
-
-
-    //----------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
     public static WebElement merchantLoginUsername;
@@ -161,14 +149,14 @@ public class Merchant_Dashboard {
 
     //Dashboard>Name Box1
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[1]")
-    public WebElement nameBox;
+    public WebElement nameBox1;
 
-    //Dashboard>Name Box1
+    //Dashboard>Name Box2
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
     public WebElement nameBox2;
 
     //Dashboard>Name Box3
-    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
+    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[3]")
     public WebElement nameBox3;
 
     //Dashboard>ddm1
@@ -180,7 +168,7 @@ public class Merchant_Dashboard {
     public WebElement ddm2;
 
     //Dashboard>Promo>Coupon>AllCoupon/Coupon Options ddm
-    @FindBy(xpath = "//select[@class=\"form-control custom-select form-control-select coupon_options\"]")
+    @FindBy(css = "#AR_voucher_used_once")
     public WebElement couponOptions_ddmX;
 
     //Dashboard>Attributes>Size & Ingredients & Cooking Reference /Save button
@@ -208,8 +196,20 @@ public class Merchant_Dashboard {
     public WebElement daysAvailableBox;
 
     //Dashboard>Promo>Coupon>AllCoupon/Expriration17
-    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
-    public WebElement expriration17;
+    @FindBy(xpath = "(//td[@data-title=\"r2c5\"])[1]")
+    public WebElement expiration17;
+
+
+    @FindBy (xpath = "//label[@for=\"AR_voucher_expiration\"]")
+    public WebElement expiration;
+
+    // Dashboard>Promo>Coupon//Delete icon button
+    @FindBy(xpath = "(//a[@data-original-title=\"Delete\"])[1]")
+    public WebElement deleteButtonIcon;
+
+    // Dashboard>Promo>Coupon//Delete button
+    @FindBy(xpath = "//a[@class=\"btn btn-green item_delete\"]")
+    public WebElement deleteButton;
 
 
     //-----------------Ersin---------------------------------
@@ -341,6 +341,8 @@ public class Merchant_Dashboard {
  // Merchant Dashboard>Stephanie Eleven>profil>Change Password/Confirm Password
  @FindBy(xpath = "//*[@id=\"AR_merchant_user_repeat_password\"]")
  public WebElement profilechange_ConfirmPassword;
+
+
  // Merchant Dashboard/Total Orders
  @FindBy(xpath = "//*[@class=\"rounded-status-report rounded r1\"]")
  public WebElement totalOrders;
@@ -393,22 +395,95 @@ public class Merchant_Dashboard {
  @FindBy(xpath = "//*[text()='Overview of Review']")
  public WebElement OverviewOfReview;
 
-
  // Merchant Dashboard/Food
  @FindBy(xpath = "//*[text()='Food']")
  public WebElement FoodLink;
 
- // Merchant Dashboard/Food
+ // Merchant Dashboard>Food/Category
  @FindBy(xpath = "//*[text()='Category']")
  public WebElement CategoryLink;
-
+    // Merchant Dashboard>Food>Category/Category List
  @FindBy(xpath = "(//*[text()='Category List'])[2]")
  public WebElement CategoryList;
+    // Merchant Dashboard>Food>Category/Add
+    @FindBy(xpath = "(//div[@class='p-2'])[1]")
+    public WebElement CategoryAdd;
+
+    // Merchant Dashboard>Food>Category>add catagory/nameTextBox
+    @FindBy(xpath = "//*[@id=\"AR_category_category_name\"]")
+    public WebElement CategoryAddnameTextBox;
+
+    // Merchant Dashboard>Food>Category>add catagory/DascriptionTextBox
+    @FindBy(xpath = "//*[@id=\"AR_category_category_description\"]")
+    public WebElement CategoryAddDascriptionTextBox;
+    // Merchant Dashboard>Food>Category>add catagory/SaveButton
+    @FindBy(xpath = "//*[@value='Save']")
+    public WebElement CategoryAddSaveButton;
+    // Merchant Dashboard>Food>Category/update
+    @FindBy(xpath = "(//*[@class='btn btn-light tool_tips'])[1]")
+    public WebElement CategoryUpdate;
+
+    // Merchant Dashboard>Food>Category/delete
+    @FindBy(xpath = "(//*[@class='zmdi zmdi-delete'])[1]")
+    public WebElement CategoryDelete;
+
+    // Merchant Dashboard>Food/Items
+    @FindBy(xpath = "//*[text()='Items']")
+    public WebElement ItemsLink;
+
+    // Merchant Dashboard>Food>Items/Items list
+    @FindBy(xpath = "//nav[@class='navbar navbar-light justify-content-between']")
+    public WebElement ItemsList;
+
+    // Merchant Dashboard>Food>Items>Items list/ItemAdd
+    @FindBy(xpath = "//*[@class='btn btn-black btn-circle']")
+    public WebElement ItemAdd;
+
+    // Merchant Dashboard>Food>Items>Items list>ItemAdd/NameTexBox
+    @FindBy(xpath = "//*[@id=\"AR_item_item_name\"]")
+    public WebElement ItemAddNameTexBox;
+
+
+
+    // Merchant Dashboard>Food>Items>Items list>ItemAdd/category
+    @FindBy(xpath = "(//*[@role='combobox'])[1]")
+    public WebElement ItemAddCategory;
+
+    // Merchant Dashboard>Food>Items>Items list>ItemAdd/category
+        @FindBy(xpath = "//*[@id=\"AR_item_category_selected\"]/option[8]")
+       public WebElement ItemAddCategorySnacks;
+
+    // Merchant Dashboard>Food>Items>Items list>ItemAdd/save button
+    @FindBy(xpath = "//*[@value='Save']")
+    public WebElement ItemAddSaveButtonu;
+
+    // Merchant Dashboard>Food>Items>Items/Update
+    @FindBy(xpath = "//*[@class='zmdi zmdi-border-color']")
+    public WebElement ItemUpdate;
+
+    // Merchant Dashboard>Food>Items>Items/Update name
+    @FindBy(xpath = "//*[@id=\"AR_item_item_name\"]")
+    public WebElement ItemUpdateNameTexBox;
+
+    // Merchant Dashboard>Food>Items>Items/Update Save button
+    @FindBy(xpath = "//*[@value='Save']")
+    public WebElement ItemUpdateSaveButton;
+
+    // Merchant Dashboard>Food>Items>Items/Delete
+    @FindBy(xpath = "//*[@class='zmdi zmdi-delete']")
+    public WebElement ItemDelete;
+
+    // Merchant Dashboard>Stephanie Eleven>profil>Change Password/Save Button
+    @FindBy(xpath = "//*[@id=\"profile\"]/input")
+    public WebElement profilechangeSaveButton;
+
+
+
+
 
 
 
 
 
 }
-
 

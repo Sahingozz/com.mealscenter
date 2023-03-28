@@ -10,6 +10,7 @@ import utilities.ReusableMethods;
 
 public class TC_03 {
 
+
     Merchant_Dashboard merchantDashboard=new Merchant_Dashboard();
     Homepage homepage=new Homepage();
     private ReusableMethods reausableMethods;
@@ -57,4 +58,5 @@ public class TC_03 {
 
 
     }
+
 }
