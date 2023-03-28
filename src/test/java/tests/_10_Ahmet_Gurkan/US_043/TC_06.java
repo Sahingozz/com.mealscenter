@@ -14,16 +14,21 @@ public class TC_06 {
     public void test01(){
 
         //"Kullanici https://qa.mealscenter.com/backoffice/reports/merchant_registration Url'ye gider
+        // "User goes to https://qa.mealscenter.com/backoffice/reports/merchant_registration Url
         ReusableMethods.adminLogin("gurkan.gulsoy","123456");
         //Solda bulunan Reports basligina tiklar
+        // Click on Reports on the left
         adminDashboard.adminReports.click();
 
         //Merchant Registration sekmesine tiklar
+        // Click on Merchant Registration tab
         adminDashboard.merchantRegistration.click();
 
         //acilan sayfada Merchant Registration yazisi dogrulanir
+        // On the page that opens, the text Merchant Registration is verified.
         Assert.assertTrue(adminDashboard.merchantRegistrationText.isDisplayed());
-        //sayfa kapatilir"
+        //sayfa kapatilir
+        // page is closed
         Driver.closeDriver();
 
     }

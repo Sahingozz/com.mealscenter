@@ -11,15 +11,6 @@ public class TC_03 {
     @Test
     public void test03(){
 
-
-
-
-
-
-
-        //tested to work
-
-
         //https://qa.mealscenter.com/backoffice/admin/dashboard URL'ye gider
         // "User goes to https://qa.mealscenter.com/backoffice/admin/dashboard URL
         ReusableMethods.adminLogin("gurkan.gulsoy","123456");

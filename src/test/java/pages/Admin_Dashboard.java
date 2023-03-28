@@ -185,7 +185,7 @@ public class Admin_Dashboard {
     @FindBy (xpath = "(//div[@class='col-sm-12 col-md-6'])[2]")
     public WebElement merchantEarningsSearchField;
 
-<<<<<<< HEAD
+
     @FindBy(xpath = "//a[text()='Buyers']" )
     public WebElement buyers;
 
@@ -249,7 +249,7 @@ public class Admin_Dashboard {
 
 
 
-=======
+
     //Admin meals center basligi
     @FindBy(xpath = "//img[@class=\"img-200\"]")
     public WebElement adminMealsCenter;
@@ -324,7 +324,7 @@ public class Admin_Dashboard {
     //All Merchant listesinde bulunan silme buttonu
     @FindBy(xpath = "//a[@data-original-title=\"Delete\"]")
     public WebElement deleteButton;
->>>>>>> main
+
 
 
 }

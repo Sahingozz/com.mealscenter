@@ -12,13 +12,6 @@ public class TC_05 {
     @Test
     public void test05(){
 
-
-
-
-
-
-
-
         //https://qa.mealscenter.com/backoffice/admin/dashboard URL'ye gider
         // "User goes to https://qa.mealscenter.com/backoffice/admin/dashboard URL
         ReusableMethods.adminLogin("gurkan.gulsoy","123456");
@@ -39,7 +32,6 @@ public class TC_05 {
         String actual=adminDashboard.allReview.getText();
         Assert.assertTrue(actual.contains(expected));
         //acilan sayfada All Review tiklanir
-
         adminDashboard.allReview.click();
         //delete butonuna tiklanir,acilan ekranda Delete Confirmation yazisi dogrulanir
         //Click on the delete button, and confirm the Delete Confirmation text on the screen that appears.
@@ -47,6 +39,7 @@ public class TC_05 {
         Assert.assertTrue(adminDashboard.deleteConfirmation.isDisplayed());
 
         //acilan sayfada cancel button'a tiklanir
+        //open page click cancel button
         adminDashboard.cancel.click();
         //sayfa kapatilir
         // page is closed
