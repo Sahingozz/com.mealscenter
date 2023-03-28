@@ -137,8 +137,51 @@ public class Admin_Dashboard {
     public WebElement adminReportsAdminCommission;
 
     //Admin Dashboard Reports > Order Earnings > Count: ?
-    @FindBy(xpath = "//h5[text()='148']")
+    @FindBy(xpath = "(//h5[@class='m-0'])[1]")
     public WebElement adminReportsOrderEarningsCount;
 
+    //------------------------------------------
 
+    // Admin Dashboard ->Order>All order > Order by ID butonu
+    @FindBy (xpath = "//th[text()='Order ID']")
+    public WebElement sortByOrderIDButton ;
+
+    // Admin Dashboard ->Order->All order > Download any order butonu
+
+    @FindBy (xpath = "(//i[@class='zmdi zmdi-download'])[1]")
+    public WebElement orderDownloadButton ;
+
+    // Admin Dashboard -> Earnings butonu
+
+    @FindBy (xpath = "//a[text()='Earnings']")
+    public WebElement earningsButton;
+
+    // Admin Dashboard -> Earnings -> Merchant Earnings butonu
+
+    @FindBy (xpath = "//a[text()='Merchant Earnings']")
+    public WebElement merchantEarningsButton;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Earnings Text
+    @FindBy (xpath = "//h5[text()='Merchant Earnings']")
+    public WebElement merchantEarningsText;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Earnings Text
+    @FindBy (xpath = "//th[text()='Balance']")
+    public WebElement balanceText ;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Merchant Text Button
+    @FindBy (xpath = "//th[text()='Merchant']")
+    public WebElement merchantText ;
+
+    //Admin Dashboard ->Earnings->Merchant Earnings->Actions Eye Button
+    @FindBy (xpath = "//i[@class='zmdi zmdi-eye']")
+    public WebElement actionsEyeButton;
+
+    //Admin Dashboard -> Earnings ->Merchant Earnings ->Merchant Info Pop-up Text
+    @FindBy (xpath = "//h6[text()='Merchant Info']")
+    public WebElement merchantInfoText;
+
+    //Admin Dashboard -> Earnings -> Merchant Earnings -> SearchField
+    @FindBy (xpath = "(//div[@class='col-sm-12 col-md-6'])[2]")
+    public WebElement merchantEarningsSearchField;
 }

@@ -38,10 +38,125 @@ public class Homepage {
     @FindBy(xpath = "//*[text()='Become Restaurant partner']")
     public WebElement becomeRestauranPartnerText;
 
+
+//--------------Ayten Hanım---------------------------------------------------------------------//
+//HomePage>sign in>My account/dropdownMenu
+@FindBy(id = "dropdownMenuLink")
+public WebElement dropdownMenuLink;
+
+    //HomePage>sign in>My account>dropdownMenu/my Orders link
+    @FindBy(xpath = "//*[@class='dropdown-item with-icon-orders']")
+    public WebElement myOrdersLink;
+
+    //HomePage>sign in>My account>dropdownMenu>my Orders link/order now text
+    @FindBy(xpath = "//*[@class='btn btn-green']")
+    public WebElement orderNowButton;
+
+
+    //HomePage>sign in>My account>dropdownMenu/adresses link
+    @FindBy(xpath = "//*[@class='dropdown-item with-icon-addresses']")
+    public WebElement adressesLink;
+
+
+    //HomePage>sign in>My account>dropdownMenu/payments Options link
+    @FindBy(xpath = "//*[@class='dropdown-item with-icon-payments']")
+    public WebElement paymentsOptionsLink;
+
+    //HomePage>sign in>My account>dropdownMenu/saved stores link
+    @FindBy(xpath = "//*[@class='dropdown-item with-icon-savedstore']")
+    public WebElement savedStoresLink;
+
+    //HomePage>sign in>My account>dropdownMenu/Logout link
+    @FindBy(xpath = "//*[@class='dropdown-item with-icon-logout']")
+    public WebElement logOutLink;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses/add new adress
+    @FindBy(xpath = "(//*[@class='btn btn-green'])[1]")
+    public WebElement addNewAdressButton;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress/change adress
+    @FindBy(xpath = "//*[text()='Change address']")
+    public WebElement changeAdressText;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress/Enter delivery address
+    @FindBy(xpath = "//input[@placeholder='Enter delivery address']")
+    public WebElement enterDeliveryAddressbutton;
+
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address/United States Holocaust Memorial Museum
+    @FindBy(xpath = "//*[*='United States Holocaust Memorial Museum']")
+    public WebElement unitedStatesHolocaustMemorialMuseumtext;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>United States Holocaust/Delivery options
+    @FindBy(xpath = "//*[@class='form-control custom-select']")
+    public WebElement deliveryOptionsDropdown;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address/save button
+    @FindBy(xpath = "//span[text()='Save']")
+    public WebElement saveButton;
+
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>save/home adress information
+    @FindBy(xpath = "//*[@class='module truncate-overflow']")
+    public WebElement adressInformation;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>save/edit
+    @FindBy(xpath = "(//*[@class='btn normal small'])[1]")
+    public WebElement editbutton;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>save/delete
+    @FindBy(xpath = "(//*[text()='Delete'])[1]")
+    public WebElement deleteButton;
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>save>delete/yes
+    @FindBy(xpath = "//button[text()='Yes']")
+    public WebElement yesButton;
+
+
+    //HomePage>sign in>My account>dropdownMenu>adresses>add new adress>change adress>Enter delivery address>save>delete/Are you sure you want to continue?
+    @FindBy(xpath = "//*[text()='Are you sure you want to continue?']")
+    public WebElement areYouSureYouWantToContinueText;
+
+
+    //HomePage>My account>dropdownMenu>Payments Options/add new payments
+    @FindBy(xpath = "(//*[text()='Add new payment'])[1]")
+    public WebElement addNewPaymentText;
+
+
+    //HomePage>My account>dropdownMenu>Payments Options>add new payments/cash on delivery
+    @FindBy(xpath = "(//*[@class='card p-3 fixed-height card-listing'])[2]")
+    public WebElement cashOnDeliveryText;
+
+    //HomePage>My account>dropdownMenu>Payments Options>add new payments/cash on delivery button
+    @FindBy(xpath = "//span[text()='Cash On delivery']")
+    public WebElement cashOnDeliveryButton;
+
+    //HomePage>My account>dropdownMenu>Payments Options>add new payments>cash on delivery button/add cash button
+    @FindBy(xpath = "//span[text()='Add Cash']")
+    public WebElement addCashButton;
+
+
+    //HomePage>My account>dropdownMenu>Payments Options>add new payments>cash on delivery button/cross element
+    @FindBy(xpath = "(//*[@class='zmdi zmdi-close font20'])[1]")
+    public WebElement crossElement;
+
+    //HomePage>My account>dropdownMenu>Payments Options>add new payments>cash on delivery button>cross element/close payment
+    @FindBy(xpath = "(//*[@class='btn btn-green'])[1]")
+    public WebElement closePaymentButton;
+
+    //HomePage>My account>dropdownMenu>saved stores/order now
+    @FindBy(xpath = "(//*[@class='btn btn-green'])[1]")
+    public WebElement orderNowlink;
+
+
+
+
+
 //MURAT
     // Homepage panel> sign  in button
     @FindBy(xpath = "//li[@class='d-none d-lg-inline line-left']")
     public WebElement signInButton;
+
 
     // Homepage panel> sign in > eMail button
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
@@ -119,7 +234,7 @@ public class Homepage {
     public  WebElement brolarKebapButton;
 
     // Homepage panel > Thai
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[8]")
+    @FindBy(xpath = "(//*[text()='Thai'])[1]")
     public  WebElement thaiButton;
 
     // Homepage panel > Thai > Street Cafe
@@ -127,7 +242,7 @@ public class Homepage {
     public  WebElement streetCafeButton;
 
     // Homepage panel > More
-    @FindBy(xpath = "//a[@id='dropdownCuisine']")
+    @FindBy(xpath = "//a[@class='btn btn-sm dropdown-toggle text-truncate shadow-none']")
     public  WebElement moreButton;
 
     // Homepage panel > Chinese
@@ -221,7 +336,52 @@ public class Homepage {
 
 
 
+    //============================= Harun's Locaters ===================
+@FindBy(xpath = "//*[text()='Sign in']")
+public WebElement anaEkranSignInButonu;
+
+    //Cookies i kabul et
+    @FindBy(xpath = "//*[text()='Accept']")
+    public WebElement AcceptKabulButonu;
+
+    //MealsCenter>Sign in ekranindaki Email kutusu
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement EmailorTelefonButonu;
+
+    //Mealscenter>Sign in ekranindaki Sign Up butonu
+    @FindBy (xpath = "//*[text()='Sign Up']")
+    public WebElement SignUpButonu;
+
+    //MealsCenter>Sign Up Kutularindaki ilkKutu(isim)
+    @FindBy (xpath = "//input[@id=\"firstname\"]")
+    public WebElement FristnameKutusu;
+
+    //MealsCenter/Anasayfanin/contact Us Butonu
+    @FindBy(xpath = "//*[text()='Contact us']")
+    public WebElement ContactUs;
+
+    @FindBy (xpath = "//h2[@class='text-center mb-3']")
+    public WebElement hungryyazisi;
+
+    //MealsCenter>Contact Us yazisi
+    @FindBy (xpath = "//*[text()='Contact Us']")
+    public WebElement ContactUSGorundu;
+
+    //MealsCenter/TermsundConditionsButonu
+    @FindBy (xpath = "//*[text()='Terms and conditions']")
+    public WebElement TermsundConditions;
+
+    //TermsundconditionsYazisi
+    @FindBy (xpath = "(//*[text()='Terms and conditions'])[1]")
+    public WebElement TermsundConditionsgoruldu;
+
+    //MealsCenter/PrivacyPolicyButonu
+    @FindBy(xpath = "//*[text()='Privacy policy']")
+    public WebElement Privacy_Policiy;
+
+    //MealsCenter>PrivacyPolicyYazisi
+    @FindBy(xpath = "(//*[text()='Privacy policy'])[1]")
+    public WebElement PrivacyPolicyGorundu;
+
 
 }
-
-

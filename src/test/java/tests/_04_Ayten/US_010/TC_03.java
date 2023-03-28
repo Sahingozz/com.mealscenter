@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtilities;
+import utilities.ReusableMethods;
 
 public class TC_03 {
 /*
@@ -45,13 +47,13 @@ public class TC_03 {
      Assert.assertTrue(actualTitle.contains(expectedTitle));
 
 
-     actions.sendKeys(Keys.PAGE_DOWN);
-
-     actions.moveToElement(homepage.joinUsLink).build().perform();
-   //  homepage.cookiesElement.click();
-   // homepage.joinUsLink.click();
+     WebElement deneme =homepage.joinUsLink;
+     ReusableMethods.wait(3);
+     JSUtilities.scrollToElement(Driver.getDriver(),deneme);
+     ReusableMethods.wait(3);
+     homepage.joinUsLink.click();
     Assert.assertTrue(homepage.becomeRestauranPartnerText.isDisplayed());
-
+ Driver.closeDriver();
  }
 
 

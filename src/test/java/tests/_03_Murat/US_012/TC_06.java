@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 public class TC_06 {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     public void TC_06() {

@@ -11,15 +11,17 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_02 {
+public class TC_02 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     private void TC_02
             (){
+        extentTest= extentReports.createTest("TC_02", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -38,7 +40,11 @@ public class TC_02 {
 
         homepage.signInButtonConfirm.click();
 
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+
         // 4* press the cookies button
+
+        ReusableMethods.wait(2);
 
         homepage.cookiesButton.click();
 
@@ -52,11 +58,12 @@ public class TC_02 {
 
         // 6* Verifies that the  section exists.
 
-         //String expectedUrl="https://qa.mealscenter.com/restaurants";
-        WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
-        //String actualUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertTrue(storeYazisi.isDisplayed());
-        //Assert.assertEquals(expectedUrl,actualUrl);
+         String expectedUrl="https://qa.mealscenter.com/restaurants";
+        //WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        //Assert.assertTrue(storeYazisi.isDisplayed());
+        Assert.assertEquals(actualUrl,expectedUrl);
+
 
         // 7* User goes to Eleven page.
         // 8* Checks that there is a User Menu section.
@@ -70,5 +77,7 @@ public class TC_02 {
         // 10* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
     }
 }

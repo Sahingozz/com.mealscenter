@@ -8,12 +8,13 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.JSUtilities;
 import utilities.ReusableMethods;
 
 public class TC_05 {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     public void TC_05() {
@@ -38,9 +39,10 @@ public class TC_05 {
         homepage.cookiesButton.click();
 
         // 4* User clicks on Thai page.
-
-        homepage.thaiButton.click();
-        homepage.streetCafeButton.click();
+        JSUtilities.clickWithJS(Driver.getDriver(),homepage.thaiButton);
+       // homepage.thaiButton.click();
+        JSUtilities.clickWithJS(Driver.getDriver(),homepage.streetCafeButton);
+        //homepage.streetCafeButton.click();
 
         // 5* User confirms that Bai Tong Thai Sreet Cafe exists.
 
