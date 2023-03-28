@@ -5,22 +5,23 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseReport;
 
 /**
  * This Test Case controlls the following:
  * -Open browser to access the website
  * -Enter the URL ""https://qa.mealscenter.com"" into browser's address bar
- * -Go to Url on your browser to confirm the entered URL and navigate to the website
- * -Click on any available feature on the homepage (such as the ""meals Center"" element)
+ * -Go to Url on your browser to confirm the entered URL
+ * -Click on any available feature on the homepage (such as the "meals Center" element)
  * -Close the page
  */
-public class TC_04 {
+public class TC_04 extends TestBaseReport {
 
-    Homepage homepage = new Homepage();
+
     @Test
     public void testAnyAvailableFeatureOnTheHomepage() {
+        Homepage homepage = new Homepage();
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         Assert.assertTrue(homepage.homePageHeaderLogo.isDisplayed());
-        Driver.getDriver().quit();
     }
 }
