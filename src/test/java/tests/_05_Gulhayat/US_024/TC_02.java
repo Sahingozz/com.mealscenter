@@ -9,7 +9,7 @@ import utilities.ReusableMethods;
 public class TC_02 {
 
     @Test
-    public void merchantCategory() {
+    public void merchantCategory_02() {
         // - The user goes to the "Merchant login", which is the merchand panel, with the browser he opens
         //  - User enters "username" and "password" and clicks "Sign in" button
         ReusableMethods.merchantLoginAndsuccessfullLogin();
@@ -24,9 +24,13 @@ public class TC_02 {
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
         //  Verifies that a new catagory can be added
-
+        merchant_dashboard.CategoryAdd.click();
+        merchant_dashboard.CategoryAddnameTextBox.sendKeys("abc");
+        merchant_dashboard.CategoryAddDascriptionTextBox.sendKeys("abc");
+        merchant_dashboard.CategoryAddSaveButton.click();
 
         //  - user closes the page
+        Driver.closeDriver();
 
     }
 }

@@ -7,14 +7,17 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_04 {
+public class TC_04 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     private void TC_04() {
+
+        extentTest= extentReports.createTest("TC_04", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,8 +36,10 @@ public class TC_04 {
 
         homepage.signInButtonConfirm.click();
 
-        // 4* press the cookies button
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
+        // 4* press the cookies button
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
 
         // 5* User type New Orleans into the search engine and search.
@@ -56,7 +61,8 @@ public class TC_04 {
         // 8* User closes the page.
 
         Driver.getDriver().close();
-
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
 
     }
 }
