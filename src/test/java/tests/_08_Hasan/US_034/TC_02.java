@@ -8,14 +8,10 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-public class TC_02_TC_03 extends TestBaseReport {
+public class TC_02 extends TestBaseReport {
       Merchant_Dashboard merchantDashboard=new Merchant_Dashboard();
       @Test
       public void TC_02(){
-          //User goes to "Merchant Url" which is admin panel with browser opened
-          //- User enters "username" and "password" and clicks "Sign in" link
-          //- User finds "Orders Type" on the left side menu and verifies that it can be clicked
-          //- User "Delivery" Verifies that the " link is visible and clickable -User closes the page
           extentTest=extentReports.createTest("US_34 TC_02","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
           // - Kullanıcı açtığı browserla admin paneli olan "Merchant Url" ye gider
           // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar

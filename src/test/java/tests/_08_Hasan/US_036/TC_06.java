@@ -21,8 +21,8 @@ public class TC_06 extends TestBaseReport {
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
         // ve acilan sayfada "Today Deliverd" bolumunun gorunur oldugunu ve degerler icerdigini dogrular
-        Assert.assertTrue(adminDashboard.totalSubscriptionsButtonu.isDisplayed());
-        Assert.assertFalse(adminDashboard.totalSubscriptionsButtonu.getText().isEmpty());
+        Assert.assertTrue(adminDashboard.todayDeliverdLink.isDisplayed());
+        Assert.assertFalse(adminDashboard.todayDeliverdLink.getText().isEmpty());
         extentTest.info("Merchant linki tiklandi ve acilan sayfada bulunan 'Total total' bolumununun ozet bilgiler icerdigi dogrulandi");
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();

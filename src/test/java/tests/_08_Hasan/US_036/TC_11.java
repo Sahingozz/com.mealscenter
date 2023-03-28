@@ -20,8 +20,7 @@ public class TC_11 extends TestBaseReport {
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkine basar
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
-        //// ve acilan sayfada "Commission this week","Commission this month","Subscriptions this month" , "Last Orders",
-        // "Popular items","Popular merchants", "Top Customers" , "Overview of Review" ve "Recent payout" bolumlerinin gorunur olduklari
+        //ve acilan sayfada "Commission this week","Commission this month","Subscriptions this month" , "Last Orders","Popular items","Popular merchants", "Top Customers" , "Overview of Review" ve "Recent payout" bolumlerinin gorunur olduklari
         // ve degerler icerdikleri dogrular
         Assert.assertFalse(ReusableMethods.getElementsText(By.xpath("//div[@class='card-body']")).isEmpty());
         System.out.println(ReusableMethods.getElementsText(By.xpath("//div[@class='card-body']")));

@@ -12,11 +12,11 @@ public class TC_01 extends TestBaseReport {
 
     @Test
     public void TC_01() {
-        extentTest=extentReports.createTest("US_37 TC_01","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
+         extentTest=extentReports.createTest("US_37 TC_01","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
         // - Kullanıcı açtığı browserla admin paneli olan "AdminUrl" ye gider
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
-        ReusableMethods.adminLogin("hasan.adiguzel", "123456");
-        extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+         ReusableMethods.adminLogin("hasan.adiguzel", "123456");
+         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
          // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkine basar
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
