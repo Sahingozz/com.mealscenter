@@ -22,8 +22,8 @@ public class TC_15 {
             jse.executeScript("window.scrollBy(0,5000)");
             ReusableMethods.wait(2);
             homepage.homePageCookiesDecline.click();
-            Assert.assertTrue(homepage.homePageFooterBlogBenefitsLink.isDisplayed());
-            homepage.homePageFooterBlogBenefitsLink.click();
+            Assert.assertTrue(Homepage.homePageFooterBlogBenefitsLink.isDisplayed());
+            Homepage.homePageFooterBlogBenefitsLink.click();
             Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle");
         } finally {
             driver.quit();

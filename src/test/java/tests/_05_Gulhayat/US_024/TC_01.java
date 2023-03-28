@@ -9,7 +9,7 @@ import utilities.ReusableMethods;
 public class TC_01 {
 
     @Test
-    public void merchantCategory() {
+    public void merchantCategory_01() {
         // - The user goes to the "Merchant login", which is the merchand panel, with the browser he opens
         //  - User enters "username" and "password" and clicks "Sign in" button
         ReusableMethods.merchantLoginAndsuccessfullLogin();

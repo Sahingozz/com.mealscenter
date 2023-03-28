@@ -28,10 +28,13 @@ public class TC_16 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
         adminDashboard.adminReports.click();
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
+        ReusableMethods.wait(1);
+        Assert.assertTrue(adminDashboard.adminReportsOrderEarnings.isDisplayed());
         adminDashboard.adminReportsOrderEarnings.click();
         extentTest.info("Order Earnings linkine tiklandi");
 
