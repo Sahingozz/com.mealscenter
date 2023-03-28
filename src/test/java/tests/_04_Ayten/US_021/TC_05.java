@@ -8,6 +8,8 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.IOException;
+
 public class TC_05 {
     /*
      - The user opens the browser and logs in to the https://qa.mealscenter.com/backoffice/auth/login page
@@ -32,7 +34,9 @@ public class TC_05 {
     Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
 
     @Test
-    public void TC_01() {
+    public void TC_01() throws IOException {
+        ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
+
         Driver.getDriver().get(ConfigReader.getProperty("merchantDashboardUrl"));
         Assert.assertTrue(merchant_dashboard.merchantLoginText.isDisplayed());
         Actions action = new Actions(Driver.getDriver());
