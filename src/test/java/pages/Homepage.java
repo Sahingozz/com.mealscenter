@@ -347,7 +347,7 @@ public WebElement dropdownMenuLink;
     public WebElement redBullButton;
 
     // Homepage panel > search button > kosher restaurant
-    @FindBy(xpath = "(//div[@class='el-image'])[4]")
+    @FindBy(xpath = "(//div[@class='col-lg-4 mb-3 col-md-6 list-items'])[5]")
     public WebElement kosherRestaurantButton;
 
     // Homepage panel > search button > Starbucks Caffe
@@ -372,7 +372,7 @@ public WebElement dropdownMenuLink;
     public  WebElement checkoutButton;
 
     // Homepage panel > American button
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[21]")
     public  WebElement americanButton;
 
 
@@ -382,43 +382,43 @@ public WebElement dropdownMenuLink;
 
 
     // Homepage panel > Mexican
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[5]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[25]")
     public  WebElement mexicanButton;
 
     // Homepage panel > Japanise
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[7]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[27]")
     public  WebElement japaniseButton;
 
     // Homepage panel > Japanise > Brolar Kebap
-    @FindBy(xpath = "//div[@class='layer-grey']")
+    @FindBy(xpath = "(//div[@class='row align-items-center mt-2'])[2]")
     public  WebElement brolarKebapButton;
 
     // Homepage panel > Thai
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[8]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[28]")
     public  WebElement thaiButton;
 
     // Homepage panel > Thai > Street Cafe
-    @FindBy(xpath = "//div[@class='el-image']")
+    @FindBy(xpath = "//div[@class='row align-items-center mt-2']")
     public  WebElement streetCafeButton;
 
     // Homepage panel > More
-    @FindBy(xpath = "//a[@id='dropdownCuisine']")
+    @FindBy(xpath = "//a[@class='btn btn-sm dropdown-toggle text-truncate shadow-none']")
     public  WebElement moreButton;
 
     // Homepage panel > Chinese
-    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[1]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[29]")
     public  WebElement chineseButton;
 
     // Homepage panel > Chinese > Sichunese
-    @FindBy(xpath = "//img[@class='el-image__inner']")
+    @FindBy(xpath = "//div[@class='row align-items-center mt-2']")
     public WebElement sichuaneseButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season
-    @FindBy(xpath = "(//h5[@class='m-0 text-truncate'])[10]")
+    @FindBy(xpath = "(//*[@class='el-image__inner'])[10]")
     public WebElement veganSeasonButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa
-    @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[2]")
+    @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[1]")
     public WebElement vegSamosaAddButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order
@@ -430,11 +430,11 @@ public WebElement dropdownMenuLink;
     public WebElement checkOutButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe
-    @FindBy(xpath = "(//span[@class='mr-1'])[3]")
+    @FindBy(xpath = "(//div[@class='flexcol mr-0 mr-lg-2 payment-logo-wrap'])[2]")
     public WebElement stripeButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe > Cart
-    @FindBy(xpath = "//div[@class='CardField-input-wrapper']")
+    @FindBy(xpath = "//div[@id='card-element']")
     public WebElement cartNoButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe > Cart > Stripe add
@@ -447,7 +447,7 @@ public WebElement dropdownMenuLink;
     public WebElement placeOrderButton;
 
     // Homepage panel > Name
-    @FindBy(xpath = "//li[@class='d-none d-lg-inline']")
+    @FindBy(xpath = "//a[@role='button']")
     public WebElement nameButton;
 
     // Homepage panel > Name > Manege My Account
@@ -470,7 +470,7 @@ public WebElement dropdownMenuLink;
     @FindBy(xpath = "//button[@class='mt-3 btn btn-green w-100']")
     public WebElement changePasswordSubmitButton;
 
-    // Homepage panel > Name > Adress
+    // Homepage panel > Name > Adress.
     @FindBy(xpath = "//a[@class='dropdown-item with-icon-addresses']")
     public WebElement adressButton;
 
@@ -493,6 +493,13 @@ public WebElement dropdownMenuLink;
     // Homepage panel > Name > Logout
     @FindBy(xpath = "//a[@class='dropdown-item with-icon-logout']")
     public WebElement logoutButton;
+    @FindBy(xpath = "(//div[@class='el-image'])[4]")
+    public WebElement burgerKing;
+    @FindBy(xpath = "//div[@class='col-lg-4 mb-3 col-md-6 list-items']")
+    public WebElement laPalmerabutton;
+    @FindBy(xpath = "//a[@class='btn link more-cuisine']")
+    public WebElement showMorebutton;
+
 
 
 

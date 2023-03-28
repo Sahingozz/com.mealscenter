@@ -9,14 +9,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_03 {
+public class TC_03 extends  TestBaseReport  {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     private void TC_03(){
+        extentTest= extentReports.createTest("TC_03", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -35,8 +37,10 @@ public class TC_03 {
 
         homepage.signInButtonConfirm.click();
 
-        // 4* press the cookies button
+      extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
+        // 4* press the cookies button
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
 
         // 5* User type New Orleans into the search engine and search.
@@ -53,12 +57,14 @@ public class TC_03 {
 
         // 7* User verifies that the Address has.
 
-        String expectedKosherAdressContents = "Address:";
-        String actualKosherAdressContents = Driver.getDriver().findElement(By.xpath("//*[text()='Address:']")).getText();
-        Assert.assertTrue(actualKosherAdressContents.contains(expectedKosherAdressContents));
+        String expectedUrl = "https://qa.mealscenter.com/kosher-restaurant";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualUrl,expectedUrl);
 
         // 8* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Test basarili");
+        extentTest.pass("Test basarili oldu");
     }
 }

@@ -492,11 +492,7 @@ public class ReusableMethods {
         DateTimeFormatter dtf=DateTimeFormatter.ofPattern("yyyyMMddhhmmss");
 
 
-
-        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"Dynamik Bilgi girilmeli"+".jpg";
-
-
-
+        String dinamikDosyaYolu ="target/fullScreenSs" + ldt.format(dtf)+"Dinamik bilgi girilmeli"+".jpg";
 
 
         //dosya yolu "target/tumSayfaSs20230227114813"

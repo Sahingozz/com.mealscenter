@@ -11,6 +11,11 @@ public class TC_01 {
 
 
 =======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> main
 >>>>>>> main
     /*
 
@@ -24,9 +29,8 @@ public class TC_01 {
      */
 
 
-
     @Test
-    public void TC_01(){
+    public void TC_01() {
         //- Kullanıcı açtığı browserla admin paneli olan "Merchant Url" ye gider
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine tıklar
         //-Kullanıcı sayfayı kapatır
@@ -34,8 +38,9 @@ public class TC_01 {
         Driver.closeDriver();
 
 
-
     }
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 
@@ -45,4 +50,8 @@ public class TC_01 {
 
 =======
 >>>>>>> 9bd099661718b4c33280993d7ae92878349d1342
+>>>>>>> main
 }
+
+
+

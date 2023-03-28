@@ -8,14 +8,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_02 {
+public class TC_02 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     public void TC_02() {
+        extentTest= extentReports.createTest("TC_02", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,24 +35,40 @@ public class TC_02 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
-        // 4* Click on Amarican link.
+        // 4* User type New Orleans into the search engine and search
+
+        actions.sendKeys(homepage.searchButton)
+                .sendKeys("New Orleans").perform();
+        homepage.newOrleansButton.click();
+
+        ReusableMethods.wait(2);
+
+
+        // 5* Click on Amarican link.
 
         homepage.americanButton.click();
 
-        // 5* User selects McDonalds restaurant.
+        ReusableMethods.wait(2);
 
-        homepage.mcDonaldsButton.click();
+        // 6* User selects BurgerKing restaurant.
 
-        // 6* Verifies that the User Menu section exists.
+        homepage.burgerKing.click();
 
-        String expectedMcDonaldsUrl="https://qa.mealscenter.com/mcdonalds";
-        String actaulMcDonaldsUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertTrue(expectedMcDonaldsUrl.contains(actaulMcDonaldsUrl));
+        // 7* Verifies that the User Burger King section exists.
 
-        // 7* User closes the page.
+        String expectedUrl="https://qa.mealscenter.com/burger-king";
+        String actaulUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actaulUrl,expectedUrl);
+        extentTest.info("BurgerKing restaurantinin menu bolumunun oldugu dogrulandi");
+
+        // 8* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
+
 
     }
 }
