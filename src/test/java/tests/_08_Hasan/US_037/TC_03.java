@@ -39,16 +39,16 @@ public class TC_03 extends TestBaseReport {
         actions.sendKeys(Keys.DELETE)
                 .sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE)
                 .sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE)
-                .sendKeys("kar")
+                .sendKeys("mar")
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
-                .sendKeys("kara")
+                .sendKeys("hara")
                 .sendKeys(Keys.TAB)
-                .sendKeys("Karacali")
+                .sendKeys("haracali")
                 .sendKeys(Keys.TAB)
-                .sendKeys("093328068432")
+                .sendKeys("093434528068432")
                 .sendKeys(Keys.TAB)
-                .sendKeys("hkm@hotmail.com")
+                .sendKeys("hkma@hotmail.com")
                 .sendKeys(Keys.ENTER).perform();
         ReusableMethods.wait(5);
         extentTest.info("Kisilerin bilgileri uzerinde degisiklik yapildi");
