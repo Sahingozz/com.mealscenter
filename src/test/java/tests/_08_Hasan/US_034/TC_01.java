@@ -7,22 +7,7 @@ import utilities.ReusableMethods;
 
 public class TC_01 {
 
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
->>>>>>> main
-    /*
-
-
-
-     */
-    /*
+  /*
     - The user goes to the admin panel "Merchant Url" with the browser he opened
     - User enters "username" and "password" and clicks "Sign in" link
     -User closes the page
@@ -37,20 +22,7 @@ public class TC_01 {
         ReusableMethods.merchantLoginHasan();
         Driver.closeDriver();
 
-
     }
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
-
-=======
->>>>>>> 9bd099661718b4c33280993d7ae92878349d1342
->>>>>>> main
 }
 
 
