@@ -27,6 +27,7 @@ public class TC_23 extends TestBaseReport {
 
     @Test
     public void testMealCenterDiscoverHealthyFood() {
+        extentTest= extentReports.createTest("US_003-TC_23", "testMealCenterDiscoverHealthyFood");
         WebDriver driver = Driver.getDriver();
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         driver.get(ConfigReader.getProperty("homePageUrl"));
@@ -37,6 +38,6 @@ public class TC_23 extends TestBaseReport {
         homepage.homePageBodyJoinUsLink.click();
         ReusableMethods.wait(1);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/merchant/signup");
-        
+        extentTest.pass("Test pass");
     }
 }

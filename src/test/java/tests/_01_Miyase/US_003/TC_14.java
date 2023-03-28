@@ -24,6 +24,7 @@ public class TC_14 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyNearBySeattle() {
+        extentTest= extentReports.createTest("US_003-TC_14", "testMealCenterVerifyNearBySeattle");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
@@ -38,5 +39,6 @@ public class TC_14 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageBodyNew3.isDisplayed());
         Assert.assertTrue(homepage.homePageBodyNew4.isDisplayed());
         Assert.assertTrue(homepage.homePageBodyNew5.isDisplayed());
+        extentTest.pass("Test pass");
     }
 }

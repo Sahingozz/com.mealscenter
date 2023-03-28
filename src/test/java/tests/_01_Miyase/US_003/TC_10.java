@@ -24,6 +24,7 @@ public class TC_10 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessKosherCuisine() {
+        extentTest= extentReports.createTest("US_003-TC_10", "testMealCenterAccessKosherCuisine");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
@@ -35,6 +36,6 @@ public class TC_10 extends TestBaseReport {
         homepage.homePageBodyMenuDropDownKosher.click();
         ReusableMethods.wait(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/healthy");
-        
+        extentTest.pass("Test pass");
     }
 }

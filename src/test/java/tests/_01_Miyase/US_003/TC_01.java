@@ -24,6 +24,7 @@ public class TC_01 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessAmericanCuisine() {
+        extentTest= extentReports.createTest("US_003-TC_01", "testMealCenterAccessAmericanCuisine");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
@@ -31,5 +32,6 @@ public class TC_01 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageBodyAmerican.isDisplayed());
         homepage.homePageBodyAmerican.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/american");
+        extentTest.pass("Test pass");
     }
 }

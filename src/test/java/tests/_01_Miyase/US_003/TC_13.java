@@ -23,11 +23,12 @@ public class TC_13 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyNearBy() {
+        extentTest= extentReports.createTest("US_003-TC_13", "testMealCenterVerifyNearBy");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyPopularNearbyText.isDisplayed());
-        
+        extentTest.pass("Test pass");
     }
 }

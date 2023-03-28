@@ -16,11 +16,12 @@ public class TC_15 extends TestBaseReport {
 
     @Test
     public void testMealCenterVerifyNoMinimumOrder() {
+        extentTest= extentReports.createTest("US_003-TC_15", "testMealCenterVerifyNoMinimumOrder");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homeHomeBodyNoMinimumOrder.isDisplayed());
-        
+        extentTest.pass("Test pass");
     }
 }

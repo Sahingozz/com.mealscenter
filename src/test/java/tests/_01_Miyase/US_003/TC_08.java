@@ -24,14 +24,15 @@ public class TC_08 extends TestBaseReport {
 
     @Test
     public void testMealCenterAccessThaiCuisine() {
+        extentTest= extentReports.createTest("US_003-TC_08", "testMealCenterAccessThaiCuisine");
         WebDriver driver = Driver.getDriver();
-
+        extentTest= extentReports.createTest("US_003-TC_08", "Go To Thai");
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyThai.isDisplayed());
         homepage.homePageBodyThai.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/thai");
-
+        extentTest.pass("Test pass");
     }
 }
