@@ -5,26 +5,26 @@ import org.testng.annotations.Test;
 import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-public class TC_03 extends TestBaseReport {
+public class TC_08 extends TestBaseReport {
     /**
      * Open your browser to access the website
      * -Enter the URL "https://qa.mealscenter.com" into your browser's address bar
-     * -Navigate to the website
-     * -Verify that the Shopping bag is active
+     * -Go to Url on your browser to confirm the entered URL
+     * -Verify that home page full pictures visible
      * -Close the page
      */
     Homepage homepage = new Homepage();
 
     @Test
-    public void testMealCenterAccessBasket() {
+    public void testMealCenterVerfiySearchIsWorking() {
         Driver.getDriver().get(ConfigReader.getProperty("homePageUrl"));
         homepage.homePageCookiesDecline.click();
-        Assert.assertTrue(homepage.homePageHeaderShoppingBag.isDisplayed());
-        homepage.homePageHeaderShoppingBag.click();
-        Assert.assertTrue(homepage.shoppingBagSection.isDisplayed());
+        Assert.assertTrue(homepage.homePageHeaderSearchBanner.isDisplayed());
+        homepage.homePageHeaderSearchBanner.click();
     }
 
-
 }
+
