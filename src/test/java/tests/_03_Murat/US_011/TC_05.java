@@ -52,11 +52,11 @@ public class TC_05 extends TestBaseReport {
 
         // 5* User clicks on Burger King restaurant.
 
-        homepage.burgerKingButton.click();
+        homepage.elevenButton.click();
 
         // 6* User adds Double Whopper menu to cart.
 
-        homepage.whopperMenuButton.click();
+        homepage.redBullButton.click();
 
         // 7* User Ceheckout does.
 

@@ -9,15 +9,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_06 {
+public class TC_06 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reusableMethods;
 
     @Test
     public void TC_06() {
-
+        extentTest= extentReports.createTest("TC_06", "ilgili alana gidildigi dogrulanmali");
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
         Driver.getDriver().get(ConfigReader.getProperty("mealUrl"));
@@ -34,24 +35,41 @@ public class TC_06 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+
+        // 4* User type New Orleans into the search engine and search
+
+        actions.sendKeys(homepage.searchButton)
+                .sendKeys("New Orleans").perform();
+        homepage.newOrleansButton.click();
+
+        ReusableMethods.wait(2);
 
         homepage.cookiesButton.click();
 
+        ReusableMethods.wait(2);
+
         // 4* User clicks Chinese page.
 
-        homepage.moreButton.click();
+        homepage.showMorebutton.click();
+
+        ReusableMethods.wait(2);
         homepage.chineseButton.click();
+
+        ReusableMethods.wait(2);
 
         // 5* User verifies that there is a Sichuanese Cuisine restaurant.
 
         homepage.sichuaneseButton.click();
-        String expectedSichuaneseUrl="https://qa.mealscenter.com/sichuanesecuisine";
-        String actaulSichuaneseUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertTrue(expectedSichuaneseUrl.contains(actaulSichuaneseUrl));
-
+        String expectedUrl="https://qa.mealscenter.com/sichuanesecuisine";
+        String actaulUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actaulUrl,expectedUrl);
+        extentTest.info("Bai Tong Thai Sreet Cafe linkine girilemedi");
         // 6* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
 
     }
 }

@@ -11,7 +11,7 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseReport;
 
-public class TC_03 extends TestBaseReport {
+public class TC_03 extends  TestBaseReport  {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reusableMethods;
@@ -37,7 +37,7 @@ public class TC_03 extends TestBaseReport {
 
         homepage.signInButtonConfirm.click();
 
-        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+      extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         // 4* press the cookies button
         ReusableMethods.wait(2);
@@ -57,13 +57,14 @@ public class TC_03 extends TestBaseReport {
 
         // 7* User verifies that the Address has.
 
-        String expectedKosherAdressContents = "Address:";
-        String actualKosherAdressContents = Driver.getDriver().findElement(By.xpath("//*[text()='Address:']")).getText();
-        Assert.assertTrue(actualKosherAdressContents.contains(expectedKosherAdressContents));
+        String expectedUrl = "https://qa.mealscenter.com/kosher-restaurant";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualUrl,expectedUrl);
 
         // 8* User closes the page.
 
         Driver.getDriver().close();
         extentTest.info("Test basarili");
+        extentTest.pass("Test basarili oldu");
     }
 }

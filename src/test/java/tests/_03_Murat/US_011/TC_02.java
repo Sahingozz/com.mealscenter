@@ -48,9 +48,7 @@ public class TC_02 extends TestBaseReport {
 
         homepage.cookiesButton.click();
 
-        // 5* User type New Orleans into the search engine and search.
-
-
+        // 5* User type New Orleans into the search engine and search
 
         actions.sendKeys(homepage.searchButton)
                 .sendKeys("New Orleans").perform();
@@ -58,10 +56,8 @@ public class TC_02 extends TestBaseReport {
 
         // 6* Verifies that the  section exists.
 
-         String expectedUrl="https://qa.mealscenter.com/restaurants";
-        //WebElement storeYazisi = Driver.getDriver().findElement(By.xpath("(//div[@class='flex-col'])[8]"));
+        String expectedUrl="https://qa.mealscenter.com/restaurants";
         String actualUrl=Driver.getDriver().getCurrentUrl();
-        //Assert.assertTrue(storeYazisi.isDisplayed());
         Assert.assertEquals(actualUrl,expectedUrl);
 
 
@@ -73,6 +69,7 @@ public class TC_02 extends TestBaseReport {
         // 9* User adds Red Bull 12oz to cart.
 
         homepage.redBullButton.click();
+        ReusableMethods.wait(3);
 
         // 10* User closes the page.
 

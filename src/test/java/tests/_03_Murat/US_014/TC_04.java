@@ -8,14 +8,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_04 {
+public class TC_04 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reusableMethods;
 
     @Test
     private void TC_04() {
+        extentTest= extentReports.createTest("TC_04", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,7 +35,11 @@ public class TC_04 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+
+        ReusableMethods.wait(2);
 
         // 4* User clicks Address button.
 
@@ -44,9 +50,12 @@ public class TC_04 {
 
         homepage.adressDeleteButton.click();
         homepage.adressDeleteConfirmButton.click();
+        extentTest.info("Kayitli adres basariyla silindi");
 
         // 6* User closes the Page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
     }
 }

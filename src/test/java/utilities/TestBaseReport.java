@@ -24,7 +24,7 @@ public class TestBaseReport {
         extentReports = new ExtentReports(); // Raporlamayi baslatir
         //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_011_TC_05"+".html";
+        String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_012_TC_05"+".html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
@@ -47,7 +47,7 @@ public class TestBaseReport {
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName()); // Ignore olanlar
         }
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)

@@ -8,14 +8,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_03 {
+public class TC_03 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reusableMethods;
 
     @Test
     public void TC_03() {
+        extentTest= extentReports.createTest("TC_03", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,20 +35,34 @@ public class TC_03 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+
+        // 4* User type New Orleans into the search engine and search
+
+        actions.sendKeys(homepage.searchButton)
+                .sendKeys("New Orleans").perform();
+        homepage.newOrleansButton.click();
+        ReusableMethods.wait(2);
 
         // 4* Click Mexican page.
 
         homepage.mexicanButton.click();
+        ReusableMethods.wait(2);
+        extentTest.info("Mexican butonuna tiklandi");
 
         // 5* User verifies that Lapalmera restaurant exists.
+         homepage.laPalmerabutton.click();
 
-        String expectedLapalmerasUrl="https://qa.mealscenter.com/cuisine/mexican";
-        String actaulLapalmeraUrl=Driver.getDriver().getCurrentUrl();
-        Assert.assertTrue(expectedLapalmerasUrl.contains(actaulLapalmeraUrl));
+        String expectedUrl="https://qa.mealscenter.com/lapalmera";
+        String actaulLUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actaulLUrl,expectedUrl);
 
+        extentTest.info("Lapelmera restaurantinin linkine tiklandigi dogrulandi");
         // 6* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
 
     }
 }

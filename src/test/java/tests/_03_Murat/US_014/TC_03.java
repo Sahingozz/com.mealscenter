@@ -11,14 +11,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_03 {
+public class TC_03 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
     private ReusableMethods reusableMethods;
 
     @Test
     private void TC_03() {
+        extentTest= extentReports.createTest("TC_03", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -37,7 +39,9 @@ public class TC_03 {
 
         homepage.signInButtonConfirm.click();
         homepage.cookiesButton.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
+        ReusableMethods.wait(2);
 
         // 4* User clicks My Orders link.
 
@@ -50,9 +54,13 @@ public class TC_03 {
                 findElement(By.xpath("//div[@class='col-lg-3 d-none d-lg-block']"));
         Assert.assertTrue(orderNumber.isDisplayed());
 
+        extentTest.info("Begenilen restaurantlarin adedi basariyla goruldu");
+
 
         // 6* User closes the Page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
     }
 }

@@ -10,6 +10,166 @@ public class Homepage {
     public Homepage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
+    //Header
+    @FindBy(xpath = "//div[@class='top-logo']")
+    public static WebElement homePageHeaderLogo;
+    @FindBy(xpath = "//button[@class='el-button el-button--default is-round w-100']")
+    public WebElement homePageCookiesDecline;
+    @FindBy(xpath = "//h2[@class='text-center mb-3']")
+    public static WebElement homePageHeaderText;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-text']")
+    public static WebElement homePageHeaderSearchBox;
+
+    @FindBy(xpath = "//div[@class='search-geocomplete-results']")
+    public static WebElement homePageSearchResults;
+
+    @FindBy(xpath = "(//h6[@class='m-0'])[1]")
+    public static WebElement homePageSearchResultsFirstResult;
+
+    @FindBy(xpath = "//a[@class='ssm-toggle-navx']")
+    public static WebElement homePageHeaderCart;
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/shopping-bag.svg']")
+    public static WebElement homePageHeaderShoppingBag;
+    @FindBy(xpath = "//section[@class='el-drawer__body']")
+    public static WebElement shoppingBagSection;
+
+    @FindBy(xpath = "//a[@href='/account/login']")
+    public static WebElement homePageHeaderSignIn;
+
+
+    @FindBy(xpath = "//div[@id='main-search-banner']")
+    public static WebElement homePageHeaderSearchBanner;
+
+    //body
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
+    public static WebElement homePageBodyAmerican;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[2]")
+    public static WebElement homePageBodyMediterranean;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[3]")
+    public static WebElement homePageBodySandwiches;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[4]")
+    public static WebElement homePageBodyItalian;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[5]")
+    public static WebElement homePageBodyMexican;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[6]")
+    public static WebElement homePageBodyBurgers;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[7]")
+    public static WebElement homePageBodyJapanese;
+
+    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[8]")
+    public static WebElement homePageBodyThai;
+
+
+    @FindBy(xpath = "//a[@id='dropdownCuisine']")
+    public static WebElement homePageBodyMenuDropDown;
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[1]")
+    public static WebElement homePageBodyMenuDropDownChinese;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[2]")
+    public static WebElement homePageBodyMenuDropDownKosher;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[3]")
+    public static WebElement homePageBodyMenuDropDownHalal;
+
+    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[4]")
+    public static WebElement homePageBodyMenuDropDownVegetarian;
+
+    @FindBy(xpath = "//h5[@class='m-0 section-title']")
+    public static WebElement homePageBodyPopularNearbyText;//Popular nearby Seattle Mcdonalds
+    @FindBy(xpath = "//div[@class='row equal align-items-center position-relative w-100']")
+    public static WebElement homePageBodyPopularNearbyMD;//Popular nearby Seattle Mcdonalds
+
+    @FindBy(xpath = "//div[@class='addons addons-1']")
+    public static WebElement homeHomeBodyNoMinimumOrder;
+
+    @FindBy(xpath = "//div[@class='addons addons-2']")
+    public static WebElement homePageBodyTrackYourDelivery;
+
+    @FindBy(xpath = "//div[@class='addons addons-3']")
+    public static WebElement homePageBodyDeliveryOnTime;
+
+    //read
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[1]")
+    public static WebElement homePageBodyReadText;
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[2]")
+    public static WebElement homePageBodyReadText2;
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[3]")
+    public static WebElement homePageBodyReadText3;// body bolumunde readbolumu How to Eat Healthy with Food Delivery
+
+    @FindBy(xpath = "(//div[@class='col-lg-3 col-md-3 col-sm-6 mb-4 mb-lg-3'])[4]")
+    public static WebElement homePageBodyReadText4; // body bolumunde readbolumu Discover the Best Vegetarian Food Options in Your Area
+
+    @FindBy(xpath = "//div[@class='section-join-us mt-0 mb-0']")
+    public static WebElement homePageBodyReadText5;//Are you a restaurant owner?// Join us and reach new customers
+    //Just a few steps to join our family
+
+    @FindBy(xpath = "//div[@class='btn-white-parent non-trasparent']")
+    public static WebElement homePageBodyJoinUsLink;
+    @FindBy(xpath = " //div[@class='section-mobileapp tree-columns-center d-none d-md-block']")
+    public static WebElement homePageBodyBottom;
+
+
+    //footer
+    @FindBy(xpath = " //div[@class='footer-logo']")
+    public static WebElement homePageFooterMealsCenterLogo;
+
+    @FindBy(xpath = "//div[@class='sub-footer']")
+    public static WebElement homePageFooterVisible;
+
+    // footer menu
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/contactus']")
+    public static WebElement homePageFooterContactUsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/terms-and-conditions']")
+    public static WebElement homePageFooterTermsAndConditionsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/privacy-policy']")
+    public static WebElement homePageFooterPrivacyPolicyLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/merchant/signup']")
+    public static WebElement homePageFooterBecomePartnerLink;
+
+    //footer social media
+    @FindBy(xpath = "//a[@class='facebook']")
+    public static WebElement homePageFooterSocialMediaFacebookLink;
+    @FindBy(xpath = "//a[@class='instagram']")
+    public static WebElement homePageFooterSocialMediaInstagramLink;
+    @FindBy(xpath = "//a[@class='linkedin']")
+    public static WebElement homePageFooterSocialMediaLinkedinLink;
+    @FindBy(xpath = "//a[@class='twitter']")
+    public static WebElement homePageFooterSocialMediaTwitterLink;
+    @FindBy(xpath = "//a[@class='youtube']")
+    public static WebElement homePageFooterSocialMediaYoutubeLink;
+
+    //footer blog
+    @FindBy(xpath = "//ul[@id='yw2']")
+    public static WebElement homePageFooterBlogList;
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/discover-the-best-vegetarian-food-delivery-options-in-your-area'])[2]")
+    public static WebElement homePageFooterBlogDiscoverLink;
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/how-to-eat-healthy-with-food-delivery'])[2]")
+    public static WebElement homePageFooterBlogHowToLink;
+    @FindBy(xpath = "(//a[@href='https://qa.mealscenter.com/the-benefits-of-using-a-food-delivery-platform-for-your-healthy-lifestyle'])[2]")
+    public static WebElement homePageFooterBlogBenefitsLink;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family']")
+    public static WebElement homePageFooterBlogWholeFamilyLink;
+
+    //footer of footer
+
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/app-store@2x.png']")
+    public static WebElement homePageFooterAppStore;
+    @FindBy(xpath = "//img[@src='/themes/karenderia_v2/assets/images/google-play@2x.png']")
+    public static WebElement homePageFooterGoogleStore;
+    @FindBy(xpath = "//a[@href='https://qa.mealscenter.com/']")
+    public static WebElement homePageFooterQaMealsCenterLink;
+
+
     //HomePage/Sign in buttonElement
     @FindBy(linkText = "Sign in")
     public WebElement signInButtonElement;
@@ -187,7 +347,7 @@ public WebElement dropdownMenuLink;
     public WebElement redBullButton;
 
     // Homepage panel > search button > kosher restaurant
-    @FindBy(xpath = "(//div[@class='el-image'])[4]")
+    @FindBy(xpath = "(//div[@class='col-lg-4 mb-3 col-md-6 list-items'])[5]")
     public WebElement kosherRestaurantButton;
 
     // Homepage panel > search button > Starbucks Caffe
@@ -212,7 +372,7 @@ public WebElement dropdownMenuLink;
     public  WebElement checkoutButton;
 
     // Homepage panel > American button
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[1]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[21]")
     public  WebElement americanButton;
 
 
@@ -222,23 +382,23 @@ public WebElement dropdownMenuLink;
 
 
     // Homepage panel > Mexican
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[5]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[25]")
     public  WebElement mexicanButton;
 
     // Homepage panel > Japanise
-    @FindBy(xpath = "(//div[@class='col cuisineMainPage'])[7]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[27]")
     public  WebElement japaniseButton;
 
     // Homepage panel > Japanise > Brolar Kebap
-    @FindBy(xpath = "//div[@class='layer-grey']")
+    @FindBy(xpath = "(//div[@class='row align-items-center mt-2'])[2]")
     public  WebElement brolarKebapButton;
 
     // Homepage panel > Thai
-    @FindBy(xpath = "(//*[text()='Thai'])[1]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[28]")
     public  WebElement thaiButton;
 
     // Homepage panel > Thai > Street Cafe
-    @FindBy(xpath = "//div[@class='el-image']")
+    @FindBy(xpath = "//div[@class='row align-items-center mt-2']")
     public  WebElement streetCafeButton;
 
     // Homepage panel > More
@@ -246,19 +406,19 @@ public WebElement dropdownMenuLink;
     public  WebElement moreButton;
 
     // Homepage panel > Chinese
-    @FindBy(xpath = "(//a[@class='p-2 pl-2 d-block'])[1]")
+    @FindBy(xpath = "(//label[@class='custom-control-label'])[29]")
     public  WebElement chineseButton;
 
     // Homepage panel > Chinese > Sichunese
-    @FindBy(xpath = "//img[@class='el-image__inner']")
+    @FindBy(xpath = "//div[@class='row align-items-center mt-2']")
     public WebElement sichuaneseButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season
-    @FindBy(xpath = "(//h5[@class='m-0 text-truncate'])[10]")
+    @FindBy(xpath = "(//*[@class='el-image__inner'])[10]")
     public WebElement veganSeasonButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa
-    @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[2]")
+    @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[1]")
     public WebElement vegSamosaAddButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order
@@ -270,11 +430,11 @@ public WebElement dropdownMenuLink;
     public WebElement checkOutButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe
-    @FindBy(xpath = "(//span[@class='mr-1'])[3]")
+    @FindBy(xpath = "(//div[@class='flexcol mr-0 mr-lg-2 payment-logo-wrap'])[2]")
     public WebElement stripeButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe > Cart
-    @FindBy(xpath = "//div[@class='CardField-input-wrapper']")
+    @FindBy(xpath = "//div[@id='card-element']")
     public WebElement cartNoButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order > Checkout > Stripe > Cart > Stripe add
@@ -287,7 +447,7 @@ public WebElement dropdownMenuLink;
     public WebElement placeOrderButton;
 
     // Homepage panel > Name
-    @FindBy(xpath = "//li[@class='d-none d-lg-inline']")
+    @FindBy(xpath = "//a[@role='button']")
     public WebElement nameButton;
 
     // Homepage panel > Name > Manege My Account
@@ -333,6 +493,13 @@ public WebElement dropdownMenuLink;
     // Homepage panel > Name > Logout
     @FindBy(xpath = "//a[@class='dropdown-item with-icon-logout']")
     public WebElement logoutButton;
+    @FindBy(xpath = "(//div[@class='el-image'])[4]")
+    public WebElement burgerKing;
+    @FindBy(xpath = "//div[@class='col-lg-4 mb-3 col-md-6 list-items']")
+    public WebElement laPalmerabutton;
+    @FindBy(xpath = "//a[@class='btn link more-cuisine']")
+    public WebElement showMorebutton;
+
 
 
 
@@ -382,6 +549,31 @@ public WebElement anaEkranSignInButonu;
     //MealsCenter>PrivacyPolicyYazisi
     @FindBy(xpath = "(//*[text()='Privacy policy'])[1]")
     public WebElement PrivacyPolicyGorundu;
+
+    //---------------------Ersin___________----
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div[4]/div[2]/div[3]/div[1]/div[1]/a[1]/div/img")
+    public WebElement userPageEleven;
+
+    @FindBy (xpath = "//a[@class='btn btn-grey quantity-add-cart'][1]")
+    public WebElement cokeAddCart;
+
+    @FindBy (xpath = "/html/body/div[2]/div[7]/div/div/div[3]/div/div/div[2]/a")
+    public WebElement cokeCheckout;
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div/div/div[2]/div/div/div/div[3]/div/div[2]/button")
+    public WebElement cokePlaceOrder;
+
+    @FindBy(xpath = "/html/body/div[2]/div[1]/div/div/div[1]/div/div[4]/div/a[1]/div[2]/span")
+    public  WebElement cokeCashOnDelivery;
+
+    @FindBy (xpath = "/html/body/div[2]/div[1]/div/div/div[1]/div/div[4]/div/a[1]/div[2]/span")
+    public WebElement cokeAddCash;
+
+
+
+
+
 
 
 }
