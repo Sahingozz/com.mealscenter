@@ -7,19 +7,55 @@ import utilities.Driver;
 
 public class Merchant_Dashboard {
 
-    public Merchant_Dashboard(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-    //----------------------------------------------------------------------------------------
+
+        public Merchant_Dashboard(){
+            PageFactory.initElements(Driver.getDriver(),this);
+        }
+        //Merchant Dashboard/sign In
+        @FindBy(xpath = "//input[@value='Sign in']")
+        public WebElement merchantLoginSignin;
+
+        //Merchant Dashboard>sign In/merchant login text
+        @FindBy(xpath = "(//*[text()='Merchant Login'])[2]")
+        public WebElement merchantLoginText;
+
+        //Merchant Dashboard>sign In/merchant dropdown menu button
+        @FindBy(xpath = "//*[text()='Merchant']")
+        public WebElement merchantDropdownMenuButton;
+
+        //Merchant Dashboard/Incorrect username or password text
+        @FindBy(xpath = "//*[text()='Incorrect username or password.']")
+        public WebElement incorrectMessageText;
+
+
+        //Merchant Dashboard/forgot password text
+        @FindBy(xpath = "//*[@class='dim underline']")
+        public WebElement forgotPasswordLink;
+
+
+        //Merchant Dashboard>forgot password text/Email checkbox
+        @FindBy(xpath = "//label[@for='AR_merchant_login_email_address']")
+        public WebElement forgotPasswordEmailCheckbox;
+
+
+
+        //Merchant Dashboard>forgot password text/forgotPasswort Link RequestEmailButton
+        @FindBy(xpath = "//input[@type='submit']")
+        public WebElement forgotPasswortLinkRequestEmailButton;
+
+
+        @FindBy(xpath = "//body/div[1]/div[1]/div/div[4]")
+        public WebElement merchantMenuElements;
+
+        @FindBy(xpath = "(//*[text()='Dashboard'])[2]")
+        public WebElement dashboardPanelButton;
+        //----------------------------------------------------------------------------------------
     //merchant login icin gerekli username locateri
     @FindBy(xpath = "//input[@placeholder='Username']")
-    public WebElement merchantLoginUsername;
+    public static WebElement merchantLoginUsername;
     //merchant login icin gerekli password locateri
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement merchantLoginPassword;
-    ////merchant login icin gerekli sign in  locateri
-    @FindBy(xpath = "//input[@value=\"Sign in\"]")
-    public WebElement merchantLoginSignin;
 
     //Dashboard buttonun soldaa bulunan locateri.
     @FindBy(xpath = "//a[text()='Dashboard']")
@@ -113,14 +149,14 @@ public class Merchant_Dashboard {
 
     //Dashboard>Name Box1
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[1]")
-    public WebElement nameBox;
+    public WebElement nameBox1;
 
-    //Dashboard>Name Box1
+    //Dashboard>Name Box2
     @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
     public WebElement nameBox2;
 
     //Dashboard>Name Box3
-    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[2]")
+    @FindBy(xpath = "(//input[@class=\"form-control form-control-text\"])[3]")
     public WebElement nameBox3;
 
     //Dashboard>ddm1
@@ -132,7 +168,7 @@ public class Merchant_Dashboard {
     public WebElement ddm2;
 
     //Dashboard>Promo>Coupon>AllCoupon/Coupon Options ddm
-    @FindBy(xpath = "//select[@class=\"form-control custom-select form-control-select coupon_options\"]")
+    @FindBy(css = "#AR_voucher_used_once")
     public WebElement couponOptions_ddmX;
 
     //Dashboard>Attributes>Size & Ingredients & Cooking Reference /Save button
@@ -160,8 +196,109 @@ public class Merchant_Dashboard {
     public WebElement daysAvailableBox;
 
     //Dashboard>Promo>Coupon>AllCoupon/Expriration17
-    @FindBy(xpath = "(//td[@class=\"available\"])[23]")
-    public WebElement expriration17;
+    @FindBy(xpath = "(//td[@data-title=\"r2c5\"])[1]")
+    public WebElement expiration17;
+
+
+    @FindBy (xpath = "//label[@for=\"AR_voucher_expiration\"]")
+    public WebElement expiration;
+
+    // Dashboard>Promo>Coupon//Delete icon button
+    @FindBy(xpath = "(//a[@data-original-title=\"Delete\"])[1]")
+    public WebElement deleteButtonIcon;
+
+    // Dashboard>Promo>Coupon//Delete button
+    @FindBy(xpath = "//a[@class=\"btn btn-green item_delete\"]")
+    public WebElement deleteButton;
+
+
+    //-----------------Ersin---------------------------------
+
+    // Dashboard>Orders
+    @FindBy(xpath = "//a[text()='Orders'][1]")
+    public WebElement orders;
+
+    //Dashboard>New Orders
+    @FindBy (xpath= "//li[@class='position-relative orders_new']")
+    public WebElement newOrders;
+
+    //Dashboard>New Order>Accepted
+    @FindBy (xpath = "//span[text()='Accepted']")
+    public WebElement acceptedButton;
+
+    //Dashboard>New Order>Reject
+    @FindBy (xpath = "//span[text()='Reject']")
+    public WebElement reject;
+
+    //Dashboard>New Order>Other Button
+    @FindBy (xpath = "//a[text()='other']")
+    public WebElement otherButton;
+
+    //Dashboard>New Order>Reject Other
+    @FindBy (xpath = " //span[text()='Reject order']")
+    public WebElement rejectOther;
+
+    @FindBy (xpath = "//h5[text()='Order Details will show here']")
+    public WebElement acceptedOk;
+
+    @FindBy (xpath = "//button[text()='Print']")
+    public WebElement print;
+
+    @FindBy (xpath = "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[13]/div/div/div[3]/button[2]")
+    public WebElement printButton;
+
+    @FindBy (xpath = "/html/body/div[1]/div[2]/div/div/div[1]/div[8]/div[2]/div[4]/div/div[1]/div[2]/div/div[2]/div/a")
+    public  WebElement threePointButton;
+
+    @FindBy (xpath = "//a[text()= 'Contact customer']")
+    public WebElement contactCustomer;
+
+    @FindBy (xpath = "//a[text()= 'Delay Order']")
+    public WebElement delayOrder;
+
+    @FindBy (xpath = "//a[text()= 'Cancel order']")
+    public WebElement cancelOrder;
+
+    @FindBy (xpath = "//a[text()= 'Timeline']")
+    public WebElement timeline;
+
+    @FindBy (xpath = "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[1]/div[2]/div/div[2]/div/div/a[4]")
+    public WebElement downloadPdf;
+
+    @FindBy (xpath = "//button[text()='Assign Driver']")
+    public WebElement assignButton;
+
+    @FindBy (xpath= "//*[@id=\"yw0\"]/li[3]/ul/li[2]/a")
+    public WebElement ordersProcessing;
+
+    @FindBy (xpath= "//span[text()='Ready for pickup']")
+    public WebElement readyForPickup;
+
+    @FindBy (xpath= "//*[@id=\"yw0\"]/li[3]/ul/li[3]/a")
+    public WebElement ordersReady;
+
+    @FindBy (xpath= "//*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[2]/div[1]/div[1]/div[2]/div/div[2]/h6")
+    public WebElement deliveryOnItsWayOk;
+
+    @FindBy (xpath= " //span[text()='Delivery on its way']")
+    public WebElement deliveryOnItsWay;
+
+    @FindBy (xpath= " //span[text()='Delivered']")
+    public WebElement delivered;
+
+    @FindBy (xpath= " //*[@id=\"vue-order-management\"]/div[8]/div[2]/div[4]/div/div[1]/div[1]/button[3]/span")
+    public WebElement deliveryFailed;
+
+    @FindBy (xpath= " //*[@id=\"yw0\"]/li[3]/ul/li[4]/a")
+    public WebElement completed;
+
+    @FindBy (xpath= " //h5[text()='Completed Today']")
+    public WebElement completedToday;
+
+
+
+    //----------------------------------------
+
 
     //Merchant panel login password 2
     @FindBy(xpath = "//*[@id=\"AR_merchant_login_password\"]")
@@ -169,7 +306,7 @@ public class Merchant_Dashboard {
 
     //Merchant Dashboard/ successfull Login Element
     @FindBy(xpath = "//img[@class='img-200']")
-     public WebElement successfullLoginElement;
+    public WebElement successfullLoginElement;
     //Merchant Dashboard>Stephanie Eleven
     @FindBy(xpath = "(//*[@id=\"dropdownMenuLink\"])[1]")
     public WebElement profilDropdownmenu;
@@ -258,7 +395,6 @@ public class Merchant_Dashboard {
  @FindBy(xpath = "//*[text()='Overview of Review']")
  public WebElement OverviewOfReview;
 
-
  // Merchant Dashboard/Food
  @FindBy(xpath = "//*[text()='Food']")
  public WebElement FoodLink;
@@ -340,6 +476,8 @@ public class Merchant_Dashboard {
     // Merchant Dashboard>Stephanie Eleven>profil>Change Password/Save Button
     @FindBy(xpath = "//*[@id=\"profile\"]/input")
     public WebElement profilechangeSaveButton;
+
+
 
 
 
