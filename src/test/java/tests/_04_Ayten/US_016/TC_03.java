@@ -1,5 +1,6 @@
 package tests._04_Ayten.US_016;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -41,7 +42,7 @@ public class TC_03 {
         homepage.passwordCheckbox.sendKeys(ConfigReader.getProperty("userPassword"));
 
         homepage.signInButton2.click();
-
+        ReusableMethods.wait(3);
         String expectedUrl="https://qa.mealscenter.com/";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
@@ -51,6 +52,8 @@ public class TC_03 {
         Assert.assertTrue(homepage.adressesLink.isEnabled());
         WebElement adressesLink=homepage.adressesLink;
         ReusableMethods.waitAndClick(adressesLink);
+        ReusableMethods.wait(3);
+        homepage.dropdownMenuLink.click();
         homepage.logOutLink.click();
 
         Driver.closeDriver();

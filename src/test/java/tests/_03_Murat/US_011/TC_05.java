@@ -8,14 +8,16 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_05 {
+public class TC_05 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     private void TC_05() {
+        extentTest= extentReports.createTest("TC_04", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -34,8 +36,10 @@ public class TC_05 {
 
         homepage.signInButtonConfirm.click();
 
-        // 4* press the cookies button
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
+        // 4* press the cookies button
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
 
         // 5* User type New Orleans into the search engine and search.
@@ -48,11 +52,11 @@ public class TC_05 {
 
         // 5* User clicks on Burger King restaurant.
 
-        homepage.burgerKingButton.click();
+        homepage.elevenButton.click();
 
         // 6* User adds Double Whopper menu to cart.
 
-        homepage.whopperMenuButton.click();
+        homepage.redBullButton.click();
 
         // 7* User Ceheckout does.
 
@@ -61,6 +65,8 @@ public class TC_05 {
         // 8* User closes the page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
 
     }
 }

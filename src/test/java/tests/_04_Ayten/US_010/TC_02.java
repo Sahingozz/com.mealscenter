@@ -35,6 +35,7 @@ public class TC_02 {
         String expectedUrl="https://qa.mealscenter.com/";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
+
         Driver.closeDriver();
 
     }

@@ -9,6 +9,7 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
 public class TC_01 {
     Merchant_Dashboard merchantDashboard=new Merchant_Dashboard();

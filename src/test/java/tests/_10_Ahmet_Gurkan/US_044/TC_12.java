@@ -31,18 +31,22 @@ public class TC_12 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
         adminDashboard.adminReports.click();
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReportsMerchantSales.isDisplayed());
         adminDashboard.adminReportsMerchantSales.click();
         extentTest.info("Merchant Sales linkine tiklandi");
 
         //-Merchant Sales Report yazisinin altinda bulunan sari renkli filtreleme tusuna basin
         adminDashboard.adminReportsMerchantSalesYellowFilter.click();
+        Assert.assertTrue(adminDashboard.adminReportsMerchantSalesYellowFilter.isDisplayed());
 
         //- Sag tarafta gelen kisimda "By Marchant" basligi altinda "McDonalds" i secin
         Actions actions=new Actions(Driver.getDriver());
+        Assert.assertTrue(adminDashboard.adminFilterByMerchantText.isDisplayed());
         actions.click(adminDashboard.adminFilterByMerchantText)
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.ENTER)
@@ -50,10 +54,12 @@ public class TC_12 extends TestBaseReport {
         extentTest.info("By Marchant basligi altinda McDonalds secildi");
 
         //- Filtreyi uygulayin
+        Assert.assertTrue(adminDashboard.adminFiltersApply.isDisplayed());
         adminDashboard.adminFiltersApply.click();
         extentTest.info("Filtre uygulandi");
 
         //- Yeni listede ilk gelenin "Mcdonalds" gozuktugunu test edin
+        Assert.assertTrue(adminDashboard.adminMerchantColumn.isDisplayed());
         String expectedMerchant="McDonalds";
         String actualMerchant=adminDashboard.adminMerchantColumn.getText();
         ReusableMethods.getScreenShotFullScreen(Driver.getDriver());

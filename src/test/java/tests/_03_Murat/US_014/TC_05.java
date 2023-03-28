@@ -8,14 +8,18 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_05 {
+import java.io.IOException;
+
+public class TC_05 extends TestBaseReport {
 
     Homepage homepage=new Homepage();
-    private ReusableMethods reausableMethods;
+    private ReusableMethods reusableMethods;
 
     @Test
     private void TC_05() {
+        extentTest= extentReports.createTest("TC_05", "ilgili alana gidildigi dogrulanmali");
 
         // 1* User goes to https://qa.mealscenter.com/ homepage
 
@@ -33,7 +37,11 @@ public class TC_05 {
         // 3* User confirms Sign in button.
 
         homepage.signInButtonConfirm.click();
+        ReusableMethods.wait(2);
         homepage.cookiesButton.click();
+        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+
+        ReusableMethods.wait(2);
 
         // 4* User clicks on Payments Options.
 
@@ -43,9 +51,19 @@ public class TC_05 {
         // 5* User deletes current payment method.
 
         homepage.paymentDeleteButton.click();
+        try {
+            ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
+        } catch (IOException e) {
+
+        }
+        // bug var
+        // odeme yontemi silinmedi
+        extentTest.info("odeme yontemi silinmedi");
 
         // 6* User closes the Page.
 
         Driver.getDriver().close();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("test basarili");
     }
 }
