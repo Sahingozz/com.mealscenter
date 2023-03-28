@@ -7,7 +7,9 @@ import utilities.ReusableMethods;
 
 public class TC_01 {
 
+
   /*
+>>>>>>> main
     - The user goes to the admin panel "Merchant Url" with the browser he opened
     - User enters "username" and "password" and clicks "Sign in" link
     -User closes the page
@@ -23,7 +25,7 @@ public class TC_01 {
         Driver.closeDriver();
 
     }
-}
 
+}
 
 

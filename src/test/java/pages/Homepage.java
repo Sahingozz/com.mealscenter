@@ -203,7 +203,7 @@ public class Homepage {
     @FindBy(xpath = "(//*[text()='Sign in'])[2]")
     public WebElement signInButton2;
 
-   // Homepage/cookies
+    // Homepage/cookies
     @FindBy(className = "Decline")
     public WebElement cookiesElement;
 
@@ -216,10 +216,10 @@ public class Homepage {
     public WebElement becomeRestauranPartnerText;
 
 
-//--------------Ayten Hanım---------------------------------------------------------------------//
+    //--------------Ayten Hanım---------------------------------------------------------------------//
 //HomePage>sign in>My account/dropdownMenu
-@FindBy(id = "dropdownMenuLink")
-public WebElement dropdownMenuLink;
+    @FindBy(id = "dropdownMenuLink")
+    public WebElement dropdownMenuLink;
 
     //HomePage>sign in>My account>dropdownMenu/my Orders link
     @FindBy(xpath = "//*[@class='dropdown-item with-icon-orders']")
@@ -329,7 +329,7 @@ public WebElement dropdownMenuLink;
 
 
 
-//MURAT
+    //MURAT
     // Homepage panel> sign  in button
     @FindBy(xpath = "//li[@class='d-none d-lg-inline line-left']")
     public WebElement signInButton;
@@ -530,8 +530,8 @@ public WebElement dropdownMenuLink;
 
 
     //============================= Harun's Locaters ===================
-@FindBy(xpath = "//*[text()='Sign in']")
-public WebElement anaEkranSignInButonu;
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement anaEkranSignInButonu;
 
     //Cookies i kabul et
     @FindBy(xpath = "//*[text()='Accept']")

@@ -36,7 +36,11 @@ public class TC_03 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         // 4* User type New Orleans into the search engine and search.
-ReusableMethods.wait(2);
+
+        ReusableMethods.wait(2);
+
+
+
         homepage.cookiesButton.click();
 
         actions.sendKeys(homepage.searchButton)
@@ -50,13 +54,23 @@ ReusableMethods.wait(2);
 
         // 5* User clicks Vegan Season on the page that comes up.
         //JSUtilities.clickWithJS(Driver.getDriver(),homepage.veganSeasonButton);
+
+        // JSUtilities.scrollToElement(Driver.getDriver(),homepage.veganSeasonButton);
+        actions.scrollByAmount(300,700).build().perform();
+
+        ReusableMethods.wait(3);
+        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+        executor.executeScript("arguments[0].click();", homepage.veganSeasonButton);
+        //     homepage.veganSeasonButton.click();
+
        // JSUtilities.scrollToElement(Driver.getDriver(),homepage.veganSeasonButton);
       actions.scrollByAmount(300,700).build().perform();
 
        ReusableMethods.wait(3);
-        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+      executor = (JavascriptExecutor) Driver.getDriver();
         executor.executeScript("arguments[0].click();", homepage.veganSeasonButton);
    //     homepage.veganSeasonButton.click();
+
 
         extentTest.info("Vegan Season sayfasina gidildi");
 
@@ -72,14 +86,23 @@ ReusableMethods.wait(2);
 
         // 7* User clicks new order button
 
+
+        // homepage.newOrderButton.click();
+
        // homepage.newOrderButton.click();
+
 
         // 8* User presses the Checkout button.
 
         homepage.checkOutButton.click();
 
+
+        //  homepage.cashOnDeliveryLinkText.click();
+        // homepage.addCashButtonVegan.click();
+
       //  homepage.cashOnDeliveryLinkText.click();
        // homepage.addCashButtonVegan.click();
+
 
         extentTest.info("checkout yapildi");
         ReusableMethods.wait(2);
@@ -100,7 +123,11 @@ ReusableMethods.wait(2);
 
         extentTest.info("Kredi Karti bolumune Kart no, son kullanma tarihi, CVV girildi");
 */
+
+        //    homepage.addStripeButton.click();
+
     //    homepage.addStripeButton.click();
+
 
         // 11* User presses the Place Order button.
 
@@ -111,7 +138,11 @@ ReusableMethods.wait(2);
 
         // 12* User closes the Page.
 
+
+        Driver.getDriver().close();
+
        // Driver.getDriver().close();
+
         extentTest.info("Sayfa kapandi");
         extentTest.pass("test basarili");
 
