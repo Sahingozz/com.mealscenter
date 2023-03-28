@@ -28,18 +28,23 @@ public class TC_17 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
         adminDashboard.adminReports.click();
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
+        ReusableMethods.wait(1);
+        Assert.assertTrue(adminDashboard.adminReportsOrderEarnings.isDisplayed());
         adminDashboard.adminReportsOrderEarnings.click();
         extentTest.info("Order Earnings linkine tiklandi");
 
         //-Order Earnings Report yazisinin altinda bulunan "Start Date-End Date" tarih kutucuguna tiklayin
+        Assert.assertTrue(adminDashboard.adminStartandEndDate.isDisplayed());
         adminDashboard.adminStartandEndDate.click();
         extentTest.info("Start Date-End Date tarih kutucuguna tiklandi");
 
         //- Bir tarih araligi secin ve o tarih araligindaki siparislerin geldigini dogrulayin
+        Assert.assertTrue(adminDashboard.adminDateLast7Days.isDisplayed());
         adminDashboard.adminDateLast7Days.click();
         Assert.assertTrue(adminDashboard.adminFirstElementofSearchResultOrderID.isDisplayed());
         extentTest.info("Bir tarih araligi secildi ve o tarih araligindaki siparislerin geldigini dogrulandi");
