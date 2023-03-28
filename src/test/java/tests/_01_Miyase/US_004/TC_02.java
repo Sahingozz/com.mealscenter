@@ -24,6 +24,7 @@ public class TC_02 extends TestBaseReport {
 
     @Test
     public void testMealCenterhomePageFooterVisible() {
+        extentTest= extentReports.createTest("US_004-TC_02", "testMealCenterhomePageFooterVisible");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -32,6 +33,7 @@ public class TC_02 extends TestBaseReport {
         ReusableMethods.wait(2);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageFooterVisible.isDisplayed());
+        extentTest.pass("Test pass");
 
 
     }

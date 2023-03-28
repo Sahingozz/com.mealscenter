@@ -25,6 +25,7 @@ public class TC_16 extends TestBaseReport {
 
     @Test
     public void testMealFooterBlogWholeFamilyToLink() {
+        extentTest= extentReports.createTest("US_004-TC_16", "testMealFooterBlogWholeFamilyToLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_16 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterBlogWholeFamilyLink.isDisplayed());
         Homepage.homePageFooterBlogWholeFamilyLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/discover-healthy-food-delivery-options-for-your-whole-family");
+        extentTest.pass("Test pass");
 
     }
 }

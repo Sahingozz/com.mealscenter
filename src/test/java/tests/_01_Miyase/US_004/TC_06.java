@@ -25,6 +25,7 @@ public class TC_06 extends TestBaseReport {
 
     @Test
     public void testMealCenterFooterBecomePartnerLink() {
+        extentTest= extentReports.createTest("US_004-TC_06", "testMealCenterFooterBecomePartnerLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_06 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageFooterBecomePartnerLink.isDisplayed());
         homepage.homePageFooterBecomePartnerLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/merchant/signup");
+        extentTest.pass("Test pass");
 
     }
 }

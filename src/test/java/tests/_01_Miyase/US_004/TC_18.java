@@ -25,6 +25,7 @@ public class TC_18 extends TestBaseReport {
 
     @Test
     public void testMealFooterGoogleStore() {
+        extentTest= extentReports.createTest("US_004-TC_18", "testMealFooterGoogleStore");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_18 extends TestBaseReport {
         Assert.assertTrue(Homepage.homePageFooterGoogleStore.isDisplayed());
         Homepage.homePageFooterGoogleStore.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://store.google.com/");
+        extentTest.pass("Test pass");
 
     }
 }

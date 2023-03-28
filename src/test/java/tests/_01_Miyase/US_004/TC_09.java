@@ -28,6 +28,7 @@ public class TC_09 extends TestBaseReport {
 
     @Test
     public void testMealCenterFooterSocialMediaLinkedinLink() {
+        extentTest = extentReports.createTest("US_004-TC_09", "testMealCenterFooterSocialMediaLinkedinLink");
         WebDriver driver = Driver.getDriver();
         
             JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -41,6 +42,7 @@ public class TC_09 extends TestBaseReport {
             browserTabs.addAll(driver.getWindowHandles());
             driver.switchTo().window(browserTabs.get(1));
             Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.linkedin.com/");
+            extentTest.pass("Test pass");
         
     }
 }

@@ -25,6 +25,7 @@ public class TC_05 extends TestBaseReport {
 
     @Test
     public void testMealCenterFooterPrivacyPolicyLink() {
+        extentTest= extentReports.createTest("US_004-TC_05", "testMealCenterFooterPrivacyPolicyLink");
         WebDriver driver = Driver.getDriver();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -35,6 +36,7 @@ public class TC_05 extends TestBaseReport {
         Assert.assertTrue(homepage.homePageFooterPrivacyPolicyLink.isDisplayed());
         homepage.homePageFooterPrivacyPolicyLink.click();
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/privacy-policy");
+        extentTest.pass("Test pass");
 
     }
 }
