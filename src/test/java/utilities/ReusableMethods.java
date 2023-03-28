@@ -439,6 +439,9 @@ public class ReusableMethods {
     }
 
 
+
+
+
     public static WebElement dashboardMenuElements(){
 
 
@@ -454,6 +457,7 @@ public class ReusableMethods {
         return null;
     }
 
+
   //Merchant paneline parametreli Kullanici adi ve sifre isle giris methodu
     public static void merchantLoginAndsuccessfullLogin (){
         Merchant_Dashboard merchant_dashboard=new Merchant_Dashboard();
@@ -468,6 +472,10 @@ public class ReusableMethods {
     }
 
 
+
+
+
+
         public static void merchantLoginHasan (){
         Merchant_Dashboard merchantDashboard = new Merchant_Dashboard();
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -476,6 +484,7 @@ public class ReusableMethods {
          merchantDashboard.merchantLoginPassword.sendKeys("1234567");
          merchantDashboard.merchantLoginSignin.click();
     }
+
     public static String getScreenShotFullScreen(WebDriver driver) throws IOException {
         TakesScreenshot ts= (TakesScreenshot) driver;
 
@@ -523,7 +532,5 @@ public class ReusableMethods {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return simpleDateFormat.format(calendar.getTime());
     }
+
 }
-
-
-
