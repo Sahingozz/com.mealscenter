@@ -3,6 +3,7 @@ package tests._10_Ahmet_Gurkan.US_044;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
 import utilities.Driver;
@@ -32,12 +33,15 @@ public class TC_13 extends TestBaseReport {
         //- Yanda bulunan "Reports" kısmına tıklayın
         adminDashboard.adminReports.click();
         extentTest.info("Reports linkine tiklandi");
+        Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
 
         //- Çıkan bölümde "Merchant Sales" kısmına tıklayın
         adminDashboard.adminReportsMerchantSales.click();
         extentTest.info("Merchant Sales linkine tiklandi");
+        Assert.assertTrue(adminDashboard.adminReportsMerchantSales.isDisplayed());
 
         //- Merchant Sales Report yazisinin altinda "Order ID" yazan yere tiklayin
+        Assert.assertTrue(adminDashboard.adminReportsMerchantSalesOrderID.isDisplayed());
         adminDashboard.adminReportsMerchantSalesOrderID.click();
         extentTest.info("By Marchant basligi altinda Order ID secildi");
 

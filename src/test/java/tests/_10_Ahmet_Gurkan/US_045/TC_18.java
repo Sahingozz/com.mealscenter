@@ -29,15 +29,18 @@ public class TC_18 extends TestBaseReport {
         extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
         adminDashboard.adminReports.click();
         extentTest.info("Reports linkine tiklandi");
 
         //- Çıkan bölümde "Order Earnings" kısmına tıklayın
+        Assert.assertTrue(adminDashboard.adminReportsOrderEarnings.isDisplayed());
         adminDashboard.adminReportsOrderEarnings.click();
         extentTest.info("Order Earnings linkine tiklandi");
 
         //- Gelen sekmede arama kutusuna gidin ve arama yapin
         ReusableMethods.getScreenShotFullScreen(Driver.getDriver());
+        Assert.assertTrue(adminDashboard.adminReportsOrderEarningsSearchBox.isDisplayed());
         adminDashboard.adminReportsOrderEarningsSearchBox.sendKeys("10246");
         extentTest.info("Gelen sekmede arama kutusuna gidildi ve arama yapildi");
 
