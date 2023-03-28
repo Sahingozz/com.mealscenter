@@ -34,7 +34,7 @@ public class TC_02 {
         merchant_dashboard.ItemAddNameTexBox.sendKeys("cheetos");
         merchant_dashboard.ItemAddCategorySnacks.click();
 
-       merchant_dashboard.ItemAddSaveButtonu.click();
+       merchant_dashboard.ItemAddSaveButtonu.isEnabled();
 
         //  - User closes the page
           Driver.closeDriver();

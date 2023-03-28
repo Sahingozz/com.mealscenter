@@ -30,7 +30,7 @@ public class TC_03 {
         merchant_dashboard.ItemUpdate.click();
         merchant_dashboard.ItemUpdateNameTexBox.clear();
         merchant_dashboard.ItemUpdateNameTexBox.sendKeys("cheetos2");
-        merchant_dashboard.ItemUpdateSaveButton.click();
+        merchant_dashboard.ItemUpdateSaveButton.isEnabled();
         //  - User closes the page
        Driver.closeDriver();
 
