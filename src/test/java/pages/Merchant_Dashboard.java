@@ -478,7 +478,8 @@ public class Merchant_Dashboard {
     public WebElement profilechangeSaveButton;
 
 
-
+    @FindBy(xpath = "//select[@class='form-control custom-select form-control-select merchant_delivery_charges_type']")
+    public WebElement deliveryChargeTypeSelect;
 
 
 

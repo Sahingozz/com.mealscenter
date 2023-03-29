@@ -19,15 +19,17 @@ public class TC_04 extends TestBaseReport {
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.getmerchantLogin("7elevenAdmin","1234567");
         extentTest.info("Merchant sayfasina login yapildi ve Merchant anasayfaya gidildi ");
+
         // -Kullanıcı sol taraftaki menüde bulunan "Orders Type" ı bulur ve tıklar
          merchantDashboard.orderTypeLink.click();
          extentTest.info("order Type linkine  gidildi");
+
         // - Kullanici cikan ekranda  "Delivery" linkini tiklar.
         merchantDashboard.deliveryLink.click();
         extentTest.info("Delivery sayfasina gidildi");
-        // -Kullanici acilan sayfada bulunan "Enabled Opt in for no contact delivery"
-            // linkinin erisilebilir ve secilebilir oldugunu dogrular
 
+        //-Kullanici acilan sayfada bulunan "Enabled Opt in for no contact delivery"
+        //linkinin erisilebilir ve secilebilir oldugunu dogrular
         merchantDashboard.enabledLink.click();
         extentTest.info("Acilan sayfada bulunan ebled linki basariyla tiklandi ");
         Assert.assertTrue(merchantDashboard.enabledLink.isDisplayed(), "hatalı element");

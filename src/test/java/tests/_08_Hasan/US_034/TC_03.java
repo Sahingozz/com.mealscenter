@@ -17,10 +17,10 @@ public class TC_03 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.getmerchantLogin("7elevenAdmin","1234567");
         extentTest.info("Merchant sayfasina login yapildi ve Merchant anasayfaya gidildi ");
+
         //Dashboard linkine tiklanir
         merchantDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard sayfasina gidildi");
-
         String expectedUrl="dashboard";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.contains(expectedUrl));
