@@ -17,10 +17,11 @@ public class TC_02 extends TestBaseReport {
           // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
            ReusableMethods.merchantLoginHasan();
            extentTest.info("Merchant sayfasina  login islemi yapildi ve Merchant Anasayfaya gidildi" );
-           // -Kullanıcı sol taraftaki menüde bulunan "Orders Type" ı bulur ve tıklanabildiğini doğrular
 
+           // -Kullanıcı sol taraftaki menüde bulunan "Orders Type" ı bulur ve tıklanabildiğini doğrular
           merchantDashboard.orderTypeLink.click();
           extentTest.info("Order Type Linki tiklandi" );
+
           //- Kullanici "Delivery" linkinin gorunur oldugunu ve tiklanabilir oldugunu dogrular
           merchantDashboard.deliveryLink.click();
           extentTest.info("Delivery Linki tiklandi" );
@@ -28,6 +29,7 @@ public class TC_02 extends TestBaseReport {
           String actualUrl= Driver.getDriver().getCurrentUrl();
           Assert.assertTrue(actualUrl.contains(expectedUrl));
           extentTest.info("Delivery linki tiklandigi dogrulandi" );
+
           //-Kullanıcı sayfayı kapatır
            Driver.closeDriver();
           extentTest.info("Sayfa kapandi" );

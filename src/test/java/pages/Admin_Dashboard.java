@@ -316,7 +316,7 @@ public class Admin_Dashboard {
 
     //All merchant listesini edit etme icin email isim kisminin  locateri
     @FindBy(xpath = "(//input[@class='form-control form-control-text'])[1]")
-    public WebElement editEmailIsim;
+    public WebElement editRestuarantName;
 
     //Yaplan edit sonrasi yeni name degisiklik icin locater
     @FindBy(xpath = "(//tr[@class='odd'])[1]")
@@ -528,6 +528,13 @@ public class Admin_Dashboard {
     //Admin dashboard -> Buyers -> Customers List -> customer list's first element
     @FindBy (className = "odd")
     public WebElement customerList1stElement;
+    @FindBy(xpath = "//span[@class='select2-selection select2-selection--multiple']")
+    public  WebElement cuisineDDm;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    public WebElement editUpdated;
+
+
 
 
 

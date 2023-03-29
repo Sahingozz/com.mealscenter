@@ -14,7 +14,7 @@ public class TC_08 extends TestBaseReport {
     Actions actions=new Actions(Driver.getDriver());
     @Test
     public void TC_08 () {
-        extentTest=extentReports.createTest("US_34 TC_09","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
+        extentTest=extentReports.createTest("US_34 TC_08","Ilgili Alanin gorunur ve Tiklanabilir oldugu dogrulanmali");
         //- Kullanıcı açtığı browserla admin paneli olan "Merchant Url" ye gider
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.getmerchantLogin("7elevenAdmin","1234567");

@@ -1,7 +1,9 @@
 package tests._08_Hasan.US_037;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
@@ -11,6 +13,7 @@ import utilities.TestBaseReport;
 
 public class TC_03 extends TestBaseReport {
     Admin_Dashboard adminDashboard = new Admin_Dashboard();
+    Faker faker=new Faker();
 
     @Test
     public void TC_03() {
@@ -31,27 +34,41 @@ public class TC_03 extends TestBaseReport {
         extentTest.info("List linki tiklandi");
         //  acilan sayfada "All Merchant" adindaki tum saticilara ait  olan listede degisiklik yapilabildiginin dogrular
          adminDashboard.allMerchantListEdit.click();
+
         Actions actions=new Actions(Driver.getDriver());
         //emailin erisilebilir olmasi dogurlanir.
-        Assert.assertTrue(adminDashboard.editEmailIsim.isEnabled());
-        extentTest.info("Email bolumune erisilebilir oldugu dogrulandi");
-        actions.moveToElement(adminDashboard.editEmailIsim).click().perform();
-        actions.sendKeys(Keys.DELETE)
-                .sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE)
-                .sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE).sendKeys(Keys.DELETE)
-                .sendKeys("mar")
+        Assert.assertTrue(adminDashboard.editRestuarantName.isEnabled());
+        extentTest.info("Restuarant isim  bolumune erisilebilir oldugu dogrulandi");
+        adminDashboard.editRestuarantName.clear();
+        actions.moveToElement(adminDashboard.editRestuarantName).click().perform();
+        actions.sendKeys(faker.name().lastName())
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.DELETE)
-                .sendKeys("hara")
+                .sendKeys(faker.animal().name())
                 .sendKeys(Keys.TAB)
-                .sendKeys("haracali")
+                .sendKeys(faker.name().fullName())
                 .sendKeys(Keys.TAB)
-                .sendKeys("093434528068432")
+                .sendKeys(faker.phoneNumber().cellPhone())
                 .sendKeys(Keys.TAB)
-                .sendKeys("hkma@hotmail.com")
-                .sendKeys(Keys.ENTER).perform();
-        ReusableMethods.wait(5);
-        extentTest.info("Kisilerin bilgileri uzerinde degisiklik yapildi");
+                .sendKeys(faker.internet().emailAddress())
+                .sendKeys(Keys.ENTER)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(faker.letterify("lezzet pisirir"))
+                .sendKeys(Keys.TAB)
+                .sendKeys(faker.letterify("cok guzel"))
+                .perform();
+
+       /* Select select  =new Select(adminDashboard.cuisineDDm);
+        select.getFirstSelectedOption().click();*/
+        String expectedText="updated";
+        String actualtext =adminDashboard.editUpdated.getText();
+        Assert.assertTrue(actualtext.contains(expectedText));
+        extentTest.info("Yapilan degisiklik sonrasinda yeni bilgilerin sayfada gorunur oldugu dogrulandi");
+
+
+        /*extentTest.info("Kisilerin bilgileri uzerinde degisiklik yapildi");
        //Sayfa yapilan  degisiklik sonrasi kayit kontrol edilir
         adminDashboard.dashboardButtonu.click();
         adminDashboard.merchantButtonu.click();
@@ -60,10 +77,13 @@ public class TC_03 extends TestBaseReport {
         String actual=adminDashboard.editName.getText();
         Assert.assertTrue(actual.contains(expected));
         extentTest.info("Yapilan degisiklik sonrasinda yeni bilgilerin sayfada gorunur oldugu dogrulandi");
+
+         */
         //-Kullanıcı sayfayı kapatır
-         Driver.closeDriver();
+        // Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");
         extentTest.pass("Test hatasiz gerceklesti");
+
 
 
 
