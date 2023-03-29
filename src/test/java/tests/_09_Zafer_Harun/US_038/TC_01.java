@@ -3,6 +3,7 @@ package tests._09_Zafer_Harun.US_038;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TC_01 {
@@ -17,6 +18,8 @@ public class TC_01 {
         adminLogin.adminOrderLink.click();
         Assert.assertTrue(adminLogin.adminAllOrderLink.isDisplayed()
                            && adminLogin.adminAllOrderLink.isEnabled());
+
+        Driver.closeDriver();
 
     }
 }
