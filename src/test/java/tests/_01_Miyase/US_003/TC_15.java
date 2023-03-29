@@ -8,18 +8,20 @@ import pages.Homepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_15 {
+public class TC_15 extends TestBaseReport {
 
     Homepage homepage = new Homepage();
 
     @Test
     public void testMealCenterVerifyNoMinimumOrder() {
+        extentTest= extentReports.createTest("US_003-TC_15", "testMealCenterVerifyNoMinimumOrder");
         WebDriver driver = Driver.getDriver();
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homeHomeBodyNoMinimumOrder.isDisplayed());
-        driver.quit();
+        extentTest.pass("Test pass");
     }
 }

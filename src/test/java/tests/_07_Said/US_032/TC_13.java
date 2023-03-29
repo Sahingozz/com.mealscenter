@@ -7,23 +7,36 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_13 {
+public class TC_13 extends TestBaseReport {
 
-//    After clicking the Cooking Reference tab, click Cooking Reference List
+    //    After clicking the Cooking Reference tab, click Cooking Reference List
 //    page must be confirmed to open.
     @Test
-    public void TC13(){
+    public void TC13() {
+        extentTest = extentReports.createTest("US_032_TC_13", "ilgili alana gidildigi dogrulanmali");
 
         ReusableMethods.merchantLoginHasan();
+        extentTest.info("Merchant login islemi gerceklesti ve ana sayfaya gidildi.");
+
         Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
 
         merchant_dashboard.attributesLink.click();
-        merchant_dashboard.attributesCookingReferenceLink.click();
+        extentTest.info("Attributes sekmesinin oldugu dogrulandi.");
 
-        String actualUrl= Driver.getDriver().getCurrentUrl();
-        String expectedUrl="https://qa.mealscenter.com/backoffice/attrmerchant/cookingref_list";
-        Assert.assertEquals(actualUrl,expectedUrl);
+        merchant_dashboard.attributesCookingReferenceLink.click();
+        extentTest.info("Attributes sekmesinin altinda Cooking Reference linki oldugu dogrulandi.");
+
+
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        String expectedUrl = "https://qa.mealscenter.com/backoffice/attrmerchant/cookingref_list";
+        Assert.assertEquals(actualUrl, expectedUrl);
+        extentTest.info("Attributes sekmesinin altinda Cooking Reference linki oldugu dogrulandi.");
+
         Driver.closeDriver();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("Basarili sekilde dogrulandi");
+
     }
 }

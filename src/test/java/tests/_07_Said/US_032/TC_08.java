@@ -7,25 +7,33 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_08 {
+public class TC_08 extends TestBaseReport {
 
-     //"Ingredients List page after clicking the Ingredients2 tab
+    //"Ingredients List page after clicking the Ingredients2 tab
     //    it must be verified that it opens.
-     @Test
-     public void TC08() {
-         ReusableMethods.merchantLoginHasan();
-         Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
+    @Test
+    public void TC08() {
+        extentTest = extentReports.createTest("US_032_TC_08", "ilgili alana gidildigi dogrulanmali");
 
-         merchant_dashboard.attributesLink.click();
-         merchant_dashboard.attributesIngredientsLink.click();
-         Assert.assertTrue(merchant_dashboard.attributesIngredientsLink.isDisplayed());
+        ReusableMethods.merchantLoginHasan();
+        extentTest.info("Merchant login islemi gerceklesti ve ana sayfaya gidildi.");
 
-         Driver.closeDriver();
+        Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
+
+        merchant_dashboard.attributesLink.click();
+        extentTest.info("Merchant login islemi gerceklesti ve ana sayfaya gidildi.");
+
+        merchant_dashboard.attributesIngredientsLink.click();
+        Assert.assertTrue(merchant_dashboard.attributesIngredientsLink.isDisplayed());
+        extentTest.info("Attributes sekmesinin altinda Ingredients linki oldugu dogrulandi.");
 
 
+        Driver.closeDriver();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("Basarili sekilde dogrulandi");
 
 
-
-     }
+    }
 }

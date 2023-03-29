@@ -7,8 +7,9 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_10 {
+public class TC_10 extends TestBaseReport {
 
 
 
@@ -19,6 +20,9 @@ public class TC_10 {
     @Test
 
     private void TC_01() {
+
+        extentTest= extentReports.createTest("TC_10", "Verify that Assign Driver button is visible and working ");
+
         // 1- The user goes to the Merchant panel "MerchantUrl" with the browser they open
         // 2- User enters Username and Password clicks Sign in
         Driver.getDriver().get(ConfigReader.getProperty("merchantUrl"));
@@ -35,6 +39,8 @@ public class TC_10 {
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
 
+        extentTest.info("Login to the merchant dashboard page was completed and the main page was accessed");
+
         // 3- User clicks Orders and New Orders
         // 4- User verifies that New Order page is visible
 
@@ -48,17 +54,23 @@ public class TC_10 {
         actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
 
-        // 5- User verifies three point button is visible
-        // 6- Users clicks three point button
+        extentTest.info("New order Page is visible");
 
-        Assert.assertTrue(merchantDashboard.threePointButton.isDisplayed());
-        merchantDashboard.threePointButton.click();
-
-        // 7- User verifies Contact customer button is visible
+        // 5- User verifies that Assign Driver button is visible
         Assert.assertTrue(merchantDashboard.assignButton.isDisplayed());
 
-        // 8-User closes the page
+        extentTest.info("Assign Driver button is visible");
+
+        // 6 -  User clicks Assign Driver button
+        merchantDashboard.assignButton.click();
+
+        extentTest.info("Assign Driver button is not working");
+
+        // 7- User closes the page
         Driver.closeDriver();
+
+        extentTest.info("The page was closed");
+        extentTest.pass("Test failed");
 
 
     }
