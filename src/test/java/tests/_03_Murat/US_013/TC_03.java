@@ -67,13 +67,13 @@ public class TC_03 extends TestBaseReport {
 
         extentTest.info("Vegan Season sayfasina gidildi");
 
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(3);
 
         // 6* User adds Veg Samosa menu to cart.
 
 
-
-        homepage.vegSamosaAddButton.click();
+        executor.executeScript("arguments[0].click();", homepage.vegSamosaAddButton);
+      //  homepage.vegSamosaAddButton.click();
         extentTest.info("Veg Samosa menusune gidildi");
 
 
@@ -82,7 +82,7 @@ public class TC_03 extends TestBaseReport {
 
         // homepage.newOrderButton.click();
 
-       // homepage.newOrderButton.click();
+        // homepage.newOrderButton.click();
 
 
         // 8* User presses the Checkout button.
@@ -93,8 +93,8 @@ public class TC_03 extends TestBaseReport {
         //  homepage.cashOnDeliveryLinkText.click();
         // homepage.addCashButtonVegan.click();
 
-      //  homepage.cashOnDeliveryLinkText.click();
-       // homepage.addCashButtonVegan.click();
+        //  homepage.cashOnDeliveryLinkText.click();
+        // homepage.addCashButtonVegan.click();
 
 
         extentTest.info("checkout yapildi");
@@ -119,7 +119,7 @@ public class TC_03 extends TestBaseReport {
 
         //    homepage.addStripeButton.click();
 
-    //    homepage.addStripeButton.click();
+        //    homepage.addStripeButton.click();
 
 
         // 11* User presses the Place Order button.
@@ -134,7 +134,7 @@ public class TC_03 extends TestBaseReport {
 
         Driver.getDriver().close();
 
-       // Driver.getDriver().close();
+        // Driver.getDriver().close();
 
         extentTest.info("Sayfa kapandi");
         extentTest.pass("test basarili");

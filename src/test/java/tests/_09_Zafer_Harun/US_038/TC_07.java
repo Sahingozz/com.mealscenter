@@ -23,7 +23,7 @@ according to Order ID */
         adminLogin.sortByOrderIDButton.click();
         Assert.assertTrue(adminLogin.sortByOrderIDButton.isEnabled());
 
-        Driver.getDriver();
+        Driver.closeDriver();
 
 
     }

@@ -435,7 +435,8 @@ public class Homepage {
     public WebElement veganSeasonButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa
-    @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[1]")
+   // @FindBy(xpath = "(//div[@class='position-relative quantity-wrapper'])[1]")
+    @FindBy (xpath = "(//a[text()=' Add to cart '])[15]")
     public WebElement vegSamosaAddButton;
 
     // Homepage panel > Chinese > Sichunese > Vegan Season > Veg Semosa > New Order
