@@ -63,13 +63,6 @@ public class TC_03 extends TestBaseReport {
         executor.executeScript("arguments[0].click();", homepage.veganSeasonButton);
         //     homepage.veganSeasonButton.click();
 
-       // JSUtilities.scrollToElement(Driver.getDriver(),homepage.veganSeasonButton);
-      actions.scrollByAmount(300,700).build().perform();
-
-       ReusableMethods.wait(3);
-      executor = (JavascriptExecutor) Driver.getDriver();
-        executor.executeScript("arguments[0].click();", homepage.veganSeasonButton);
-   //     homepage.veganSeasonButton.click();
 
 
         extentTest.info("Vegan Season sayfasina gidildi");
