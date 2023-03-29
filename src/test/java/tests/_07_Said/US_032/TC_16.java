@@ -7,24 +7,41 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_16 {
+public class TC_16 extends TestBaseReport {
 
 
 //    It should be confirmed that Draft can be selected as status.
 
     @Test
-    public void test11() {
+    public void test16() {
+        extentTest = extentReports.createTest("US_032_TC_16", "ilgili alana gidildigi dogrulanmali");
+
         ReusableMethods.merchantLoginHasan();
+        extentTest.info("Merchant login islemi gerceklesti ve ana sayfaya gidildi.");
+
         Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
         merchant_dashboard.attributesLink.click();
+        extentTest.info("Attributes sekmesinin oldugu dogrulandi.");
+
         merchant_dashboard.attributesCookingReferenceLink.click();
         merchant_dashboard.addNewButton.click();
+        extentTest.info("Attributes sekmesinin altinda Cooking Reference linki oldugu dogrulandi.");
+
         merchant_dashboard.nameBox1.sendKeys(ConfigReader.getProperty("merchantIngredients"));
         Assert.assertTrue(merchant_dashboard.ddm1.isEnabled());
+        extentTest.info("All Cooking Reference altindaki Cooking Reference Name kutusuna bilgi girilebilir oldugunu dogrularndi");
+
         Select select = new Select(merchant_dashboard.ddm1);
         select.selectByVisibleText("Draft");
+        Assert.assertTrue(merchant_dashboard.ddm1.isEnabled());
+        extentTest.info("All Size altindaki Draft seceneginin secilebilir oldugunu dogrulandi.");
+
         ReusableMethods.wait(2);
         Driver.closeDriver();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("Basarili sekilde dogrulandi");
+
     }
 }

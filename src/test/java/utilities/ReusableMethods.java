@@ -531,4 +531,5 @@ public class ReusableMethods {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return simpleDateFormat.format(calendar.getTime());
     }
+
 }
