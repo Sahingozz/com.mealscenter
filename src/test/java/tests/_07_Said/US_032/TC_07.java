@@ -8,34 +8,57 @@ import pages.Merchant_Dashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseReport;
 
-public class TC_07 {
+public class TC_07 extends TestBaseReport {
 
-//    Confirm that the Save button is clickable.
-@Test
-public void TC07() {
-    ReusableMethods.merchantLoginHasan();
-    Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
+    //    Confirm that the Save button is clickable.
+    @Test
+    public void TC07() {
+        extentTest = extentReports.createTest("US_032_TC_07", "ilgili alana gidildigi dogrulanmali");
 
-    merchant_dashboard.attributesLink.click();
-    merchant_dashboard.attributesSizeLink.click();
-    merchant_dashboard.addNewButton.click();
-    merchant_dashboard.nameBox1.sendKeys(ConfigReader.getProperty("merchantSize"));
-    Select select = new Select(merchant_dashboard.ddm1);
-    select.selectByVisibleText("Publish");
-    Assert.assertTrue(merchant_dashboard.saveButton.isEnabled());
-    merchant_dashboard.saveButton.click();
-    ReusableMethods.wait(2);
+        ReusableMethods.merchantLoginHasan();
+        extentTest.info("Merchant login islemi gerceklesti ve ana sayfaya gidildi.");
 
-    //delete
-    Assert.assertTrue(merchant_dashboard.deleteButton.isEnabled());
-    Assert.assertTrue(merchant_dashboard.deleteButtonIcon.isEnabled());
-    merchant_dashboard.deleteButtonIcon.click();
-    ReusableMethods.wait(2);
-    merchant_dashboard.deleteButton.click();
-    ReusableMethods.wait(2);
+        Merchant_Dashboard merchant_dashboard = new Merchant_Dashboard();
 
-    Driver.closeDriver();
+        merchant_dashboard.attributesLink.click();
+        extentTest.info("Attributes sekmesinin oldugu dogrulandi.");
 
-}
+        merchant_dashboard.attributesSizeLink.click();
+        extentTest.info("Attributes sekmesinin altinda size linki oldugu dogrulandi.");
+
+        merchant_dashboard.addNewButton.click();
+        extentTest.info("add new Button'un tiklanabilir oldugu dogrulandi.");
+
+        merchant_dashboard.nameBox1.sendKeys(ConfigReader.getProperty("merchantSize"));
+        extentTest.info("All Size\" altindaki \"Size Name\" kutusuna bilgi girilebilir oldugunu dogrular");
+
+        Select select = new Select(merchant_dashboard.ddm1);
+        select.selectByVisibleText("Publish");
+        extentTest.info("- Kullanici \"All Size\" altindaki \"Publish\" seceneginin secilebilir oldugunu dogrular.");
+
+        Assert.assertTrue(merchant_dashboard.saveButton.isEnabled());
+        merchant_dashboard.saveButton.click();
+        extentTest.info("Save butonunun tiklanabilir oldugu dogrulandi.");
+
+        ReusableMethods.wait(2);
+
+        //delete
+        Assert.assertTrue(merchant_dashboard.deleteButton.isEnabled());
+        Assert.assertTrue(merchant_dashboard.deleteButtonIcon.isEnabled());
+        merchant_dashboard.deleteButtonIcon.click();
+        extentTest.info("Delete iconunun tiklanabilir oldugu dogrulandi");
+        ReusableMethods.wait(2);
+
+        merchant_dashboard.deleteButton.click();
+        extentTest.info("Delete butonunun tiklanabilir oldugu dogrulandi");
+        ReusableMethods.wait(2);
+
+        Driver.closeDriver();
+        extentTest.info("Sayfa kapandi");
+        extentTest.pass("Basarili sekilde dogrulandi");
+
+
+    }
 }

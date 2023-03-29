@@ -24,7 +24,7 @@ public class TC_11 extends TestBaseReport {
 
         //-"https://qa.mealscenter.com/backoffice/admin/dashboard" linkine gidin
         ReusableMethods.adminLogin("emre.elieyioglu","123456");
-        extentTest.info("admin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
+        extentTest.info("dmin sayfasina login islemi gerceklesti ve anasayfaya gidildi");
 
         //- Yanda bulunan "Reports" kısmına tıklayın
         Assert.assertTrue(adminDashboard.adminReports.isDisplayed());
