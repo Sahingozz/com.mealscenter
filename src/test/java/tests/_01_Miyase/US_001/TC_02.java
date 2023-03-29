@@ -9,19 +9,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ConfigReader;
+import utilities.TestBaseReport;
 
 /**
  * This Test Case controlls the following:
  * -Open browser to access the website
  * -Enter the URL ""https://qa.mealscenter.com"" into browser's address bar
- * -Go to Url on your browser to confirm the entered URL and navigate to the website
+ * -Go to Url on your browser to confirm the entered URL
  * -Verify that it is possible to access the website from different browsers
  * -Close the page
  */
-public class TC_02 {
+public class TC_02 extends TestBaseReport{
 
     @Test
     public void testAccessWebsiteFromDifferentBrowsers() {
+        extentTest= extentReports.createTest("US_001-TC_02", "Go To Homepage from various Browsers");
         WebDriver driver;
 
         //Open the website in Chrome
@@ -50,6 +52,6 @@ public class TC_02 {
         String fireFoxTitle = driver.getTitle();
         Assert.assertTrue(fireFoxTitle.contains(expectedTitle));
         driver.quit();
-
+        extentTest.pass("Test pass");
     }
 }
