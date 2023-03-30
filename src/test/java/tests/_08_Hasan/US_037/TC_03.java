@@ -74,8 +74,9 @@ public class TC_03 extends TestBaseReport {
 
         select=new Select(adminDashboard.statusButton);
         select.selectByIndex(1);
-        ReusableMethods.wait(2);
+
         actions.moveToElement(adminDashboard.saveButton).click().perform();
+
         String expectedText="updated";
         String actualtext =adminDashboard.editUpdated.getText();
         Assert.assertTrue(actualtext.contains(expectedText));
