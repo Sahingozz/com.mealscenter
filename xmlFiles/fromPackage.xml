@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Zafer/IdeaProjects/com.mealscenter/src/test/java/tests/_09_Zafer_Harun/US_039">
+        <classes>
+            <class name="tests._09_Zafer_Harun.US_039.TC_01">
+                <methods>
+                    <include name="TC_01_merchantEarnings"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_039.TC_02">
+                <methods>
+                    <include name="TC_02_merchantListSort"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_039.TC_03">
+                <methods>
+                    <include name="TC_03_SearchField"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

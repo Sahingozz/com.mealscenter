@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Zafer/IdeaProjects/com.mealscenter/src/test/java/tests/_09_Zafer_Harun/US_038">
+        <classes>
+            <class name="tests._09_Zafer_Harun.US_038.TC_01">
+                <methods>
+                    <include name="adminAllorderLink"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_02">
+                <methods>
+                    <include name="TC_02_totalNumberOforders"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_03">
+                <methods>
+                    <include name="TC_03_TotalofCancelledOrders"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_04">
+                <methods>
+                    <include name="TC_04_TotalNumberOfRefunds"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_05">
+                <methods>
+                    <include name="TC_05_TotalValueOfOrders"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_06">
+                <methods>
+                    <include name="TC_06_ordersStartEndDate"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_07">
+                <methods>
+                    <include name="TC_07_sortByOrderID"/>
+                </methods>
+            </class>
+            <class name="tests._09_Zafer_Harun.US_038.TC_08">
+                <methods>
+                    <include name="TC_08_downLoadOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
