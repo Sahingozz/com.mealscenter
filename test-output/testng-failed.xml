@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="C:/Users/Zafer/IdeaProjects/com.mealscenter/src/test/java/tests/_09_Zafer_Harun/US_039(failed)">
+    <classes>
+      <class name="tests._09_Zafer_Harun.US_039.TC_02">
+        <methods>
+          <include name="TC_02_merchantListSort"/>
+        </methods>
+      </class> <!-- tests._09_Zafer_Harun.US_039.TC_02 -->
+      <class name="tests._09_Zafer_Harun.US_039.TC_03">
+        <methods>
+          <include name="TC_03_SearchField"/>
+        </methods>
+      </class> <!-- tests._09_Zafer_Harun.US_039.TC_03 -->
+    </classes>
+  </test> <!-- C:/Users/Zafer/IdeaProjects/com.mealscenter/src/test/java/tests/_09_Zafer_Harun/US_039(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

@@ -1,7 +1,9 @@
 
 package tests._01_Miyase.US_003;
 
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Homepage;
@@ -21,18 +23,19 @@ public class TC_08 extends TestBaseReport {
      */
 
     Homepage homepage = new Homepage();
-
     @Test
     public void testMealCenterAccessThaiCuisine() {
         extentTest= extentReports.createTest("US_003-TC_08", "testMealCenterAccessThaiCuisine");
         WebDriver driver = Driver.getDriver();
-        extentTest= extentReports.createTest("US_003-TC_08", "Go To Thai");
         driver.get(ConfigReader.getProperty("homePageUrl"));
         ReusableMethods.wait(3);
         homepage.homePageCookiesDecline.click();
         Assert.assertTrue(homepage.homePageBodyThai.isDisplayed());
-        homepage.homePageBodyThai.click();
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.mealscenter.com/cuisine/thai");
+        Rectangle rect = homepage.homePageBodyThai.getRect();
+        new Actions(driver).moveByOffset(rect.getX()+30, rect.getY()+ rect.height/2).click().build().perform();
+
+        ReusableMethods.wait(3);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa.mealscenter.com/cuisine/thai");
         extentTest.pass("Test pass");
     }
 }
