@@ -26,32 +26,15 @@ public class TestBaseReport {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
 
-        String filePathasan = System.getProperty("user.dir") + "/report-US-hasan_34-35-36-37/Rapor"+"US_34_TC_06"+".html";
+        String filePathGurkan = System.getProperty("user.dir") + "/reports_gurkan_US_042_043/Rapor"+packageName()+"_"+className()+".html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
-        extentHtmlReporter = new ExtentHtmlReporter(filePathasan );
-
-        String filePathSaid = System.getProperty("user.dir") + "/reports_said_US_030_033/Rapor"+packageName()+"_"+className()+".html";
-
-
-        String filePathErsin = System.getProperty("user.dir") + "/reports_Ersin_US_026_027_028_29/Rapor"+packageName()+"_"+className()+".html";
-
-        //String filePathErsin = System.getProperty("user.dir") + "/reports_Ersin_US_026_027_028_29/Rapor"+"US_26_TC_01"+".html";
-        //String filePathasan = System.getProperty("user.dir") + "/reports_Ersin_US_026_027_028_29/Rapor"+"US_26_TC_01"+".html";
-
-
-
-
-
-        String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_014_TC_10"+".html";
-
-
-
-
-
-
+        extentHtmlReporter = new ExtentHtmlReporter(filePathGurkan );
+        //String filePathSaid = System.getProperty("user.dir") + "/reports_said_US_030_033/Rapor"+packageName()+"_"+className()+".html";
+        //String filePathErsin = System.getProperty("user.dir") + "/reports_Ersin_US_026_027_028_29/Rapor"+packageName()+"_"+className()+".html";
+        //String filePath = System.getProperty("user.dir") + "/report_US_011_012_013_014_Murat/Rapor"+"US_014_TC_10"+".html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
-        extentHtmlReporter = new ExtentHtmlReporter(filePathErsin);
-        extentHtmlReporter = new ExtentHtmlReporter(filePathSaid);
+        //extentHtmlReporter = new ExtentHtmlReporter(filePathErsin);
+        //extentHtmlReporter = new ExtentHtmlReporter(filePathSaid);
 
         extentReports.attachReporter(extentHtmlReporter);
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
