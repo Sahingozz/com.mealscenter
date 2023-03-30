@@ -19,10 +19,12 @@ public class TC_07 extends TestBaseReport {
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.getmerchantLogin("7elevenAdmin","1234567");
         extentTest.info("Merchant sayfasina login yapildi ve Merchant anasayfaya gidildi ");
+
         //-Kullanıcı sol taraftaki menüde bulunan "Orders Type" ı bulur ve tıklar
         merchantDashboard.orderTypeLink.click();
         extentTest.info("order Type linkine  gidildi");
         //-Kullanici "Delivery" linkinin gorur ve tiklar
+
         merchantDashboard.deliveryLink.click();
         extentTest.info("Delivery sayfasina gidildi");
         // -Kullanici acilan sayfada bulunan "Delivery Charge Type " bolumunde bulunan
@@ -38,6 +40,7 @@ public class TC_07 extends TestBaseReport {
         extentTest.info("Action ile onceki yazilan yazi silindi ve yeni deger yazildi");
         Assert.assertTrue(merchantDashboard.serviceFee2.isDisplayed());
         extentTest.info(" Yazilan yeni degerin olustugu ve gorundugu dogrulandi.");
+
         // -Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

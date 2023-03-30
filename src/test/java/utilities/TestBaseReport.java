@@ -26,7 +26,7 @@ public class TestBaseReport {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
 
-        String filePathasan = System.getProperty("user.dir") + "/report-US-hasan_34-35-36-37/Rapor"+"US_34_TC_06"+".html";
+        String filePathasan = System.getProperty("user.dir") + "/report-US-hasan_34-35-36-37/Rapor"+"US_00_TC_001"+".html";
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePathasan );
 

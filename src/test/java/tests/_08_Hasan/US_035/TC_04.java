@@ -16,6 +16,7 @@ public class TC_04 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı sol  ust panelde "Admin ismini "  ve "Email adresinin "  gorunur
         //   oldugunu doğrular.
         String expected ="Hasan";
@@ -25,6 +26,7 @@ public class TC_04 extends TestBaseReport {
         actualProfil=adminDashboard.profilName.getText();
         Assert.assertTrue(actualProfil.contains(expected));
         extentTest.info("Girilen sayfada sayfa sahibinin email ve isminin bulundugu dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

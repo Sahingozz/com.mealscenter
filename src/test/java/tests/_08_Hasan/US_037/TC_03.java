@@ -22,20 +22,24 @@ public class TC_03 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel", "123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkine basar
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
+
         //-Kullanıcı acilan sayfada sol panelde bulunan "Dasboard"  panelinin altinda bulunan "Merchant"
         //linkine basar
         adminDashboard.merchantButtonu.click();
         extentTest.info("Merchant  linki tiklandi");
+
         //-Kullanici acilan sekmelerden "List"  linkinin tiklar
         adminDashboard.listButtonu.click();
         extentTest.info("List linki tiklandi");
+
         //  acilan sayfada "All Merchant" adindaki tum saticilara ait  olan listede degisiklik yapilabildiginin dogrular
          adminDashboard.allMerchantListEdit.click();
-
         Actions actions=new Actions(Driver.getDriver());
+
         //emailin erisilebilir olmasi dogurlanir.
         Assert.assertTrue(adminDashboard.editRestuarantName.isEnabled());
         extentTest.info("Restuarant isim  bolumune erisilebilir oldugu dogrulandi");
@@ -51,34 +55,32 @@ public class TC_03 extends TestBaseReport {
                 .sendKeys(faker.phoneNumber().cellPhone())
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.internet().emailAddress())
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys(Keys.TAB)
+                .sendKeys("iyi gunler")
+                .sendKeys(Keys.TAB)
+                .sendKeys("iyi gunler")
+                .sendKeys(Keys.TAB)
                 .sendKeys(Keys.ENTER)
-                .sendKeys(Keys.TAB)
-                .sendKeys(Keys.TAB)
-                .sendKeys(Keys.TAB)
-                .sendKeys(faker.letterify("lezzet pisirir"))
-                .sendKeys(Keys.TAB)
-                .sendKeys(faker.letterify("cok guzel"))
-                .perform();
+                .build().perform();
 
-       /* Select select  =new Select(adminDashboard.cuisineDDm);
-        select.getFirstSelectedOption().click();*/
+        Select select  =new Select(adminDashboard.cuisineDDm);
+        select.selectByVisibleText("Japanese");
+        actions.sendKeys(Keys.TAB).build().perform();
+        select=new Select(adminDashboard.servicesDDM);
+        select.selectByIndex(1);
+
+
+        select=new Select(adminDashboard.statusButton);
+        select.selectByIndex(1);
+        ReusableMethods.wait(2);
+        actions.moveToElement(adminDashboard.saveButton).click().perform();
         String expectedText="updated";
         String actualtext =adminDashboard.editUpdated.getText();
         Assert.assertTrue(actualtext.contains(expectedText));
         extentTest.info("Yapilan degisiklik sonrasinda yeni bilgilerin sayfada gorunur oldugu dogrulandi");
 
-
-        /*extentTest.info("Kisilerin bilgileri uzerinde degisiklik yapildi");
-       //Sayfa yapilan  degisiklik sonrasi kayit kontrol edilir
-        adminDashboard.dashboardButtonu.click();
-        adminDashboard.merchantButtonu.click();
-        adminDashboard.listButtonu.click();
-        String expected="kar";
-        String actual=adminDashboard.editName.getText();
-        Assert.assertTrue(actual.contains(expected));
-        extentTest.info("Yapilan degisiklik sonrasinda yeni bilgilerin sayfada gorunur oldugu dogrulandi");
-
-         */
         //-Kullanıcı sayfayı kapatır
         // Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

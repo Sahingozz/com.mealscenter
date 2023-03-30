@@ -16,6 +16,7 @@ public class TC_01 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkinini tiklanabilir ve gorunur oldugunu dogrular.
         adminDashboard.dashboardButtonu.click();
         Assert.assertTrue(adminDashboard.dashboardButtonu.isDisplayed());
@@ -23,6 +24,7 @@ public class TC_01 extends TestBaseReport {
         String actual=adminDashboard.dashboardButtonu.getText();
         Assert.assertTrue(actual.contains(expected));
         extentTest.info("Dashboard sayfasina tiklandi ve sayfanin gorunur oldugu dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

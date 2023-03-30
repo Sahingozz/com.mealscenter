@@ -16,12 +16,14 @@ public class TC_02 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         // - Kullanıcı "Url"ye gider
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
+
         //  ve Url'nin "https://qa.mealscenter.com/backoffice/admin/dashboard"  icerdiginin dogrular
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
         String expectedUrl="admin/dashboard";
         String actualUrl= Driver.getDriver().getCurrentUrl();
         Assert.assertTrue(actualUrl.contains(expectedUrl));
         extentTest.info("Admin sayfasina gidildigi dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

@@ -17,13 +17,16 @@ public class TC_06 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkine basar
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
+
         // ve acilan sayfada "Today Deliverd" bolumunun gorunur oldugunu ve degerler icerdigini dogrular
         Assert.assertTrue(adminDashboard.todayDeliverdLink.isDisplayed());
         Assert.assertFalse(adminDashboard.todayDeliverdLink.getText().isEmpty());
         extentTest.info("Merchant linki tiklandi ve acilan sayfada bulunan 'Total total' bolumununun ozet bilgiler icerdigi dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

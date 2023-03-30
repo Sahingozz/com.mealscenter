@@ -19,12 +19,15 @@ public class TC_08 extends TestBaseReport {
         //- Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.getmerchantLogin("7elevenAdmin","1234567");
         extentTest.info("Merchant sayfasina login yapildi ve Merchant anasayfaya gidildi ");
+
         //-Kullanıcı sol taraftaki menüde bulunan "Orders Type" ı bulur ve tıklar
         merchantDashboard.orderTypeLink.click();
         extentTest.info("order Type linkine  gidildi");
+
         //-Kullanici "Delivery" linkinin gorur ve tiklar
         merchantDashboard.deliveryLink.click();
         extentTest.info("Delivery sayfasina gidildi");
+
         //-Kullanici acilan sayfada bulunan "Fixed Charge " bolumune tiklar ve Service Fee kismini  doldurur
         merchantDashboard.dynamicRates.click();
         extentTest.info("Acilan sayfada bulunan 'Dynamik Rates'alanina tiklandi");
@@ -37,12 +40,14 @@ public class TC_08 extends TestBaseReport {
                 .sendKeys(Keys.DELETE).perform();
         merchantDashboard.serviceFee2.sendKeys("4.00");
         extentTest.info("Action ile onceki yazilan yazi silindi ve yeni deger yazildi");
+
         //"Service Fee" bolumune yazilanlarin kaydedilebildigi  dogrulanir
         merchantDashboard.saveButton.click();
         extentTest.info("Yazilan yeni deger kaydedildi");
         String expectedText= "saved";
         String actualtext= merchantDashboard.settingSavedText.getText();
         extentTest.info("Yazilan yeni degerlerin kaydedildigi dogrulandi");
+
         //-Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

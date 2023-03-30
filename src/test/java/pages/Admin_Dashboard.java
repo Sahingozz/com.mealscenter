@@ -528,12 +528,20 @@ public class Admin_Dashboard {
     //Admin dashboard -> Buyers -> Customers List -> customer list's first element
     @FindBy (className = "odd")
     public WebElement customerList1stElement;
-    @FindBy(xpath = "//span[@class='select2-selection select2-selection--multiple']")
+    @FindBy(xpath = "(//select[@class='form-control custom-select form-control-select select_two select2-hidden-accessible'])[1]")
     public  WebElement cuisineDDm;
-
+    @FindBy(xpath = "(//select[@class='form-control custom-select form-control-select select_two select2-hidden-accessible'])[2]")
+    public  WebElement servicesDDM;
+    @FindBy(xpath = "(//select[@class='form-control custom-select form-control-select select_two select2-hidden-accessible'])[3]")
+    public  WebElement tagsDDM;
     @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement editUpdated;
 
+    @FindBy(xpath = "//input[@type=\"submit\"]")
+    public  WebElement saveButton;
+
+    @FindBy(xpath = "(//select[@class='form-control custom-select form-control-select'])[2]")
+    public  WebElement statusButton;
 
 
 

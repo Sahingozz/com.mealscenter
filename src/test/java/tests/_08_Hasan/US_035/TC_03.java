@@ -17,11 +17,13 @@ public class TC_03 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı acilan sayfada "Dashboard"  basliginin gorunur oldugunu dogrular
         String expectedTitle="Dashboard";
         String actualTitle =Driver.getDriver().getTitle();
         Assert.assertTrue(actualTitle.contains(expectedTitle));
         extentTest.info("Dashboard anasayfaya gidildigi dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

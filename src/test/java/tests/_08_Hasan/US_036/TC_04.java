@@ -16,15 +16,18 @@ public class TC_04 extends TestBaseReport {
         // - Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         // - Kullanıcı acilan sayfada sol panelde bulunan "Dasboard" linkine basar
         adminDashboard.dashboardButtonu.click();
         extentTest.info("Dashboard linki tiklandi");
+
         // ve acilan sayfada "Total Commission" bolumunun gorunur oldugunu ve degerler icerdigini dogrular
         Assert.assertTrue(adminDashboard.totalCommissionButtonu.isDisplayed());
         String expected ="$";
         String actual=adminDashboard.totalCommissionButtonu.getText();
         Assert.assertTrue(actual.contains(expected));
         extentTest.info("Merchant linki tiklandi ve acilan sayfada bulunan 'Total Commission' bolumunun ozet bilgiler icerdigi dogrulandi");
+
         // - Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");

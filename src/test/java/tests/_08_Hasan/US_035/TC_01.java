@@ -12,7 +12,9 @@ public class TC_01 extends TestBaseReport {
         //-Kullanıcı açtığı browserla admin paneli olan "AdminUrl" ye gider
         //-Kullanıcı "username" ve "password" girişi yapıp, "Sign in" linkine  tıklar
         ReusableMethods.adminLogin("hasan.adiguzel","123456");
+
         extentTest.info("Admin sayfasina login yapildi ve Admin anasayfaya gidildi ");
+
         //-Kullanıcı sayfayı kapatır
         Driver.closeDriver();
         extentTest.info("Sayfa kapatildi");
