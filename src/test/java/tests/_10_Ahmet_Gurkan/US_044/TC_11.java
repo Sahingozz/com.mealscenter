@@ -1,5 +1,6 @@
 package tests._10_Ahmet_Gurkan.US_044;
 
+import org.junit.Before;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Admin_Dashboard;
@@ -14,6 +15,9 @@ public class TC_11 extends TestBaseReport {
     It should be verified that you click to the "Merchant Sales" section from the Reports menu
     -----------------------------------------------------------------------------------------------
     */
+
+
+
 
     Admin_Dashboard adminDashboard=new Admin_Dashboard();
 
